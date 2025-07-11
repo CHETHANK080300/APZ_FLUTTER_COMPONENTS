@@ -1,0 +1,53 @@
+{
+  "toggleSwitch": {
+    "sizes": {
+      "small": {
+        "width": "toggle_small_width",
+        "height": "toggle_small_height",
+        "thumbSize": "toggle_small_thumb_size",
+        "padding": "toggle_small_padding"
+      },
+      "large": {
+        "width": "toggle_large_width",
+        "height": "toggle_large_height",
+        "thumbSize": "toggle_large_thumb_size",
+        "padding": "toggle_large_padding"
+      }
+    },
+    "colors": {
+      "on": {
+        "backgroundColor": "toggle_on_bg",
+        "thumbColor": "toggle_on_thumb",
+        "borderColor": "toggle_on_border",
+        "textColor": "toggle_on_text"
+      },
+      "off": {
+        "backgroundColor": "toggle_off_bg",
+        "thumbColor": "toggle_off_thumb",
+        "borderColor": "toggle_off_border",
+        "textColor": "toggle_off_text"
+      },
+      "disabled": {
+        "backgroundColor": "toggle_disabled_bg",
+        "thumbColor": "toggle_disabled_thumb",
+        "borderColor": "toggle_disabled_border",
+        "textColor": "toggle_disabled_text"
+      }
+    },
+    "text": {
+      "fontFamily": "toggle_font_family",
+      "fontSizes": {
+        "small": "toggle_font_size_small",
+        "large": "toggle_font_size_large"
+      },
+      "spacing": {
+        "small": "toggle_spacing_small",
+        "large": "toggle_spacing_large"
+      }
+    },
+    "animation": {
+      "duration": 200,
+      "curve": "easeInOut"
+    }
+  }
+}

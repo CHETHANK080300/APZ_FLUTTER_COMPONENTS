@@ -1,0 +1,51 @@
+{
+  "toggleWithLabel": {
+    "sizes": {
+      "small": {
+        "width": "toggle_label_small_width",
+        "height": "toggle_label_small_height",
+        "borderRadius": "toggle_label_small_border_radius",
+        "fontSize": "toggle_label_small_font_size",
+        "labelFontSize": "toggle_label_small_label_font_size",
+        "spacing": "toggle_label_small_spacing"
+      },
+      "large": {
+        "width": "toggle_label_large_width",
+        "height": "toggle_label_large_height",
+        "borderRadius": "toggle_label_large_border_radius",
+        "fontSize": "toggle_label_large_font_size",
+        "labelFontSize": "toggle_label_large_label_font_size",
+        "spacing": "toggle_label_large_spacing"
+      }
+    },
+    "colors": {
+      "selected": {
+        "backgroundColor": "toggle_label_selected_bg",
+        "textColor": "toggle_label_selected_text",
+        "borderColor": "toggle_label_selected_border"
+      },
+      "unselected": {
+        "backgroundColor": "toggle_label_unselected_bg",
+        "textColor": "toggle_label_unselected_text",
+        "borderColor": "toggle_label_unselected_border"
+      },
+      "disabled": {
+        "backgroundColor": "toggle_label_disabled_bg",
+        "textColor": "toggle_label_disabled_text",
+        "borderColor": "toggle_label_disabled_border"
+      },
+      "label": {
+        "textColor": "toggle_label_label_text"
+      }
+    },
+    "text": {
+      "fontFamily": "toggle_label_font_family",
+      "fontWeight": "toggle_label_font_weight",
+      "labelFontWeight": "toggle_label_label_font_weight"
+    },
+    "animation": {
+      "duration": 200,
+      "curve": "easeInOut"
+    }
+  }
+}

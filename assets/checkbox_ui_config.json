@@ -1,0 +1,150 @@
+{
+  "checkbox": {
+    "sizes": {
+      "small": {
+        "width": "checkbox_small_width",
+        "height": "checkbox_small_height",
+        "borderRadius": "checkbox_small_radius",
+        "iconSize": "checkbox_small_icon",
+        "borderWidth": "checkbox_small_border"
+      },
+      "medium": {
+        "width": "checkbox_medium_width",
+        "height": "checkbox_medium_height",
+        "borderRadius": "checkbox_medium_radius",
+        "iconSize": "checkbox_medium_icon",
+        "borderWidth": "checkbox_medium_border"
+      },
+      "large": {
+        "width": "checkbox_large_width",
+        "height": "checkbox_large_height",
+        "borderRadius": "checkbox_large_radius",
+        "iconSize": "checkbox_large_icon",
+        "borderWidth": "checkbox_large_border"
+      }
+    },
+    "colors": {
+      "selected": {
+        "backgroundColor": "primary_default",
+        "borderColor": "primary_default",
+        "iconColor": "primary_text",
+        "shadowColor": "shadow_primary",
+        "shadowOpacity": 0.2
+      },
+      "unselected": {
+        "backgroundColor": "secondary_default",
+        "borderColor": "secondary_border",
+        "iconColor": "primary_text",
+        "shadowColor": "shadow_none",
+        "shadowOpacity": 0.0
+      },
+      "hover": {
+        "backgroundColor": "primary_hover",
+        "borderColor": "primary_hover",
+        "iconColor": "primary_text",
+        "shadowColor": "shadow_hover",
+        "shadowOpacity": 0.3
+      },
+      "focus": {
+        "backgroundColor": "secondary_default",
+        "borderColor": "primary_focus",
+        "iconColor": "primary_text",
+        "shadowColor": "shadow_primary",
+        "shadowOpacity": 0.4
+      },
+      "disabled": {
+        "backgroundColor": "disabled_bg",
+        "borderColor": "disabled_border",
+        "iconColor": "disabled_icon",
+        "shadowColor": "shadow_none",
+        "shadowOpacity": 0.0
+      },
+      "error": {
+        "backgroundColor": "secondary_default",
+        "borderColor": "error_border",
+        "iconColor": "primary_text",
+        "shadowColor": "shadow_error",
+        "shadowOpacity": 0.2
+      },
+      "success": {
+        "backgroundColor": "success_bg",
+        "borderColor": "success_border",
+        "iconColor": "primary_text",
+        "shadowColor": "shadow_success",
+        "shadowOpacity": 0.2
+      }
+    },
+    "text": {
+      "fontFamily": "font_family",
+      "fontSizes": {
+        "small": "font_size_small",
+        "medium": "font_size_medium",
+        "large": "font_size_large"
+      },
+      "colors": {
+        "default": "secondary_text",
+        "disabled": "disabled_text",
+        "error": "error_text",
+        "success": "success_text",
+        "secondary": "secondary_label"
+      },
+      "spacing": {
+        "small": "spacing_small",
+        "medium": "spacing_medium",
+        "large": "spacing_large"
+      },
+      "lineHeight": {
+        "small": "line_height_small",
+        "medium": "line_height_medium",
+        "large": "line_height_large"
+      }
+    },
+    "animation": {
+      "duration": "animation_duration",
+      "curve": "animation_curve",
+      "scaleFactor": "animation_scale",
+      "enableHover": "enable_hover",
+      "enableFocus": "enable_focus"
+    },
+    "states": {
+      "default": "unselected",
+      "checked": "selected",
+      "disabled": "disabled",
+      "error": "error",
+      "success": "success",
+      "hover": "hover",
+      "focus": "focus"
+    },
+    "accessibility": {
+      "semanticLabel": "accessibility_label",
+      "semanticHint": "accessibility_hint",
+      "enableSemantics": "accessibility_enable"
+    },
+    "themes": {
+      "light": {
+        "selected": {
+          "backgroundColor": "primary_default",
+          "borderColor": "primary_default",
+          "iconColor": "primary_text"
+        },
+        "unselected": {
+          "backgroundColor": "secondary_default",
+          "borderColor": "secondary_border",
+          "iconColor": "primary_text"
+        }
+      },
+      "dark": {
+        "selected": {
+          "backgroundColor": "dark_selected_bg",
+          "borderColor": "dark_selected_bg",
+          "iconColor": "primary_text"
+        },
+        "unselected": {
+          "backgroundColor": "dark_unselected_bg",
+          "borderColor": "dark_unselected_border",
+          "iconColor": "primary_text"
+        }
+      }
+    }
+  }
+}

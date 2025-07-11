@@ -1,0 +1,202 @@
+{
+
+  "primary_default": "#0054A6",
+  "primary_hover": "#006FCF",
+  "primary_focus": "#0054A6",
+  "primary_text": "#FFFFFF",
+ 
+  "secondary_default": "#006FCF",
+  "secondary_border": "#B3BBC6",
+  "secondary_text": "#333333",
+  "secondary_label": "#666666",
+ 
+  "disabled_bg": "#F5F5F5",
+  "disabled_border": "#E0E0E0",
+  "disabled_icon": "#B3BBC6",
+  "disabled_text": "#B3BBC6",
+ 
+  "error_border": "#FF4444",
+  "error_text": "#FF4444",
+ 
+  "success_bg": "#00C851",
+  "success_border": "#00C851",
+  "success_text": "#00C851",
+ 
+  "shadow_primary": "#0054A6",
+  "shadow_hover": "#006FCF",
+  "shadow_error": "#FF4444",
+  "shadow_success": "#00C851",
+  "shadow_none": "#000000",
+ 
+  "dark_selected_bg": "#4CAF50",
+  "dark_unselected_bg": "#2C2C2C",
+  "dark_unselected_border": "#555555",
+ 
+  "font_family": "Roboto",
+ 
+  "font_size_small": 12,
+  "font_size_medium": 14,
+  "font_size_large": 16,
+ 
+  "line_height_small": 1.2,
+  "line_height_medium": 1.3,
+  "line_height_large": 1.4,
+ 
+  "spacing_small": 8,
+  "spacing_medium": 12,
+  "spacing_large": 16,
+ 
+  "checkbox_small_width": 16,
+  "checkbox_small_height": 16,
+  "checkbox_small_radius": 2,
+  "checkbox_small_icon": 10,
+  "checkbox_small_border": 1.0,
+ 
+  "checkbox_medium_width": 20,
+  "checkbox_medium_height": 20,
+  "checkbox_medium_radius": 4,
+  "checkbox_medium_icon": 12,
+  "checkbox_medium_border": 1.43,
+ 
+  "checkbox_large_width": 24,
+  "checkbox_large_height": 24,
+  "checkbox_large_radius": 6,
+  "checkbox_large_icon": 14,
+  "checkbox_large_border": 1.5,
+ 
+  "animation_duration": 200,
+  "animation_curve": "easeInOut",
+  "animation_scale": 0.95,
+  "enable_hover": true,
+  "enable_focus": true,
+ 
+  "accessibility_label": "Checkbox",
+  "accessibility_hint": "Double tap to toggle",
+  "accessibility_enable": true,
+
+  
+    
+    "radio_selected_outer": "#0054A6",
+    "radio_selected_inner": "#0054A6",
+    "radio_selected_border": "#0054A6",
+  
+    "radio_unselected_outer": "#FFFFFF",
+    "radio_unselected_inner": "#FFFFFF",
+    "radio_unselected_border": "#B3BBC6",
+  
+    "radio_disabled_outer": "#F5F5F5",
+    "radio_disabled_inner": "#B3BBC6",
+    "radio_disabled_border": "#E0E0E0",
+  
+    "radio_error_outer": "#FFFFFF",
+    "radio_error_inner": "#FF4444",
+    "radio_error_border": "#FF4444",
+  
+   
+    "radio_small_outer_radius": 10,
+    "radio_small_inner_radius": 5,
+    "radio_small_border_width": 1.0,
+  
+    "radio_medium_outer_radius": 12,
+    "radio_medium_inner_radius": 6,
+    "radio_medium_border_width": 1.43,
+  
+    "radio_large_outer_radius": 16,
+    "radio_large_inner_radius": 8,
+    "radio_large_border_width": 1.5,
+  
+    
+    "radio_font_family": "Roboto",
+    "radio_font_size_small": 12,
+    "radio_font_size_medium": 14,
+    "radio_font_size_large": 16,
+  
+    "radio_text_default": "#333333",
+    "radio_text_disabled": "#B3BBC6",
+    "radio_text_error": "#FF4444",
+  
+    "radio_spacing_small": 8,
+    "radio_spacing_medium": 12,
+    "radio_spacing_large": 16,
+
+  
+      "toggle_on_bg": "#0054A6",
+      "toggle_on_thumb": "#FFFFFF",
+      "toggle_on_border": "#0054A6",
+      "toggle_on_text": "#FFFFFF",
+    
+     
+      "toggle_off_bg": "#E0E0E0",
+      "toggle_off_thumb": "#FFFFFF",
+      "toggle_off_border": "#B3BBC6",
+      "toggle_off_text": "#333333",
+    
+     
+      "toggle_disabled_bg": "#F5F5F5",
+      "toggle_disabled_thumb": "#B3BBC6",
+      "toggle_disabled_border": "#E0E0E0",
+      "toggle_disabled_text": "#B3BBC6",
+    
+    
+      "toggle_small_width": 36,
+      "toggle_small_height": 20,
+      "toggle_small_thumb_size": 16,
+      "toggle_small_padding": 2,
+    
+      "toggle_large_width": 52,
+      "toggle_large_height": 32,
+      "toggle_large_thumb_size": 28,
+      "toggle_large_padding": 2,
+    
+      
+      "toggle_font_family": "Roboto",
+      "toggle_font_size_small": 12,
+      "toggle_font_size_large": 16,
+    
+      "toggle_spacing_small": 8,
+      "toggle_spacing_large": 12,
+
+
+      
+       
+        "toggle_label_selected_bg": "#0054A6",
+        "toggle_label_selected_text": "#FFFFFF",
+        "toggle_label_selected_border": "#0054A6",
+      
+
+        "toggle_label_unselected_bg": "#FFFFFF",
+        "toggle_label_unselected_text": "#0054A6",
+        "toggle_label_unselected_border": "#FFFFFF",
+      
+        
+        "toggle_label_disabled_bg": "#F5F5F5",
+        "toggle_label_disabled_text": "#B3BBC6",
+        "toggle_label_disabled_border": "#E0E0E0",
+      
+        
+        "toggle_label_label_text": "#B3BBC6",
+      
+      
+        "toggle_label_small_width": 88,
+        "toggle_label_small_height": 32,
+        "toggle_label_small_border_radius": 16,
+        "toggle_label_small_font_size": 12,
+        "toggle_label_small_label_font_size": 12,
+        "toggle_label_small_spacing": 8,
+      
+       
+        "toggle_label_large_width": 120,
+        "toggle_label_large_height": 44,
+        "toggle_label_large_border_radius": 22,
+        "toggle_label_large_font_size": 16,
+        "toggle_label_large_label_font_size": 16,
+        "toggle_label_large_spacing": 12,
+      
+      
+        "toggle_label_font_family": "Roboto",
+        "toggle_label_font_weight": 500,
+        "toggle_label_label_font_weight": 400
+      
+    
+  
+}

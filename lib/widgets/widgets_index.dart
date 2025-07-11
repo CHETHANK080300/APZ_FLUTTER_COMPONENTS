@@ -48,6 +48,11 @@ import 'promotions/poromotions.dart';
 import 'searchbar/enabled_lg.dart';
 // Selection
 import 'selection/variants/icon_with_one_txt_line.dart';
+
+import 'selection/selectors/checkbox/dynamic_checkbox.dart';
+import 'selection/selectors/Radio_btn/dynamic_radio.dart';
+import 'selection/toggle_switch/dynamic_toggle_switch.dart';
+import 'selection/toggle_button_label/dynamic_toggle_with_label.dart';
 // Sliders
 import 'sliders/sliders.dart';
 // Status Bar
@@ -94,7 +99,41 @@ final List<WidgetDemo> widgetDemos = [
   WidgetDemo(name: 'Progress Step', builder: (_) => ProgressSteps()),
   WidgetDemo(name: 'Promotions', builder: (_) => Promotions()),
   WidgetDemo(name: 'Searchbar Enabled LG', builder: (_) => StateEnabledSizeLg()),
-  WidgetDemo(name: 'Selection Icon With One Text Line', builder: (_) => Property1WithPriTxt()),
+  WidgetDemo(name: 'Selection checkbox', builder: (_) => DynamicCheckbox(
+  isChecked: true,
+  title: 'Text line one with value text',
+  subtitle: 'Text line one with value text',
+  size: 'medium',
+  onChanged: (value) {
+   
+  },
+)),
+ WidgetDemo(name: 'Selection radio', builder: (_) => DynamicRadio(
+  isChecked: true,
+  title: 'Option 1',
+  subtitle: 'This is a radio option',
+  size: 'small',
+  onChanged: (value) {
+ 
+  },
+)),
+ WidgetDemo(name: 'Selection toggle switch', builder: (_) =>DynamicToggleSwitch(
+  isOn: false,
+  size: ToggleSwitchSize.small,
+  text: 'Enable notifications',
+  onChanged: (value) {
+    
+  },
+)),
+ WidgetDemo(name: 'Selection toggle switch with label', builder: (_) =>DynamicToggleWithLabel(
+  label: 'Mode of transfer',
+  value: true,
+  onChanged: (val) {  },
+  size: ToggleWithLabelSize.small,
+  activeText: 'Yes',
+  inactiveText: 'No',
+)),
+
   WidgetDemo(name: 'Sliders', builder: (_) => WebLayoutMb()),
   WidgetDemo(name: 'Status Bar Dark', builder: (_) => DarkModeOn()),
   WidgetDemo(name: 'Status Bar Light', builder: (_) => DarkModeOff()),
