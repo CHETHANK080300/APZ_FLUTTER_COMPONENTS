@@ -1,0 +1,61 @@
+{
+  "radio": {
+    "sizes": {
+      "small": {
+        "outerRadius": "radio_small_outer_radius",
+        "innerRadius": "radio_small_inner_radius",
+        "borderWidth": "radio_small_border_width"
+      },
+      "medium": {
+        "outerRadius": "radio_medium_outer_radius",
+        "innerRadius": "radio_medium_inner_radius",
+        "borderWidth": "radio_medium_border_width"
+      },
+      "large": {
+        "outerRadius": "radio_large_outer_radius",
+        "innerRadius": "radio_large_inner_radius",
+        "borderWidth": "radio_large_border_width"
+      }
+    },
+    "colors": {
+      "selected": {
+        "outerColor": "radio_selected_outer",
+        "innerColor": "radio_selected_inner",
+        "borderColor": "radio_selected_border"
+      },
+      "unselected": {
+        "outerColor": "radio_unselected_outer",
+        "innerColor": "radio_unselected_inner",
+        "borderColor": "radio_unselected_border"
+      },
+      "disabled": {
+        "outerColor": "radio_disabled_outer",
+        "innerColor": "radio_disabled_inner",
+        "borderColor": "radio_disabled_border"
+      },
+      "error": {
+        "outerColor": "radio_error_outer",
+        "innerColor": "radio_error_inner",
+        "borderColor": "radio_error_border"
+      }
+    },
+    "text": {
+      "fontFamily": "radio_font_family",
+      "fontSizes": {
+        "small": "radio_font_size_small",
+        "medium": "radio_font_size_medium",
+        "large": "radio_font_size_large"
+      },
+      "colors": {
+        "default": "radio_text_default",
+        "disabled": "radio_text_disabled",
+        "error": "radio_text_error"
+      },
+      "spacing": {
+        "small": "radio_spacing_small",
+        "medium": "radio_spacing_medium",
+        "large": "radio_spacing_large"
+      }
+    }
+  }
+}
