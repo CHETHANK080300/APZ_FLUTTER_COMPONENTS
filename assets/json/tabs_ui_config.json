@@ -1,0 +1,23 @@
+{
+  "default": {
+    "textColor": "#8A96A6",
+    "fontFamily": "{fonts.fontFamily}",
+    "fontSize": "{fonts.fontSize}",
+    "fontWeight": 500
+  },
+  "focused": {
+    "textColor": "#7B61FF",
+    "borderColor": "#7B61FF",
+    "borderWidth": 2,
+    "fontWeight": 600
+  },
+  "layout": { 
+    "tabPaddingHorizontal": 18,
+    "tabPaddingVertical": 16,
+    "tabSpacing": 8,
+    "borderColor": "#D9D9D9",
+    "borderRadius": 0,
+    "borderWidth": 0,
+    "backgroundColor": "{colors.colorWhite}"
+  }
+}

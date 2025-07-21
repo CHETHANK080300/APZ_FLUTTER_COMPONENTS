@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:phonecodes/phonecodes.dart';
-import '../country_model.dart';
+
+import 'common/country_model.dart';
 
 class ApzPhoneInputWithDropdown extends StatefulWidget {
   final void Function(String)? onChanged;

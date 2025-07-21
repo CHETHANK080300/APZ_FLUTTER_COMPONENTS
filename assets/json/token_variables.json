@@ -1,0 +1,4950 @@
+{
+  "version": "1.0.4",
+  "metadata": {},
+  "collections": [
+    {
+      "name": "Tokens",
+      "modes": [
+        {
+          "name": "CSC - Light theme",
+          "variables": [
+            {
+              "name": "Surface/Colour 1",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Surface/Colour 2",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 50"
+              }
+            },
+            {
+              "name": "Surface/Colour 3",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-50"
+              }
+            },
+            {
+              "name": "Surface/Colour 4",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Form Fields/Header/Header sub",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Form Fields/Header/Header sub outline",
+              "type": "color",
+              "isAlias": false,
+              "value": "#0054A666"
+            },
+            {
+              "name": "Form Fields/Header/Header outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Form Fields/Search/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Form Fields/Search/Search outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Form Fields/Input/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-50"
+              }
+            },
+            {
+              "name": "Form Fields/Input/Outline default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-200"
+              }
+            },
+            {
+              "name": "Form Fields/Input/Filled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-50"
+              }
+            },
+            {
+              "name": "Form Fields/Input/Outline Filled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-200"
+              }
+            },
+            {
+              "name": "Form Fields/Input/Focused",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-50"
+              }
+            },
+            {
+              "name": "Form Fields/Input/Outline focused",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Secondary colors/Secondary 400"
+              }
+            },
+            {
+              "name": "Form Fields/Input/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-50"
+              }
+            },
+            {
+              "name": "Form Fields/Input/Outline disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-50"
+              }
+            },
+            {
+              "name": "Form Fields/Input/Error",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-50"
+              }
+            },
+            {
+              "name": "Form Fields/Input/Outline error",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Error colors/red-400"
+              }
+            },
+            {
+              "name": "Form Fields/NavFooter/Footer",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Form Fields/NavFooter/Selected nav",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 200"
+              }
+            },
+            {
+              "name": "Form Fields/Tooltip/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Form Fields/Tooltip/Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Form Fields/Tooltip/Outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Form Fields/Sliders/default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Form Fields/Side Menu/Default BG",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Form Fields/Side Menu/Default",
+              "type": "color",
+              "isAlias": false,
+              "value": "#FFFFFF00"
+            },
+            {
+              "name": "Form Fields/Side Menu/Hover",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 900"
+              }
+            },
+            {
+              "name": "Form Fields/Side Menu/Active",
+              "type": "color",
+              "isAlias": false,
+              "value": "#FFFFFF1A"
+            },
+            {
+              "name": "Form Fields/Badges/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-600"
+              }
+            },
+            {
+              "name": "Form Fields/Badges/Default outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-600"
+              }
+            },
+            {
+              "name": "Form Fields/Sliders/Filled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Form Fields/Badges/Success/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Semantics/Success/Success container"
+              }
+            },
+            {
+              "name": "Form Fields/Badges/Success/Default outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Success colors/green-300"
+              }
+            },
+            {
+              "name": "Form Fields/Badges/Error/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Semantics/Error/Error container"
+              }
+            },
+            {
+              "name": "Form Fields/Badges/Error/Default outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Error colors/red-300"
+              }
+            },
+            {
+              "name": "Form Fields/Badges/Warning/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Semantics/Warning/Warning container"
+              }
+            },
+            {
+              "name": "Form Fields/Badges/Warning/Default outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Alert colors/orange-300"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-50"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Outline default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-200"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Filled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-50"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Outline filled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Hover",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Outline hover",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-200"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Outline disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Error",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Outline error",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Semantics/Error/Error"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Clicked",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Form Fields/Selections/Inactive",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Form Fields/Selections/Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Form Fields/Selections/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Outline clicked",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Form Fields/Toggle/Button/Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Form Fields/Toggle/Button/Inactive",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Button/Primary/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Button/Primary/Default outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Button/Primary/Hover",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 900"
+              }
+            },
+            {
+              "name": "Button/Primary/Hover outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 900"
+              }
+            },
+            {
+              "name": "Button/Primary/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Neutral colors/Neutral 100"
+              }
+            },
+            {
+              "name": "Button/Primary/Disabled outlline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Neutral colors/Neutral 100"
+              }
+            },
+            {
+              "name": "Button/Secondary/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Button/Secondary/Default outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Neutral colors/Neutral 200"
+              }
+            },
+            {
+              "name": "Button/Secondary/Hover",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Button/Secondary/Hover outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Neutral colors/Neutral 200"
+              }
+            },
+            {
+              "name": "Button/Secondary/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Neutral colors/Neutral 200"
+              }
+            },
+            {
+              "name": "Button/Secondary/Disabled outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Neutral colors/Neutral 200"
+              }
+            },
+            {
+              "name": "Button/Hyperlink/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Semantics/Info/Info"
+              }
+            },
+            {
+              "name": "Button/Hyperlink/Hover",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Button/Hyperlink/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Chips/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-50"
+              }
+            },
+            {
+              "name": "Chips/Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Chips/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Neutral colors/Neutral 100"
+              }
+            },
+            {
+              "name": "Tags/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-50"
+              }
+            },
+            {
+              "name": "Tags/Pending",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Semantics/Warning/Warning container"
+              }
+            },
+            {
+              "name": "Tags/Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Semantics/Success/Success container"
+              }
+            },
+            {
+              "name": "Tags/Error",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Semantics/Error/Error container"
+              }
+            },
+            {
+              "name": "Tabs/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-400"
+              }
+            },
+            {
+              "name": "Icon/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-800"
+              }
+            },
+            {
+              "name": "Icon/Inverse",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Icon/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Icon/Highlight",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Secondary colors/Secondary 400"
+              }
+            },
+            {
+              "name": "Icon/Fill",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 100"
+              }
+            },
+            {
+              "name": "Tabs/Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Secondary colors/Secondary 400"
+              }
+            },
+            {
+              "name": "Tabs/Outline Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Secondary colors/Secondary 400"
+              }
+            },
+            {
+              "name": "Text colour/Title Text/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Text colour/Title Text/Inverse",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Subtitle/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Text colour/Subtitle/Inverse",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Header/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Text colour/Menu Item/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Text colour/Menu Item/Hover",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Text colour/Menu Item/Highlight",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Secondary colors/Secondary 400"
+              }
+            },
+            {
+              "name": "Text colour/Label & Help/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Text colour/Input/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Text colour/Input/Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Text colour/Input/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Text colour/Input/Inverse",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Input/Highlight",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Secondary colors/Secondary 400"
+              }
+            },
+            {
+              "name": "Text colour/Label & Help/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Text colour/Label & Help/Inverse",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Currency/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Text colour/Currency/Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Text colour/Currency/Hover",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Text colour/Currency/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Text colour/Body/Style 1",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Text colour/Body/Style 2",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Text colour/Paragraph/Style 1",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Paragraph/Style 2",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Text colour/Paragraph/Style 3",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Text colour/Button/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Button/Hover",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Text colour/Button/Clicked",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Text colour/Button/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Text colour/Hyperlink/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Secondary colors/Secondary 500"
+              }
+            },
+            {
+              "name": "Text colour/Hyperlink/Light",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Tooltip/Style 1",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Tooltip/Style 2",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Text colour/Table Header/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Text colour/Table Header/Inverse",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Table Content/Style 1",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Text colour/Table Content/Style 2",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Text colour/Note/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Spacings/micro",
+              "type": "number",
+              "isAlias": false,
+              "value": 2
+            },
+            {
+              "name": "Spacings/x-small",
+              "type": "number",
+              "isAlias": false,
+              "value": 4
+            },
+            {
+              "name": "Spacings/small",
+              "type": "number",
+              "isAlias": false,
+              "value": 8
+            },
+            {
+              "name": "Spacings/medium",
+              "type": "number",
+              "isAlias": false,
+              "value": 12
+            },
+            {
+              "name": "Spacings/medium increased",
+              "type": "number",
+              "isAlias": false,
+              "value": 16
+            },
+            {
+              "name": "Spacings/large",
+              "type": "number",
+              "isAlias": false,
+              "value": 24
+            },
+            {
+              "name": "Spacings/large increased",
+              "type": "number",
+              "isAlias": false,
+              "value": 32
+            },
+            {
+              "name": "Spacings/Extra large",
+              "type": "number",
+              "isAlias": false,
+              "value": 40
+            },
+            {
+              "name": "Spacings/Extra large increased",
+              "type": "number",
+              "isAlias": false,
+              "value": 48
+            },
+            {
+              "name": "Spacings/Full",
+              "type": "number",
+              "isAlias": false,
+              "value": 64
+            },
+            {
+              "name": "Semantics/Success/Success",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Success colors/green-500"
+              }
+            },
+            {
+              "name": "Semantics/Success/Success container",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Success colors/green-50"
+              }
+            },
+            {
+              "name": "Semantics/Error/Error",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Error colors/red-500"
+              }
+            },
+            {
+              "name": "Semantics/Error/Error container",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Error colors/red-50"
+              }
+            },
+            {
+              "name": "Semantics/Warning/warning",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Alert colors/orange-500"
+              }
+            },
+            {
+              "name": "Semantics/Info/Info",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Secondary colors/Secondary 500"
+              }
+            },
+            {
+              "name": "Semantics/Info/Info Container",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Secondary colors/Secondary 50"
+              }
+            },
+            {
+              "name": "Semantics/Warning/Warning container",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Alert colors/orange-50"
+              }
+            },
+            {
+              "name": "Outline/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Outline/Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/Black"
+              }
+            },
+            {
+              "name": "Outline/Pressed",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Secondary colors/Secondary 950"
+              }
+            },
+            {
+              "name": "Outline/Highlight",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Text colour/Input/Highlight"
+              }
+            },
+            {
+              "name": "Outline/Highlight 2",
+              "type": "color",
+              "isAlias": false,
+              "value": "#0054A666"
+            },
+            {
+              "name": "Outline/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-50"
+              }
+            },
+            {
+              "name": "Outline/Error",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Semantics/Error/Error"
+              }
+            },
+            {
+              "name": "Outline/Success",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Semantics/Success/Success"
+              }
+            },
+            {
+              "name": "Outline/warning",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Semantics/Warning/warning"
+              }
+            },
+            {
+              "name": "Outline/Default 2",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Text colour/Chips/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Text colour/Chips/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Text colour/Chips/Inverse",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Form Fields/Toggle/Switch/Inactive",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Form Fields/Toggle/Switch/Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Form Fields/Toggle/Switch/Switch button",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Form Fields/Progress bar/Colour 1",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Form Fields/Progress bar/Color 2",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Form Fields/Progress bar/Color 3",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            }
+          ]
+        },
+        {
+          "name": "CSC - Dark theme",
+          "variables": [
+            {
+              "name": "Surface/Colour 1",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Neutral colors/Neutral 900"
+              }
+            },
+            {
+              "name": "Surface/Colour 2",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-900"
+              }
+            },
+            {
+              "name": "Surface/Colour 3",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-900"
+              }
+            },
+            {
+              "name": "Surface/Colour 4",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-400"
+              }
+            },
+            {
+              "name": "Form Fields/Header/Header sub",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/Black"
+              }
+            },
+            {
+              "name": "Form Fields/Header/Header sub outline",
+              "type": "color",
+              "isAlias": false,
+              "value": "#D8000066"
+            },
+            {
+              "name": "Form Fields/Header/Header outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Form Fields/Search/Default",
+              "type": "color",
+              "isAlias": false,
+              "value": "#33333F"
+            },
+            {
+              "name": "Form Fields/Search/Search outline",
+              "type": "color",
+              "isAlias": false,
+              "value": "#33333F"
+            },
+            {
+              "name": "Form Fields/Input/Default",
+              "type": "color",
+              "isAlias": false,
+              "value": "#33333F"
+            },
+            {
+              "name": "Form Fields/Input/Outline default",
+              "type": "color",
+              "isAlias": false,
+              "value": "#33333F"
+            },
+            {
+              "name": "Form Fields/Input/Filled",
+              "type": "color",
+              "isAlias": false,
+              "value": "#33333F"
+            },
+            {
+              "name": "Form Fields/Input/Outline Filled",
+              "type": "color",
+              "isAlias": false,
+              "value": "#33333F"
+            },
+            {
+              "name": "Form Fields/Input/Focused",
+              "type": "color",
+              "isAlias": false,
+              "value": "#33333F"
+            },
+            {
+              "name": "Form Fields/Input/Outline focused",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Secondary colors/Secondary 400"
+              }
+            },
+            {
+              "name": "Form Fields/Input/Disabled",
+              "type": "color",
+              "isAlias": false,
+              "value": "#33333F"
+            },
+            {
+              "name": "Form Fields/Input/Outline disabled",
+              "type": "color",
+              "isAlias": false,
+              "value": "#33333F"
+            },
+            {
+              "name": "Form Fields/Input/Error",
+              "type": "color",
+              "isAlias": false,
+              "value": "#33333F"
+            },
+            {
+              "name": "Form Fields/Input/Outline error",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Error colors/red-400"
+              }
+            },
+            {
+              "name": "Form Fields/NavFooter/Footer",
+              "type": "color",
+              "isAlias": false,
+              "value": "#33333F"
+            },
+            {
+              "name": "Form Fields/NavFooter/Selected nav",
+              "type": "color",
+              "isAlias": false,
+              "value": "#52525C"
+            },
+            {
+              "name": "Form Fields/Tooltip/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Form Fields/Tooltip/Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Form Fields/Tooltip/Outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Form Fields/Sliders/default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Form Fields/Side Menu/Default BG",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-700"
+              }
+            },
+            {
+              "name": "Form Fields/Side Menu/Default",
+              "type": "color",
+              "isAlias": false,
+              "value": "#33333F00"
+            },
+            {
+              "name": "Form Fields/Side Menu/Hover",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-900"
+              }
+            },
+            {
+              "name": "Form Fields/Side Menu/Active",
+              "type": "color",
+              "isAlias": false,
+              "value": "#FFFFFF1A"
+            },
+            {
+              "name": "Form Fields/Badges/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Secondary colors/Secondary 50"
+              }
+            },
+            {
+              "name": "Form Fields/Badges/Default outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Secondary colors/Secondary 50"
+              }
+            },
+            {
+              "name": "Form Fields/Sliders/Filled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Form Fields/Badges/Success/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Semantics/Success/Success container"
+              }
+            },
+            {
+              "name": "Form Fields/Badges/Success/Default outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Success colors/green-300"
+              }
+            },
+            {
+              "name": "Form Fields/Badges/Error/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Semantics/Error/Error container"
+              }
+            },
+            {
+              "name": "Form Fields/Badges/Error/Default outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Error colors/red-300"
+              }
+            },
+            {
+              "name": "Form Fields/Badges/Warning/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Semantics/Warning/Warning container"
+              }
+            },
+            {
+              "name": "Form Fields/Badges/Warning/Default outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Alert colors/orange-300"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Outline default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Filled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Outline filled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Hover",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-600"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Outline hover",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-200"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Outline disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Error",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Outline error",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Clicked",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Form Fields/Selections/Inactive",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Form Fields/Selections/Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Form Fields/Selections/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Form Fields/Dropdown/Outline clicked",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Form Fields/Toggle/Button/Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Form Fields/Toggle/Button/Inactive",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-600"
+              }
+            },
+            {
+              "name": "Button/Primary/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Button/Primary/Default outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Button/Primary/Hover",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 900"
+              }
+            },
+            {
+              "name": "Button/Primary/Hover outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 900"
+              }
+            },
+            {
+              "name": "Button/Primary/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Neutral colors/Neutral 100"
+              }
+            },
+            {
+              "name": "Button/Primary/Disabled outlline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Neutral colors/Neutral 100"
+              }
+            },
+            {
+              "name": "Button/Secondary/Default",
+              "type": "color",
+              "isAlias": false,
+              "value": "#FFFFFF00"
+            },
+            {
+              "name": "Button/Secondary/Default outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Button/Secondary/Hover",
+              "type": "color",
+              "isAlias": false,
+              "value": "#FFFFFF00"
+            },
+            {
+              "name": "Button/Secondary/Hover outline",
+              "type": "color",
+              "isAlias": false,
+              "value": "#FFFFFF00"
+            },
+            {
+              "name": "Button/Secondary/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Neutral colors/Neutral 200"
+              }
+            },
+            {
+              "name": "Button/Secondary/Disabled outline",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Neutral colors/Neutral 200"
+              }
+            },
+            {
+              "name": "Button/Hyperlink/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Secondary colors/Secondary 500"
+              }
+            },
+            {
+              "name": "Button/Hyperlink/Hover",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Button/Hyperlink/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-100"
+              }
+            },
+            {
+              "name": "Chips/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-50"
+              }
+            },
+            {
+              "name": "Chips/Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Chips/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Neutral colors/Neutral 100"
+              }
+            },
+            {
+              "name": "Tags/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-50"
+              }
+            },
+            {
+              "name": "Tags/Pending",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Semantics/Warning/Warning container"
+              }
+            },
+            {
+              "name": "Tags/Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Semantics/Success/Success container"
+              }
+            },
+            {
+              "name": "Tags/Error",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Semantics/Error/Error container"
+              }
+            },
+            {
+              "name": "Tabs/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-400"
+              }
+            },
+            {
+              "name": "Icon/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Icon/Inverse",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Icon/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Icon/Highlight",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Secondary colors/Secondary 400"
+              }
+            },
+            {
+              "name": "Icon/Fill",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-400"
+              }
+            },
+            {
+              "name": "Tabs/Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Secondary colors/Secondary 400"
+              }
+            },
+            {
+              "name": "Tabs/Outline Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Secondary colors/Secondary 400"
+              }
+            },
+            {
+              "name": "Text colour/Title Text/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Title Text/Inverse",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Subtitle/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Subtitle/Inverse",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Text colour/Header/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Menu Item/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Menu Item/Hover",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Menu Item/Highlight",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Label & Help/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Text colour/Input/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Text colour/Input/Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Input/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Text colour/Input/Inverse",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Text colour/Input/Highlight",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Secondary colors/Secondary 400"
+              }
+            },
+            {
+              "name": "Text colour/Label & Help/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Text colour/Label & Help/Inverse",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/Black"
+              }
+            },
+            {
+              "name": "Text colour/Currency/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Currency/Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Currency/Hover",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Currency/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Text colour/Body/Style 1",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/Black"
+              }
+            },
+            {
+              "name": "Text colour/Body/Style 2",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/Black"
+              }
+            },
+            {
+              "name": "Text colour/Paragraph/Style 1",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Text colour/Paragraph/Style 2",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Paragraph/Style 3",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Button/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Button/Hover",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Text colour/Label & Help/Default"
+              }
+            },
+            {
+              "name": "Text colour/Button/Clicked",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Button/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Text colour/Hyperlink/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Secondary colors/Secondary 500"
+              }
+            },
+            {
+              "name": "Text colour/Hyperlink/Light",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Tooltip/Style 1",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Tooltip/Style 2",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-950"
+              }
+            },
+            {
+              "name": "Text colour/Table Header/Default",
+              "type": "color",
+              "isAlias": false,
+              "value": "#FFFFFF"
+            },
+            {
+              "name": "Text colour/Table Header/Inverse",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Table Content/Style 1",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Table Content/Style 2",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Text colour/Note/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Spacings/micro",
+              "type": "number",
+              "isAlias": false,
+              "value": 2
+            },
+            {
+              "name": "Spacings/x-small",
+              "type": "number",
+              "isAlias": false,
+              "value": 4
+            },
+            {
+              "name": "Spacings/small",
+              "type": "number",
+              "isAlias": false,
+              "value": 8
+            },
+            {
+              "name": "Spacings/medium",
+              "type": "number",
+              "isAlias": false,
+              "value": 12
+            },
+            {
+              "name": "Spacings/medium increased",
+              "type": "number",
+              "isAlias": false,
+              "value": 16
+            },
+            {
+              "name": "Spacings/large",
+              "type": "number",
+              "isAlias": false,
+              "value": 24
+            },
+            {
+              "name": "Spacings/large increased",
+              "type": "number",
+              "isAlias": false,
+              "value": 32
+            },
+            {
+              "name": "Spacings/Extra large",
+              "type": "number",
+              "isAlias": false,
+              "value": 40
+            },
+            {
+              "name": "Spacings/Extra large increased",
+              "type": "number",
+              "isAlias": false,
+              "value": 48
+            },
+            {
+              "name": "Spacings/Full",
+              "type": "number",
+              "isAlias": false,
+              "value": 64
+            },
+            {
+              "name": "Semantics/Success/Success",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Success colors/green-500"
+              }
+            },
+            {
+              "name": "Semantics/Success/Success container",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Success colors/green-50"
+              }
+            },
+            {
+              "name": "Semantics/Error/Error",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Error colors/red-500"
+              }
+            },
+            {
+              "name": "Semantics/Error/Error container",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Error colors/red-50"
+              }
+            },
+            {
+              "name": "Semantics/Warning/warning",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Alert colors/orange-500"
+              }
+            },
+            {
+              "name": "Semantics/Info/Info",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-900"
+              }
+            },
+            {
+              "name": "Semantics/Info/Info Container",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-900"
+              }
+            },
+            {
+              "name": "Semantics/Warning/Warning container",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Alert colors/orange-50"
+              }
+            },
+            {
+              "name": "Outline/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-900"
+              }
+            },
+            {
+              "name": "Outline/Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Outline/Pressed",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Secondary colors/Secondary 950"
+              }
+            },
+            {
+              "name": "Outline/Highlight",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Text colour/Menu Item/Highlight"
+              }
+            },
+            {
+              "name": "Outline/Highlight 2",
+              "type": "color",
+              "isAlias": false,
+              "value": "#D8000066"
+            },
+            {
+              "name": "Outline/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-50"
+              }
+            },
+            {
+              "name": "Outline/Error",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Semantics/Error/Error"
+              }
+            },
+            {
+              "name": "Outline/Success",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Semantics/Success/Success"
+              }
+            },
+            {
+              "name": "Outline/warning",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Tokens",
+                "name": "Semantics/Warning/warning"
+              }
+            },
+            {
+              "name": "Outline/Default 2",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-50"
+              }
+            },
+            {
+              "name": "Text colour/Chips/Default",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Text colour/Chips/Disabled",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Text colour/Chips/Inverse",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/Black"
+              }
+            },
+            {
+              "name": "Form Fields/Toggle/Switch/Inactive",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Grey colors/grey-300"
+              }
+            },
+            {
+              "name": "Form Fields/Toggle/Switch/Active",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Primary colors/primary 700"
+              }
+            },
+            {
+              "name": "Form Fields/Toggle/Switch/Switch button",
+              "type": "color",
+              "isAlias": true,
+              "value": {
+                "collection": "Primitive",
+                "name": "Base colors/White"
+              }
+            },
+            {
+              "name": "Form Fields/Progress bar/Colour 1",
+              "type": "color",
+              "isAlias": false,
+              "value": "#33333F"
+            },
+            {
+              "name": "Form Fields/Progress bar/Color 2",
+              "type": "color",
+              "isAlias": false,
+              "value": "#33333F"
+            },
+            {
+              "name": "Form Fields/Progress bar/Color 3",
+              "type": "color",
+              "isAlias": false,
+              "value": "#33333F"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Primitive",
+      "modes": [
+        {
+          "name": "color",
+          "variables": [
+            {
+              "name": "Base colors/White",
+              "type": "color",
+              "isAlias": false,
+              "value": "#FFFFFF"
+            },
+            {
+              "name": "Base colors/Black",
+              "type": "color",
+              "isAlias": false,
+              "value": "#0A0A0A"
+            },
+            {
+              "name": "Primary colors/primary 50",
+              "type": "color",
+              "isAlias": false,
+              "value": "#DAEDFF"
+            },
+            {
+              "name": "Secondary colors/Secondary 50",
+              "type": "color",
+              "isAlias": false,
+              "value": "#EFF4FF"
+            },
+            {
+              "name": "Secondary colors/Secondary 100",
+              "type": "color",
+              "isAlias": false,
+              "value": "#DBE6FE"
+            },
+            {
+              "name": "Secondary colors/Secondary 200",
+              "type": "color",
+              "isAlias": false,
+              "value": "#BFD3FE"
+            },
+            {
+              "name": "Secondary colors/Secondary 300",
+              "type": "color",
+              "isAlias": false,
+              "value": "#79A6FC"
+            },
+            {
+              "name": "Secondary colors/Secondary 400",
+              "type": "color",
+              "isAlias": false,
+              "value": "#6192F9"
+            },
+            {
+              "name": "Secondary colors/Secondary 500",
+              "type": "color",
+              "isAlias": false,
+              "value": "#3C6AF5"
+            },
+            {
+              "name": "Secondary colors/Secondary 600",
+              "type": "color",
+              "isAlias": false,
+              "value": "#264AEA"
+            },
+            {
+              "name": "Secondary colors/Secondary 700",
+              "type": "color",
+              "isAlias": false,
+              "value": "#1E36D7"
+            },
+            {
+              "name": "Secondary colors/Secondary 800",
+              "type": "color",
+              "isAlias": false,
+              "value": "#1F2EAE"
+            },
+            {
+              "name": "Secondary colors/Secondary 900",
+              "type": "color",
+              "isAlias": false,
+              "value": "#1E2C8A"
+            },
+            {
+              "name": "Secondary colors/Secondary 950",
+              "type": "color",
+              "isAlias": false,
+              "value": "#171D54"
+            },
+            {
+              "name": "Primary colors/primary 100",
+              "type": "color",
+              "isAlias": false,
+              "value": "#DFEEFF"
+            },
+            {
+              "name": "Primary colors/primary 200",
+              "type": "color",
+              "isAlias": false,
+              "value": "#B9DCFE"
+            },
+            {
+              "name": "Primary colors/primary 300",
+              "type": "color",
+              "isAlias": false,
+              "value": "#7BC2FE"
+            },
+            {
+              "name": "Primary colors/primary 400",
+              "type": "color",
+              "isAlias": false,
+              "value": "#34A2FC"
+            },
+            {
+              "name": "Primary colors/primary 500",
+              "type": "color",
+              "isAlias": false,
+              "value": "#0A87ED"
+            },
+            {
+              "name": "Primary colors/primary 600",
+              "type": "color",
+              "isAlias": false,
+              "value": "#0069CB"
+            },
+            {
+              "name": "Primary colors/primary 700",
+              "type": "color",
+              "isAlias": false,
+              "value": "#0054A6"
+            },
+            {
+              "name": "Primary colors/primary 800",
+              "type": "color",
+              "isAlias": false,
+              "value": "#054887"
+            },
+            {
+              "name": "Primary colors/primary 900",
+              "type": "color",
+              "isAlias": false,
+              "value": "#0A3C70"
+            },
+            {
+              "name": "Primary colors/primary 950",
+              "type": "color",
+              "isAlias": false,
+              "value": "#07264A"
+            },
+            {
+              "name": "Neutral colors/Neutral 50",
+              "type": "color",
+              "isAlias": false,
+              "value": "#FAFAFA"
+            },
+            {
+              "name": "Grey colors/grey-50",
+              "type": "color",
+              "isAlias": false,
+              "value": "#F3F4F6"
+            },
+            {
+              "name": "Grey colors/grey-100",
+              "type": "color",
+              "isAlias": false,
+              "value": "#EDEEF1"
+            },
+            {
+              "name": "Grey colors/grey-200",
+              "type": "color",
+              "isAlias": false,
+              "value": "#D7DBE0"
+            },
+            {
+              "name": "Grey colors/grey-300",
+              "type": "color",
+              "isAlias": false,
+              "value": "#B3BBC6"
+            },
+            {
+              "name": "Grey colors/grey-400",
+              "type": "color",
+              "isAlias": false,
+              "value": "#8A96A6"
+            },
+            {
+              "name": "Grey colors/grey-500",
+              "type": "color",
+              "isAlias": false,
+              "value": "#6C798B"
+            },
+            {
+              "name": "Grey colors/grey-600",
+              "type": "color",
+              "isAlias": false,
+              "value": "#566173"
+            },
+            {
+              "name": "Grey colors/grey-700",
+              "type": "color",
+              "isAlias": false,
+              "value": "#474F5D"
+            },
+            {
+              "name": "Grey colors/grey-800",
+              "type": "color",
+              "isAlias": false,
+              "value": "#3D444F"
+            },
+            {
+              "name": "Grey colors/grey-900",
+              "type": "color",
+              "isAlias": false,
+              "value": "#363B44"
+            },
+            {
+              "name": "Grey colors/grey-950",
+              "type": "color",
+              "isAlias": false,
+              "value": "#24272D"
+            },
+            {
+              "name": "Neutral colors/Neutral 100",
+              "type": "color",
+              "isAlias": false,
+              "value": "#F5F5F5"
+            },
+            {
+              "name": "Neutral colors/Neutral 200",
+              "type": "color",
+              "isAlias": false,
+              "value": "#E5E5E5"
+            },
+            {
+              "name": "Neutral colors/Neutral 300",
+              "type": "color",
+              "isAlias": false,
+              "value": "#D4D4D4"
+            },
+            {
+              "name": "Neutral colors/Neutral 400",
+              "type": "color",
+              "isAlias": false,
+              "value": "#A3A3A3"
+            },
+            {
+              "name": "Neutral colors/Neutral 500",
+              "type": "color",
+              "isAlias": false,
+              "value": "#737373"
+            },
+            {
+              "name": "Neutral colors/Neutral 600",
+              "type": "color",
+              "isAlias": false,
+              "value": "#525252"
+            },
+            {
+              "name": "Neutral colors/Neutral 700",
+              "type": "color",
+              "isAlias": false,
+              "value": "#404040"
+            },
+            {
+              "name": "Neutral colors/Neutral 800",
+              "type": "color",
+              "isAlias": false,
+              "value": "#262626"
+            },
+            {
+              "name": "Neutral colors/Neutral 900",
+              "type": "color",
+              "isAlias": false,
+              "value": "#171717"
+            },
+            {
+              "name": "Alert colors/orange-50",
+              "type": "color",
+              "isAlias": false,
+              "value": "#FEF2E6"
+            },
+            {
+              "name": "Alert colors/orange-100",
+              "type": "color",
+              "isAlias": false,
+              "value": "#FCD6B0"
+            },
+            {
+              "name": "Alert colors/orange-200",
+              "type": "color",
+              "isAlias": false,
+              "value": "#FAC38A"
+            },
+            {
+              "name": "Alert colors/orange-300",
+              "type": "color",
+              "isAlias": false,
+              "value": "#F8A754"
+            },
+            {
+              "name": "Alert colors/orange-400",
+              "type": "color",
+              "isAlias": false,
+              "value": "#F79633"
+            },
+            {
+              "name": "Alert colors/orange-500",
+              "type": "color",
+              "isAlias": false,
+              "value": "#F57C00"
+            },
+            {
+              "name": "Alert colors/orange-600",
+              "type": "color",
+              "isAlias": false,
+              "value": "#DF7100"
+            },
+            {
+              "name": "Alert colors/orange-700",
+              "type": "color",
+              "isAlias": false,
+              "value": "#AE5800"
+            },
+            {
+              "name": "Alert colors/orange-800",
+              "type": "color",
+              "isAlias": false,
+              "value": "#874400"
+            },
+            {
+              "name": "Alert colors/orange-900",
+              "type": "color",
+              "isAlias": false,
+              "value": "#673400"
+            },
+            {
+              "name": "Error colors/red-50",
+              "type": "color",
+              "isAlias": false,
+              "value": "#FBE6E6"
+            },
+            {
+              "name": "Error colors/red-100",
+              "type": "color",
+              "isAlias": false,
+              "value": "#F3B0B0"
+            },
+            {
+              "name": "Error colors/red-200",
+              "type": "color",
+              "isAlias": false,
+              "value": "#ED8A8A"
+            },
+            {
+              "name": "Error colors/red-300",
+              "type": "color",
+              "isAlias": false,
+              "value": "#E55454"
+            },
+            {
+              "name": "Error colors/red-400",
+              "type": "color",
+              "isAlias": false,
+              "value": "#E03333"
+            },
+            {
+              "name": "Error colors/red-500",
+              "type": "color",
+              "isAlias": false,
+              "value": "#D80000"
+            },
+            {
+              "name": "Error colors/red-600",
+              "type": "color",
+              "isAlias": false,
+              "value": "#C50000"
+            },
+            {
+              "name": "Error colors/red-700",
+              "type": "color",
+              "isAlias": false,
+              "value": "#990000"
+            },
+            {
+              "name": "Error colors/red-800",
+              "type": "color",
+              "isAlias": false,
+              "value": "#770000"
+            },
+            {
+              "name": "Error colors/red-900",
+              "type": "color",
+              "isAlias": false,
+              "value": "#5B0000"
+            },
+            {
+              "name": "Success colors/green-50",
+              "type": "color",
+              "isAlias": false,
+              "value": "#F1F8ED"
+            },
+            {
+              "name": "Success colors/green-100",
+              "type": "color",
+              "isAlias": false,
+              "value": "#D2E8C7"
+            },
+            {
+              "name": "Success colors/green-200",
+              "type": "color",
+              "isAlias": false,
+              "value": "#BDDDAC"
+            },
+            {
+              "name": "Success colors/green-300",
+              "type": "color",
+              "isAlias": false,
+              "value": "#9FCD86"
+            },
+            {
+              "name": "Success colors/green-400",
+              "type": "color",
+              "isAlias": false,
+              "value": "#8CC36F"
+            },
+            {
+              "name": "Success colors/green-500",
+              "type": "color",
+              "isAlias": false,
+              "value": "#6FB44B"
+            },
+            {
+              "name": "Success colors/green-600",
+              "type": "color",
+              "isAlias": false,
+              "value": "#65A444"
+            },
+            {
+              "name": "Success colors/green-700",
+              "type": "color",
+              "isAlias": false,
+              "value": "#4F8035"
+            },
+            {
+              "name": "Success colors/green-800",
+              "type": "color",
+              "isAlias": false,
+              "value": "#3D6329"
+            },
+            {
+              "name": "Success colors/green-900",
+              "type": "color",
+              "isAlias": false,
+              "value": "#2F4C20"
+            },
+            {
+              "name": "Monogram colors/Indigo",
+              "type": "color",
+              "isAlias": false,
+              "value": "#9FA8DA"
+            },
+            {
+              "name": "Monogram colors/Yellow",
+              "type": "color",
+              "isAlias": false,
+              "value": "#FFECB3"
+            },
+            {
+              "name": "Monogram colors/Blue",
+              "type": "color",
+              "isAlias": false,
+              "value": "#B3E5FC"
+            },
+            {
+              "name": "Monogram colors/Orange",
+              "type": "color",
+              "isAlias": false,
+              "value": "#FFAB91"
+            },
+            {
+              "name": "Monogram colors/Grey",
+              "type": "color",
+              "isAlias": false,
+              "value": "#B0BEC5"
+            },
+            {
+              "name": "Monogram colors/Green",
+              "type": "color",
+              "isAlias": false,
+              "value": "#A5D6A7"
+            },
+            {
+              "name": "Monogram colors/Pink",
+              "type": "color",
+              "isAlias": false,
+              "value": "#F8BBD0"
+            },
+            {
+              "name": "Monogram colors/Purple",
+              "type": "color",
+              "isAlias": false,
+              "value": "#79A6FC"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Typography",
+      "modes": [
+        {
+          "name": "Style",
+          "variables": [
+            {
+              "name": "Title Text/Regular",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 20,
+                "fontFamily": "Outfit",
+                "fontWeight": "Regular",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Title Text/Regular",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 24,
+                "fontFamily": "Outfit",
+                "fontWeight": "Regular",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Title Text/Regular",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 32,
+                "fontFamily": "Outfit",
+                "fontWeight": "Regular",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Title Text/Semibold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 20,
+                "fontFamily": "Outfit",
+                "fontWeight": "SemiBold",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Title Text/Semibold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 22,
+                "fontFamily": "Outfit",
+                "fontWeight": "SemiBold",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Title Text/Semibold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 24,
+                "fontFamily": "Outfit",
+                "fontWeight": "SemiBold",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Title Text/Semibold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 30,
+                "fontFamily": "Outfit",
+                "fontWeight": "SemiBold",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Title Text/Bold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 22,
+                "fontFamily": "Outfit",
+                "fontWeight": "Bold",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Title Text/Bold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 20,
+                "fontFamily": "Outfit",
+                "fontWeight": "Bold",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Title Text/Bold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 24,
+                "fontFamily": "Outfit",
+                "fontWeight": "Bold",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Title Text/Bold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 26,
+                "fontFamily": "Outfit",
+                "fontWeight": "Bold",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Subtitle/Regular",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 12,
+                "fontFamily": "Outfit",
+                "fontWeight": "Regular",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Subtitle/Regular",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 14,
+                "fontFamily": "Outfit",
+                "fontWeight": "Regular",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Subtitle/Regular",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 16,
+                "fontFamily": "Outfit",
+                "fontWeight": "Regular",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Subtitle/Bold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 12,
+                "fontFamily": "Outfit",
+                "fontWeight": "Bold",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Subtitle/Medium",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 20,
+                "fontFamily": "Outfit",
+                "fontWeight": "Medium",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Header/Medium",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 14,
+                "fontFamily": "Outfit",
+                "fontWeight": "Medium",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Header/Medium",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 14,
+                "fontFamily": "Outfit",
+                "fontWeight": "Medium",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Header/Medium",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 16,
+                "fontFamily": "Outfit",
+                "fontWeight": "Medium",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Header/Medium",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 18,
+                "fontFamily": "Outfit",
+                "fontWeight": "Medium",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Subheader/Subheader",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 12,
+                "fontFamily": "Outfit",
+                "fontWeight": "Medium",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Subheader/Subheader",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 14,
+                "fontFamily": "Outfit",
+                "fontWeight": "Medium",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Subheader/Subheader",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 16,
+                "fontFamily": "Outfit",
+                "fontWeight": "Medium",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Subheader/Subheader",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 18,
+                "fontFamily": "Outfit",
+                "fontWeight": "Medium",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Menu Item/Regular",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 16,
+                "fontFamily": "Outfit",
+                "fontWeight": "Regular",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Menu Item/Regular",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 18,
+                "fontFamily": "Outfit",
+                "fontWeight": "Regular",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Label & Helper Text/Regular",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 12,
+                "fontFamily": "Outfit",
+                "fontWeight": "Regular",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Label & Helper Text/Regular",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 14,
+                "fontFamily": "Outfit",
+                "fontWeight": "Regular",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Label & Helper Text/label",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 10,
+                "fontFamily": "Outfit",
+                "fontWeight": "Regular",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Input/Regular",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 14,
+                "fontFamily": "Outfit",
+                "fontWeight": "Regular",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Input/Medium",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 12,
+                "fontFamily": "Outfit",
+                "fontWeight": "Medium",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Input/Medium",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 14,
+                "fontFamily": "Outfit",
+                "fontWeight": "Medium",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Input/Medium",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 18,
+                "fontFamily": "Inter",
+                "fontWeight": "Medium",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Currency/Regular",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 12,
+                "fontFamily": "Outfit",
+                "fontWeight": "Regular",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Body/Regular",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 18,
+                "fontFamily": "Outfit",
+                "fontWeight": "Regular",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PIXELS",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Body/Bold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 12,
+                "fontFamily": "Outfit",
+                "fontWeight": "Bold",
+                "lineHeight": 24,
+                "lineHeightUnit": "PIXELS",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PIXELS",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Paragraph/Regular",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 12,
+                "fontFamily": "Outfit",
+                "fontWeight": "Regular",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Paragraph/Regular",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 14,
+                "fontFamily": "Outfit",
+                "fontWeight": "Regular",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Paragraph/Regular",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 16,
+                "fontFamily": "Outfit",
+                "fontWeight": "Regular",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Paragraph/Semibold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 14,
+                "fontFamily": "Outfit",
+                "fontWeight": "SemiBold",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Paragraph/Bold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 12,
+                "fontFamily": "Outfit",
+                "fontWeight": "Bold",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Button/Semibold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 12,
+                "fontFamily": "Outfit",
+                "fontWeight": "SemiBold",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Button/Semibold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 14,
+                "fontFamily": "Outfit",
+                "fontWeight": "SemiBold",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Button/Semibold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 16,
+                "fontFamily": "Outfit",
+                "fontWeight": "SemiBold",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Hyperlink/Medium",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 12,
+                "fontFamily": "Outfit",
+                "fontWeight": "Medium",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Hyperlink/Medium",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 14,
+                "fontFamily": "Outfit",
+                "fontWeight": "Medium",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Hyperlink/Medium",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 16,
+                "fontFamily": "Outfit",
+                "fontWeight": "Medium",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Hyperlink/Bold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 12,
+                "fontFamily": "Outfit",
+                "fontWeight": "Bold",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Hyperlink/Bold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 14,
+                "fontFamily": "Outfit",
+                "fontWeight": "Bold",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Hyperlink/Bold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 16,
+                "fontFamily": "Outfit",
+                "fontWeight": "Bold",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Tooltip/Bold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 14,
+                "fontFamily": "Outfit",
+                "fontWeight": "Bold",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Tooltip/Semibold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 12,
+                "fontFamily": "Outfit",
+                "fontWeight": "SemiBold",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Table Header/Regular",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 16,
+                "fontFamily": "Outfit",
+                "fontWeight": "Regular",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Table Header/Medium",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 16,
+                "fontFamily": "Outfit",
+                "fontWeight": "Medium",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Table Header/Bold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 16,
+                "fontFamily": "Outfit",
+                "fontWeight": "Bold",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Table Header/Semibold",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 16,
+                "fontFamily": "Outfit",
+                "fontWeight": "SemiBold",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Table content/Regular",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 14,
+                "fontFamily": "Outfit",
+                "fontWeight": "Regular",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Note/Regular",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 14,
+                "fontFamily": "Outfit",
+                "fontWeight": "Regular",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            },
+            {
+              "name": "Chips/Text",
+              "type": "typography",
+              "isAlias": false,
+              "value": {
+                "fontSize": 14,
+                "fontFamily": "Outfit",
+                "fontWeight": "Regular",
+                "lineHeight": "auto",
+                "lineHeightUnit": "AUTO",
+                "letterSpacing": 0.6000000238418579,
+                "letterSpacingUnit": "PERCENT",
+                "textCase": "ORIGINAL",
+                "textDecoration": "NONE"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Effects",
+      "modes": [
+        {
+          "name": "Style",
+          "variables": [
+            {
+              "name": "Base card shadow",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 0,
+                      "g": 0,
+                      "b": 0,
+                      "a": 0.08
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "radius": 8,
+                    "spread": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Shadow/xs",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 16,
+                      "g": 24,
+                      "b": 40,
+                      "a": 0.05
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "radius": 2,
+                    "spread": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Shadow/sm",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 16,
+                      "g": 24,
+                      "b": 40,
+                      "a": 0.06
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "radius": 2,
+                    "spread": 0
+                  },
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 16,
+                      "g": 24,
+                      "b": 40,
+                      "a": 0.1
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "radius": 3,
+                    "spread": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Shadow/md",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 16,
+                      "g": 24,
+                      "b": 40,
+                      "a": 0.08
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 2
+                    },
+                    "radius": 6,
+                    "spread": 2
+                  },
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 16,
+                      "g": 24,
+                      "b": 40,
+                      "a": 0.3
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "radius": 2,
+                    "spread": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Shadow/lg",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 16,
+                      "g": 24,
+                      "b": 40,
+                      "a": 0.03
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "radius": 6,
+                    "spread": -2
+                  },
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 16,
+                      "g": 24,
+                      "b": 40,
+                      "a": 0.08
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 12
+                    },
+                    "radius": 16,
+                    "spread": -4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Shadow/xl",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 16,
+                      "g": 24,
+                      "b": 40,
+                      "a": 0.03
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 8
+                    },
+                    "radius": 8,
+                    "spread": -4
+                  },
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 16,
+                      "g": 24,
+                      "b": 40,
+                      "a": 0.08
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 20
+                    },
+                    "radius": 24,
+                    "spread": -4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Shadow/2xl",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 16,
+                      "g": 24,
+                      "b": 40,
+                      "a": 0.18
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 24
+                    },
+                    "radius": 48,
+                    "spread": -12
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Shadow/3xl",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 16,
+                      "g": 24,
+                      "b": 40,
+                      "a": 0.14
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 32
+                    },
+                    "radius": 64,
+                    "spread": -12
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Focus ring/4px primary-100",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 211,
+                      "g": 220,
+                      "b": 248,
+                      "a": 1
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "radius": 0,
+                    "spread": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Focus ring/4px primary-500",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 0,
+                      "g": 175,
+                      "b": 239,
+                      "a": 1
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "radius": 0,
+                    "spread": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Focus ring/4px gray-100",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 242,
+                      "g": 244,
+                      "b": 247,
+                      "a": 1
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "radius": 0,
+                    "spread": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Focus ring/4px gray-500",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 102,
+                      "g": 112,
+                      "b": 133,
+                      "a": 1
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "radius": 0,
+                    "spread": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Focus ring/4px error-100",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 254,
+                      "g": 228,
+                      "b": 226,
+                      "a": 1
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "radius": 0,
+                    "spread": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Focus ring/xs focused 4px primary-100",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 204,
+                      "g": 239,
+                      "b": 252,
+                      "a": 1
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "radius": 0,
+                    "spread": 4
+                  },
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 16,
+                      "g": 24,
+                      "b": 40,
+                      "a": 0.05
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "radius": 2,
+                    "spread": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Focus ring/xs focused 4px gray-100",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 242,
+                      "g": 244,
+                      "b": 247,
+                      "a": 1
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "radius": 0,
+                    "spread": 4
+                  },
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 16,
+                      "g": 24,
+                      "b": 40,
+                      "a": 0.05
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "radius": 2,
+                    "spread": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Focus ring/xs focused 4px error-100",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 254,
+                      "g": 228,
+                      "b": 226,
+                      "a": 1
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "radius": 0,
+                    "spread": 4
+                  },
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 16,
+                      "g": 24,
+                      "b": 40,
+                      "a": 0.05
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "radius": 2,
+                    "spread": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Focus ring/sm focused 4px primary-100",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 230,
+                      "g": 247,
+                      "b": 253,
+                      "a": 1
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "radius": 0,
+                    "spread": 4
+                  },
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 16,
+                      "g": 24,
+                      "b": 40,
+                      "a": 0.06
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "radius": 2,
+                    "spread": 0
+                  },
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 16,
+                      "g": 24,
+                      "b": 40,
+                      "a": 0.1
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "radius": 3,
+                    "spread": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Focus ring/sm focused 4px gray-100",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 242,
+                      "g": 244,
+                      "b": 247,
+                      "a": 1
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "radius": 0,
+                    "spread": 4
+                  },
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 16,
+                      "g": 24,
+                      "b": 40,
+                      "a": 0.06
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "radius": 2,
+                    "spread": 0
+                  },
+                  {
+                    "type": "DROP_SHADOW",
+                    "color": {
+                      "r": 16,
+                      "g": 24,
+                      "b": 40,
+                      "a": 0.1
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 1
+                    },
+                    "radius": 3,
+                    "spread": 0
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Background blur/sm",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "BACKGROUND_BLUR",
+                    "radius": 8
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Background blur/md",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "BACKGROUND_BLUR",
+                    "radius": 16
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Background blur/lg",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "BACKGROUND_BLUR",
+                    "radius": 24
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Background blur/xl",
+              "type": "effect",
+              "isAlias": false,
+              "value": {
+                "effects": [
+                  {
+                    "type": "BACKGROUND_BLUR",
+                    "radius": 40
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Grids",
+      "modes": [
+        {
+          "name": "Style",
+          "variables": [
+            {
+              "name": "(1+12) column layout",
+              "type": "grid",
+              "isAlias": false,
+              "value": {
+                "layoutGrids": [
+                  {
+                    "pattern": "COLUMNS",
+                    "sectionSize": 74,
+                    "color": {
+                      "r": 255,
+                      "g": 0,
+                      "b": 0,
+                      "a": 0.1
+                    },
+                    "alignment": "MIN",
+                    "gutterSize": 16,
+                    "offset": 270,
+                    "count": 12
+                  },
+                  {
+                    "pattern": "COLUMNS",
+                    "sectionSize": 238,
+                    "color": {
+                      "r": 255,
+                      "g": 0,
+                      "b": 0,
+                      "a": 0.1
+                    },
+                    "alignment": "MIN",
+                    "gutterSize": 1,
+                    "offset": 0,
+                    "count": 1
+                  }
+                ]
+              }
+            },
+            {
+              "name": "12 column layout",
+              "type": "grid",
+              "isAlias": false,
+              "value": {
+                "layoutGrids": [
+                  {
+                    "pattern": "COLUMNS",
+                    "color": {
+                      "r": 255,
+                      "g": 0,
+                      "b": 0,
+                      "a": 0.1
+                    },
+                    "alignment": "STRETCH",
+                    "gutterSize": 16,
+                    "offset": 32,
+                    "count": 12
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

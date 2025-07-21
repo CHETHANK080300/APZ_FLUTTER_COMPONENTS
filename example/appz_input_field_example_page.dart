@@ -1,8 +1,8 @@
 import 'package:apz_flutter_components/components/appz_input_field/appz_input_field_theme.dart';
 import 'package:flutter/material.dart';
 // Adjust path if your project structure is different for the imports below
-import '../lib/components/appz_input_field/appz_input_field.dart';
-import '../lib/components/appz_input_field/appz_input_field_enums.dart';
+import 'package:apz_flutter_components/components/appz_input_field/appz_input_field.dart';
+import 'package:apz_flutter_components/components/appz_input_field/appz_input_field_enums.dart';
 // AppzStyleConfig is used internally by AppzInputField, direct import not always needed for usage.
 
 class AppzInputFieldExamplePage extends StatefulWidget {

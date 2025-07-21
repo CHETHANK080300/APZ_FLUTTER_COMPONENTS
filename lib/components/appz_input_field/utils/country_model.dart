@@ -24,5 +24,5 @@ class CountryModel {
   @override
   int get hashCode => isoCode.hashCode ^ phoneCode.hashCode;
 
-  String get displayDialCode => "+${phoneCode}";
+  String get displayDialCode => "+$phoneCode";
 }

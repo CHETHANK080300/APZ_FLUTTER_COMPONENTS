@@ -1,0 +1,4 @@
+enum DropdownLabelAlignment {
+  vertical,
+  horizontal,
+}

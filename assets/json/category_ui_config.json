@@ -1,0 +1,27 @@
+{
+  "default": {
+  "backgroundColor": "{colors.secondaryColor}",
+  "hoverBackgroundColor": "{colors.terHoverColor}",
+  "labelColor": "{colors.secTextColor}",
+  "borderColor": "{colors.secBorderColor}",
+  "borderRadius": 12,
+  "elevation": 2,
+  "iconSize": 32,
+  "fontSize": 12,
+  "itemWidth": 100,
+  "itemSpacing": 12,
+  "fontFamily": "{fonts.fontFamily}"
+},
+"selected": {
+  "backgroundColor": "{colors.secondaryColor}",
+  "labelColor": "{colors.secTextColor}",
+  "borderColor": "{colors.primaryColor1}",
+  "borderRadius": 12,
+  "elevation": 2,
+  "iconSize": 32,
+  "fontSize": 12,
+  "itemWidth": 100,
+  "itemSpacing": 12,
+  "fontFamily": "{fonts.fontFamily}"
+}
+}

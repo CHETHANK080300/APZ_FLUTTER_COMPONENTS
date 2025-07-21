@@ -1,8 +1,7 @@
 import 'package:apz_flutter_components/components/appz_input_field/appz_input_field_theme.dart';
-import 'package:apz_flutter_components/components/appz_input_field/utils/country_codes_helper.dart';
 import 'package:flutter/material.dart';
 import 'appz_input_field_enums.dart';
-import 'appz_style_config.dart';
+import 'appz_input_style_config.dart';
 import 'field_types/aadhaar_input_widget.dart';
 import 'field_types/mpin_input_widget.dart';
 import 'field_types/mobile_input_widget.dart';
@@ -26,6 +25,8 @@ class AppzInputField extends StatefulWidget {
   final TextInputAction? textInputAction;
   final int? maxLength;
   final int mpinLength;
+  final Widget? prefixIcon;
+  final Widget? suffixIcon;
   final String mobileCountryCode;
   final bool mobileCountryCodeEditable;
 
@@ -47,6 +48,8 @@ class AppzInputField extends StatefulWidget {
     this.textInputAction,
     this.maxLength,
     this.mpinLength = 4,
+    this.prefixIcon,
+    this.suffixIcon,
     this.mobileCountryCode = "+91",
     this.mobileCountryCodeEditable = false,
   });
@@ -101,8 +104,12 @@ class _AppzInputFieldState extends State<AppzInputField> {
 
   void _disposeMpinFields() {
     if (_mpinSegmentControllers.isNotEmpty) {
-      for (var controller in _mpinSegmentControllers) controller.dispose();
-      for (var focusNode in _mpinSegmentFocusNodes) focusNode.dispose();
+      for (var controller in _mpinSegmentControllers) {
+        controller.dispose();
+      }
+      for (var focusNode in _mpinSegmentFocusNodes) {
+        focusNode.dispose();
+      }
     }
   }
 
@@ -191,71 +198,6 @@ class _AppzInputFieldState extends State<AppzInputField> {
     }
   }
 
-  /*String? _performValidation(String? value) {
-    String? validationError;
-    String? valueForUserValidator = value;
-    String? valueForBuiltIn = value;
-
-    if (widget.fieldType == AppzFieldType.mobile) {
-      String numberPart = "";
-      if (value != null && value.startsWith("+")) {
-        for (var country in CountryCodesHelper.getCountries()) {
-          if (value.startsWith(country.displayDialCode)) {
-            numberPart = value.substring(country.displayDialCode.length);
-            break;
-          }
-        }
-      } else if (value != null) {
-        numberPart = value;
-      }
-      valueForUserValidator = numberPart;
-      valueForBuiltIn = numberPart;
-    }
-
-    if (widget.validator != null) {
-      validationError = widget.validator!(valueForUserValidator);
-    }
-
-    if (validationError == null) {
-      final val = valueForBuiltIn ?? '';
-      if (widget.validationType == AppzInputValidationType.mandatory && val.isEmpty) {
-        validationError = 'This field is required.';
-      }
-      if (validationError == null) {
-        switch (widget.validationType) {
-          case AppzInputValidationType.email:
-            if (val.isNotEmpty && !RegExp(r'^[\w\.-]+@[\w\.-]+\.\w+$').hasMatch(val)) {
-              validationError = 'Enter a valid email address.';
-            }
-            break;
-          case AppzInputValidationType.numeric:
-            if (val.isNotEmpty && !RegExp(r'^\d+$').hasMatch(val)) {
-              validationError = 'Only numbers allowed.';
-            }
-            break;
-          default:
-            break;
-        }
-
-        if (widget.fieldType == AppzFieldType.mobile &&
-            !RegExp(r'^\d{10}$').hasMatch(val)) {
-          validationError = 'Mobile number must be 10 digits.';
-        }
-      }
-    }
-
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (!mounted) return;
-      if (validationError != _validationErrorMessage) {
-        _updateState(
-          validationError != null ? AppzFieldState.error : AppzFieldState.filled,
-          errorMessage: validationError,
-        );
-      }
-    });
-
-    return validationError;
-  }*/
   String? _performValidation(String? value) {
     String? validationError;
 
@@ -307,6 +249,8 @@ class _AppzInputFieldState extends State<AppzInputField> {
       hintStyle: TextStyle(color: style.textColor.withOpacity(0.5), fontFamily: style.fontFamily, fontSize: style.fontSize),
       filled: true,
       fillColor: style.backgroundColor,
+      suffixIcon: widget.suffixIcon,
+      prefixIcon: widget.prefixIcon,
       contentPadding: EdgeInsets.symmetric(horizontal: style.paddingHorizontal, vertical: style.paddingVertical),
       border: OutlineInputBorder(borderRadius: BorderRadius.circular(style.borderRadius), borderSide: BorderSide(color: style.borderColor, width: style.borderWidth)),
       enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(style.borderRadius), borderSide: BorderSide(color: style.borderColor, width: style.borderWidth)),
@@ -337,20 +281,6 @@ class _AppzInputFieldState extends State<AppzInputField> {
 
     switch (widget.fieldType) {
       case AppzFieldType.defaultType:
-        /*fieldWidget = TextFormField(
-          controller: _internalController,
-          focusNode: _internalFocusNode,
-          decoration: baseFieldDecoration, // No specific overrides needed for defaultType
-          style: TextStyle(color: style.textColor, fontFamily: style.fontFamily, fontSize: style.fontSize),
-          validator: _performValidation,
-          onTap: widget.onTap,
-          onFieldSubmitted: widget.onSubmitted,
-          obscureText: widget.obscureText,
-          textInputAction: widget.textInputAction,
-          maxLength: widget.maxLength,
-          enabled: !_isEffectivelyDisabled,
-          autovalidateMode: AutovalidateMode.onUserInteraction,
-        );*/
         fieldWidget = TextFormField(
           controller: _internalController,
           focusNode: _internalFocusNode,
@@ -429,7 +359,6 @@ class _AppzInputFieldState extends State<AppzInputField> {
         ],
         fieldWidget, // Removed the outer Focus widget wrapper
         if (_validationErrorMessage != null)
-        //if (widget.fieldType != AppzFieldType.defaultType && _hasError && _validationErrorMessage != null)
           Padding(
             padding: const EdgeInsets.only(top: 6.0),
             child: Text(
@@ -440,18 +369,7 @@ class _AppzInputFieldState extends State<AppzInputField> {
                 fontFamily: style.fontFamily),
             ),
           ),
-        /*if (widget.fieldType == AppzFieldType.defaultType && _hasError && _validationErrorMessage != null) 
-        //if (_hasError && _validationErrorMessage != null)
-          Padding(
-            padding: const EdgeInsets.only(top: 6.0),
-            child: Text(
-              _validationErrorMessage!,
-              style: TextStyle(
-                  color: AppzStyleConfig.instance.getStyleForState(AppzFieldState.error, isFilled: _isFilled).textColor,
-                  fontSize: style.labelFontSize * 0.9,
-                  fontFamily: style.fontFamily),
-            ),
-          ),*/
+        
       ],
     );
   }
