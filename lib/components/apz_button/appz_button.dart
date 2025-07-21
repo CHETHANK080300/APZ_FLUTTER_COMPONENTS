@@ -34,17 +34,28 @@ class _AppzButtonState extends State<AppzButton> {
     final state = widget.disabled ? 'Disabled' : (_hovering ? 'Hover' : 'Default');
     final appearance = widget.appearance.name[0].toUpperCase() + widget.appearance.name.substring(1);
 
-    // Corrected token names to match the structure in token_variables.json
     final bgColor = cfg.getColor('Button/$appearance/$state');
     final borderColor = cfg.getColor('Button/$appearance/$state outline');
-    final textColor = cfg.getColor('Text colour/Button/Default');
+
+    Color textColor;
+    if (widget.disabled) {
+      textColor = cfg.getColor('Text colour/Button/Disabled');
+    } else if (_hovering) {
+      textColor = cfg.getColor('Text colour/Button/Hover');
+    } else {
+      textColor = cfg.getColor('Text colour/Button/Default');
+    }
+
+    if (widget.appearance == AppzButtonAppearance.secondary && !_hovering) {
+      textColor = cfg.getColor('Text colour/Button/Clicked');
+    }
 
     final spacings = cfg.getSpacings();
     final double horizontalPadding = spacings['medium'] ?? 16.0;
     final double verticalPadding = spacings['small'] ?? 8.0;
 
-    // Corrected text style token name
     final textStyle = cfg.getTextStyle('Button/Semibold');
+    final borderRadius = cfg.getDouble('Button/borderRadius');
 
     return MouseRegion(
       onEnter: (_) => setState(() => _hovering = true),
@@ -52,16 +63,21 @@ class _AppzButtonState extends State<AppzButton> {
       child: GestureDetector(
         onTap: widget.disabled ? null : widget.onPressed,
         child: Container(
+          width: double.infinity,
+          constraints: BoxConstraints(
+            minWidth: cfg.getDouble('Button/minWidth') ?? 100.0,
+          ),
           padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: verticalPadding),
           decoration: BoxDecoration(
             color: bgColor,
-            borderRadius: BorderRadius.circular(spacings['x-small'] ?? 4.0),
+            borderRadius: BorderRadius.circular(borderRadius),
             border: Border.all(color: borderColor, width: 1.0),
           ),
           alignment: Alignment.center,
           child: Text(
             widget.label,
             style: textStyle.copyWith(color: textColor),
+            textAlign: TextAlign.center,
           ),
         ),
       ),
