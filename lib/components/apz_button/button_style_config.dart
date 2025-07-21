@@ -42,10 +42,15 @@ class ButtonStyleConfig {
   }
 
   double getDouble(String tokenName) {
-    final variables = _tokenParser.getValue<List<dynamic>>(['collections', 0, 'modes', 0, 'variables']);
-    if (variables == null) return 0.0;
+    final collections = _tokenParser.getValue<List<dynamic>>(['collections']);
+    if (collections == null) return 0.0;
 
+    final tokenCollection = collections.firstWhere((c) => c['name'] == 'Tokens', orElse: () => null);
+    if (tokenCollection == null) return 0.0;
+
+    final variables = tokenCollection['modes'][0]['variables'] as List<dynamic>;
     final token = variables.firstWhere((v) => v['name'] == tokenName, orElse: () => null);
+
     if (token != null && token['value'] is num) {
       return (token['value'] as num).toDouble();
     }
@@ -53,9 +58,13 @@ class ButtonStyleConfig {
   }
 
   Map<String, double> getSpacings() {
-    final variables = _tokenParser.getValue<List<dynamic>>(['collections', 0, 'modes', 0, 'variables']);
-    if (variables == null) return {};
+    final collections = _tokenParser.getValue<List<dynamic>>(['collections']);
+    if (collections == null) return {};
 
+    final tokenCollection = collections.firstWhere((c) => c['name'] == 'Tokens', orElse: () => null);
+    if (tokenCollection == null) return {};
+
+    final variables = tokenCollection['modes'][0]['variables'] as List<dynamic>;
     Map<String, double> spacings = {};
     for (var token in variables) {
       if (token['name'].startsWith('Spacings/')) {
@@ -70,10 +79,15 @@ class ButtonStyleConfig {
   }
 
   TextStyle getTextStyle(String tokenName) {
-    final typographyVariables = _tokenParser.getValue<List<dynamic>>(['collections', 2, 'modes', 0, 'variables']);
-    if (typographyVariables == null) return TextStyle();
+    final collections = _tokenParser.getValue<List<dynamic>>(['collections']);
+    if (collections == null) return TextStyle();
 
-    final token = typographyVariables.firstWhere((v) => v['name'] == tokenName, orElse: () => null);
+    final typographyCollection = collections.firstWhere((c) => c['name'] == 'Typography', orElse: () => null);
+    if (typographyCollection == null) return TextStyle();
+
+    final variables = typographyCollection['modes'][0]['variables'] as List<dynamic>;
+    final token = variables.firstWhere((v) => v['name'] == tokenName, orElse: () => null);
+
     if (token != null && token['value'] is Map<String, dynamic>) {
       final typography = token['value'];
       return TextStyle(
