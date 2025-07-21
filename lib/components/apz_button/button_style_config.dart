@@ -12,18 +12,25 @@ class ButtonStyleConfig {
   }
 
   Color getColor(String tokenName) {
-    final variables = _tokenParser.getValue<List<dynamic>>(['collections', 0, 'modes', 0, 'variables']);
-    if (variables == null) return Colors.transparent;
+    final collections = _tokenParser.getValue<List<dynamic>>(['collections']);
+    if (collections == null) return Colors.transparent;
 
+    final tokenCollection = collections.firstWhere((c) => c['name'] == 'Tokens', orElse: () => null);
+    if (tokenCollection == null) return Colors.transparent;
+
+    final variables = tokenCollection['modes'][0]['variables'] as List<dynamic>;
     final token = variables.firstWhere((v) => v['name'] == tokenName, orElse: () => null);
+
     if (token == null) return Colors.transparent;
 
     if (token['isAlias'] == true) {
       final alias = token['value']['name'];
-      final primitiveVariables = _tokenParser.getValue<List<dynamic>>(['collections', 1, 'modes', 0, 'variables']);
-      if (primitiveVariables == null) return Colors.transparent;
+      final primitiveCollection = collections.firstWhere((c) => c['name'] == 'Primitive', orElse: () => null);
+      if (primitiveCollection == null) return Colors.transparent;
 
+      final primitiveVariables = primitiveCollection['modes'][0]['variables'] as List<dynamic>;
       final primitiveToken = primitiveVariables.firstWhere((v) => v['name'] == alias, orElse: () => null);
+
       if (primitiveToken != null) {
         return _parseColor(primitiveToken['value']);
       }
