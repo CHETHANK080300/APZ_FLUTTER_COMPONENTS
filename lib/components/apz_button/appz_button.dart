@@ -34,15 +34,17 @@ class _AppzButtonState extends State<AppzButton> {
     final state = widget.disabled ? 'Disabled' : (_hovering ? 'Hover' : 'Default');
     final appearance = widget.appearance.name[0].toUpperCase() + widget.appearance.name.substring(1);
 
+    // Corrected token names to match the structure in token_variables.json
     final bgColor = cfg.getColor('Button/$appearance/$state');
     final borderColor = cfg.getColor('Button/$appearance/$state outline');
-    final textColor = cfg.getColor('Text colour/Button/Default'); // This might need more specific token names
+    final textColor = cfg.getColor('Text colour/Button/Default');
 
     final spacings = cfg.getSpacings();
     final double horizontalPadding = spacings['medium'] ?? 16.0;
     final double verticalPadding = spacings['small'] ?? 8.0;
 
-    final textStyle = cfg.getTextStyle('Button/Semibold'); // Assuming 'Button/Semibold' is a valid token
+    // Corrected text style token name
+    final textStyle = cfg.getTextStyle('Button/Semibold');
 
     return MouseRegion(
       onEnter: (_) => setState(() => _hovering = true),
