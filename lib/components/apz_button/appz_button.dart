@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'button_style_config.dart';
 
@@ -31,20 +30,19 @@ class _AppzButtonState extends State<AppzButton> {
   @override
   Widget build(BuildContext context) {
     final cfg = ButtonStyleConfig.instance;
-    final typeStr = widget.appearance.name;
-    final sizeStr = widget.size.name;
 
-    final state = widget.disabled ? 'disabled' : (_hovering ? 'hover' : null);
-    final bgColor = cfg.getColor('backgroundColor', category: typeStr, state: state);
-    final borderColor = cfg.getColor('borderColor', category: typeStr, state: state);
-    final textColor = cfg.getColor('textColor', category: typeStr, state: state);
+    final state = widget.disabled ? 'Disabled' : (_hovering ? 'Hover' : 'Default');
+    final appearance = widget.appearance.name[0].toUpperCase() + widget.appearance.name.substring(1);
 
-    final height = cfg.getHeight(sizeStr);
-    final width = cfg.getWidth(sizeStr);
-    final fontSize = cfg.getFontSize(sizeStr);
-    final padding = cfg.getPadding(sizeStr);
-    final borderRadius = cfg.getBorderRadius();
-    final borderWidth = cfg.getBorderWidth();
+    final bgColor = cfg.getColor('Button/$appearance/$state');
+    final borderColor = cfg.getColor('Button/$appearance/$state outline');
+    final textColor = cfg.getColor('Text colour/Button/Default'); // This might need more specific token names
+
+    final spacings = cfg.getSpacings();
+    final double horizontalPadding = spacings['medium'] ?? 16.0;
+    final double verticalPadding = spacings['small'] ?? 8.0;
+
+    final textStyle = cfg.getTextStyle('Button/Semibold'); // Assuming 'Button/Semibold' is a valid token
 
     return MouseRegion(
       onEnter: (_) => setState(() => _hovering = true),
@@ -52,23 +50,16 @@ class _AppzButtonState extends State<AppzButton> {
       child: GestureDetector(
         onTap: widget.disabled ? null : widget.onPressed,
         child: Container(
-          height: height,
-          width: width,
-          padding: EdgeInsets.symmetric(horizontal: padding[0], vertical: padding[1]),
+          padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: verticalPadding),
           decoration: BoxDecoration(
             color: bgColor,
-            borderRadius: BorderRadius.circular(borderRadius),
-            border: Border.all(color: borderColor, width: borderWidth),
+            borderRadius: BorderRadius.circular(spacings['x-small'] ?? 4.0),
+            border: Border.all(color: borderColor, width: 1.0),
           ),
           alignment: Alignment.center,
           child: Text(
             widget.label,
-            style: TextStyle(
-              fontSize: fontSize,
-              fontWeight: FontWeight.w600,
-              fontFamily: cfg.getFontFamily(),
-              color: textColor,
-            ),
+            style: textStyle.copyWith(color: textColor),
           ),
         ),
       ),

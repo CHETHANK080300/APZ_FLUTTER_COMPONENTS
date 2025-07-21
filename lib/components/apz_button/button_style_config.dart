@@ -1,54 +1,78 @@
+import 'package:apz_flutter_components/common/token_parser.dart';
 import 'package:flutter/material.dart';
 
 class ButtonStyleConfig {
   static final ButtonStyleConfig instance = ButtonStyleConfig._internal();
-  late Map<String, dynamic> _config;
+  final TokenParser _tokenParser = TokenParser();
 
   ButtonStyleConfig._internal();
 
-  Future<void> loadFromResolved(Map<String, dynamic> resolvedConfig) async {
-    _config = resolvedConfig;
+  Future<void> load() async {
+    await _tokenParser.loadTokens();
   }
 
-  dynamic get(String key, {String? category, String? state}) {
-    if (category != null && state != null) {
-      return _config['buttons']?[category]?[state]?[key] ??
-             _config['buttons']?[category]?[key] ??
-             _config['common']?[key];
+  Color getColor(String tokenName) {
+    final tokenValue = _tokenParser.getValue<Map<String, dynamic>>(['Tokens', 'CSC - Light theme', 'variables', tokenName, 'value']);
+    if (tokenValue != null && tokenValue.containsKey('collection') && tokenValue.containsKey('name')) {
+      final primitiveColor = _tokenParser.getValue<Map<String, dynamic>>(['Primitive', 'color', 'variables', tokenValue['name'], 'value']);
+      if (primitiveColor != null && primitiveColor.containsKey('value')) {
+        return _parseColor(primitiveColor['value']);
+      }
     }
-    if (category != null) {
-      return _config['buttons']?[category]?[key] ??
-             _config['common']?[key];
+    final directColor = _tokenParser.getValue<String>(['Tokens', 'CSC - Light theme', 'variables', tokenName, 'value']);
+    if (directColor != null) {
+      return _parseColor(directColor);
     }
-    return _config['common']?[key];
-  }
-
-  Color getColor(String key, {String? category, String? state}) {
-    final val = get(key, category: category, state: state);
-    if (val is String) return _parseColor(val);
     return Colors.transparent;
   }
 
-  double getDouble(String key) {
-    final val = _config['common']?[key];
-    if (val is num) return val.toDouble();
-    return 0.0;
+  double getDouble(String tokenName) {
+    final value = _tokenParser.getValue<num>(['Tokens', 'CSC - Light theme', 'variables', tokenName, 'value']);
+    return value?.toDouble() ?? 0.0;
   }
 
-  List<double> getPadding(String sizeKey) {
-    final padding = _config['common']?['${sizeKey}_padding'];
-    if (padding is List && padding.length == 2) {
-      return [padding[0].toDouble(), padding[1].toDouble()];
+  Map<String, double> getSpacings() {
+    final spacingsList = _tokenParser.getValue<List<dynamic>>(['Tokens', 'CSC - Light theme', 'variables'])
+        ?.where((v) => v['name'].startsWith('Spacings/'))
+        .toList();
+    if (spacingsList == null) return {};
+
+    Map<String, double> spacings = {};
+    for (var spacingToken in spacingsList) {
+      final name = spacingToken['name'].split('/').last;
+      final value = spacingToken['value'];
+      if (value is num) {
+        spacings[name] = value.toDouble();
+      }
     }
-    return [0.0, 0.0];
+    return spacings;
   }
 
-  String getFontFamily() => _config['common']?['fontFamily'] ?? 'Outfit';
-  double getFontSize(String sizeKey) => (_config['common']?['${sizeKey}_fontSize'] ?? 14).toDouble();
-  double getHeight(String sizeKey) => (_config['common']?['${sizeKey}_height'] ?? 40).toDouble();
-  double getWidth(String sizeKey) => (_config['common']?['${sizeKey}_width'] ?? 100).toDouble();
-  double getBorderRadius() => (_config['common']?['borderRadius'] ?? 25).toDouble();
-  double getBorderWidth() => (_config['common']?['borderWidth'] ?? 1).toDouble();
+  TextStyle getTextStyle(String tokenName) {
+    final typography = _tokenParser.getValue<Map<String, dynamic>>(['Typography', 'Style', 'variables', tokenName, 'value']);
+    if (typography == null) return TextStyle();
+
+    return TextStyle(
+      fontFamily: typography['fontFamily'],
+      fontSize: (typography['fontSize'] as num).toDouble(),
+      fontWeight: _getFontWeight(typography['fontWeight']),
+    );
+  }
+
+  FontWeight _getFontWeight(String fontWeight) {
+    switch (fontWeight) {
+      case 'Regular':
+        return FontWeight.w400;
+      case 'Medium':
+        return FontWeight.w500;
+      case 'SemiBold':
+        return FontWeight.w600;
+      case 'Bold':
+        return FontWeight.w700;
+      default:
+        return FontWeight.normal;
+    }
+  }
 
   Color _parseColor(String hex) {
     hex = hex.replaceFirst('#', '');
