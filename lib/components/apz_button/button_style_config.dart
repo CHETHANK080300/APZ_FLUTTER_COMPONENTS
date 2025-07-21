@@ -12,51 +12,71 @@ class ButtonStyleConfig {
   }
 
   Color getColor(String tokenName) {
-    final tokenValue = _tokenParser.getValue<Map<String, dynamic>>(['Tokens', 'CSC - Light theme', 'variables', tokenName, 'value']);
-    if (tokenValue != null && tokenValue.containsKey('collection') && tokenValue.containsKey('name')) {
-      final primitiveColor = _tokenParser.getValue<Map<String, dynamic>>(['Primitive', 'color', 'variables', tokenValue['name'], 'value']);
-      if (primitiveColor != null && primitiveColor.containsKey('value')) {
-        return _parseColor(primitiveColor['value']);
+    final variables = _tokenParser.getValue<List<dynamic>>(['collections', 0, 'modes', 0, 'variables']);
+    if (variables == null) return Colors.transparent;
+
+    final token = variables.firstWhere((v) => v['name'] == tokenName, orElse: () => null);
+    if (token == null) return Colors.transparent;
+
+    if (token['isAlias'] == true) {
+      final alias = token['value']['name'];
+      final primitiveVariables = _tokenParser.getValue<List<dynamic>>(['collections', 1, 'modes', 0, 'variables']);
+      if (primitiveVariables == null) return Colors.transparent;
+
+      final primitiveToken = primitiveVariables.firstWhere((v) => v['name'] == alias, orElse: () => null);
+      if (primitiveToken != null) {
+        return _parseColor(primitiveToken['value']);
       }
+    } else {
+      return _parseColor(token['value']);
     }
-    final directColor = _tokenParser.getValue<String>(['Tokens', 'CSC - Light theme', 'variables', tokenName, 'value']);
-    if (directColor != null) {
-      return _parseColor(directColor);
-    }
+
     return Colors.transparent;
   }
 
   double getDouble(String tokenName) {
-    final value = _tokenParser.getValue<num>(['Tokens', 'CSC - Light theme', 'variables', tokenName, 'value']);
-    return value?.toDouble() ?? 0.0;
+    final variables = _tokenParser.getValue<List<dynamic>>(['collections', 0, 'modes', 0, 'variables']);
+    if (variables == null) return 0.0;
+
+    final token = variables.firstWhere((v) => v['name'] == tokenName, orElse: () => null);
+    if (token != null && token['value'] is num) {
+      return (token['value'] as num).toDouble();
+    }
+    return 0.0;
   }
 
   Map<String, double> getSpacings() {
-    final spacingsList = _tokenParser.getValue<List<dynamic>>(['Tokens', 'CSC - Light theme', 'variables'])
-        ?.where((v) => v['name'].startsWith('Spacings/'))
-        .toList();
-    if (spacingsList == null) return {};
+    final variables = _tokenParser.getValue<List<dynamic>>(['collections', 0, 'modes', 0, 'variables']);
+    if (variables == null) return {};
 
     Map<String, double> spacings = {};
-    for (var spacingToken in spacingsList) {
-      final name = spacingToken['name'].split('/').last;
-      final value = spacingToken['value'];
-      if (value is num) {
-        spacings[name] = value.toDouble();
+    for (var token in variables) {
+      if (token['name'].startsWith('Spacings/')) {
+        final name = token['name'].split('/').last;
+        final value = token['value'];
+        if (value is num) {
+          spacings[name] = value.toDouble();
+        }
       }
     }
     return spacings;
   }
 
   TextStyle getTextStyle(String tokenName) {
-    final typography = _tokenParser.getValue<Map<String, dynamic>>(['Typography', 'Style', 'variables', tokenName, 'value']);
-    if (typography == null) return TextStyle();
+    final typographyVariables = _tokenParser.getValue<List<dynamic>>(['collections', 2, 'modes', 0, 'variables']);
+    if (typographyVariables == null) return TextStyle();
 
-    return TextStyle(
-      fontFamily: typography['fontFamily'],
-      fontSize: (typography['fontSize'] as num).toDouble(),
-      fontWeight: _getFontWeight(typography['fontWeight']),
-    );
+    final token = typographyVariables.firstWhere((v) => v['name'] == tokenName, orElse: () => null);
+    if (token != null && token['value'] is Map<String, dynamic>) {
+      final typography = token['value'];
+      return TextStyle(
+        fontFamily: typography['fontFamily'],
+        fontSize: (typography['fontSize'] as num).toDouble(),
+        fontWeight: _getFontWeight(typography['fontWeight']),
+      );
+    }
+
+    return TextStyle();
   }
 
   FontWeight _getFontWeight(String fontWeight) {
