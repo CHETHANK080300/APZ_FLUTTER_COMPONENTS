@@ -48,12 +48,9 @@ class _AppzProgressBarState extends State<AppzProgressBar> {
         final borderRadius = cfg.getDouble('borderRadius', fromSupportingTokens: true) ?? 8.0;
         final bgColor = cfg.getColor('Form Fields/Progress bar/Color 2');
         final fillColor = cfg.getColor('Form Fields/Progress bar/Color 3');
-        final labelStyle = TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.w500,
-          fontFamily: 'Outfit',
-          color: cfg.getColor('Text colour/Label & Help/Default'),
-        );
+        final labelStyle = cfg.getTextStyle('Label & Helper Text/Regular').copyWith(
+              color: cfg.getColor('Text colour/Label & Help/Default'),
+            );
 
         Widget barWidget;
         switch (widget.labelPosition) {
