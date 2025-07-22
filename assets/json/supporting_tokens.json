@@ -25,5 +25,9 @@
       "gap": 12.0
     },
     "borderRadius": 64.0
+  },
+  "progressBar": {
+    "height": 8.0,
+    "borderRadius": 8.0
   }
 }
