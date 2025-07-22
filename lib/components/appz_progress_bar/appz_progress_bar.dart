@@ -70,7 +70,7 @@ class _AppzProgressBarState extends State<AppzProgressBar> {
             break;
           case ProgressBarLabelPosition.bottom:
             barWidget = Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 _buildBarOnly(constraints.maxWidth, height, borderRadius, fillPercent, bgColor, fillColor),
                 Padding(
