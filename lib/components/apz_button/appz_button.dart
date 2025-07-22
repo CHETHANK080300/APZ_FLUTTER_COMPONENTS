@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'button_style_config.dart';
 
@@ -11,6 +10,8 @@ class AppzButton extends StatefulWidget {
   final AppzButtonSize size;
   final bool disabled;
   final VoidCallback? onPressed;
+  final IconData? iconTrailing;
+  final IconData? iconLeading;
 
   const AppzButton({
     super.key,
@@ -19,6 +20,8 @@ class AppzButton extends StatefulWidget {
     this.size = AppzButtonSize.medium,
     this.disabled = false,
     this.onPressed,
+    this.iconTrailing,
+    this.iconLeading,
   });
 
   @override
@@ -31,45 +34,97 @@ class _AppzButtonState extends State<AppzButton> {
   @override
   Widget build(BuildContext context) {
     final cfg = ButtonStyleConfig.instance;
-    final typeStr = widget.appearance.name;
     final sizeStr = widget.size.name;
 
-    final state = widget.disabled ? 'disabled' : (_hovering ? 'hover' : null);
-    final bgColor = cfg.getColor('backgroundColor', category: typeStr, state: state);
-    final borderColor = cfg.getColor('borderColor', category: typeStr, state: state);
-    final textColor = cfg.getColor('textColor', category: typeStr, state: state);
+    if (widget.appearance == AppzButtonAppearance.tertiary) {
+      return _buildTertiaryButton(cfg);
+    }
 
-    final height = cfg.getHeight(sizeStr);
-    final width = cfg.getWidth(sizeStr);
-    final fontSize = cfg.getFontSize(sizeStr);
-    final padding = cfg.getPadding(sizeStr);
-    final borderRadius = cfg.getBorderRadius();
-    final borderWidth = cfg.getBorderWidth();
+    return _buildPrimaryOrSecondaryButton(cfg, sizeStr);
+  }
+
+  Widget _buildPrimaryOrSecondaryButton(ButtonStyleConfig cfg, String sizeStr) {
+    final state = widget.disabled ? 'Disabled' : (_hovering ? 'Hover' : 'Default');
+    final appearanceStr = widget.appearance.name[0].toUpperCase() + widget.appearance.name.substring(1);
+
+    final bgColor = cfg.getColor('Button/$appearanceStr/$state');
+    final borderColor = cfg.getColor('Button/$appearanceStr/$state outline');
+
+    Color textColor;
+    if (widget.disabled) {
+      textColor = cfg.getColor('Text colour/Button/Disabled');
+    } else if (_hovering) {
+      textColor = cfg.getColor('Text colour/Button/Hover');
+    } else {
+      textColor = widget.appearance == AppzButtonAppearance.primary
+          ? cfg.getColor('Text colour/Button/Default')
+          : cfg.getColor('Text colour/Button/Clicked');
+    }
 
     return MouseRegion(
       onEnter: (_) => setState(() => _hovering = true),
       onExit: (_) => setState(() => _hovering = false),
+      cursor: widget.disabled ? SystemMouseCursors.forbidden : SystemMouseCursors.click,
       child: GestureDetector(
         onTap: widget.disabled ? null : widget.onPressed,
         child: Container(
-          height: height,
-          width: width,
-          padding: EdgeInsets.symmetric(horizontal: padding[0], vertical: padding[1]),
+          height: cfg.getHeight(sizeStr),
+          padding: cfg.getPadding(sizeStr),
           decoration: BoxDecoration(
             color: bgColor,
-            borderRadius: BorderRadius.circular(borderRadius),
-            border: Border.all(color: borderColor, width: borderWidth),
+            borderRadius: BorderRadius.circular(cfg.getDouble('borderRadius', fromSupportingTokens: true) ?? 0),
+            border: Border.all(color: borderColor, width: 1.0),
           ),
-          alignment: Alignment.center,
-          child: Text(
-            widget.label,
-            style: TextStyle(
-              fontSize: fontSize,
-              fontWeight: FontWeight.w600,
-              fontFamily: cfg.getFontFamily(),
-              color: textColor,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (widget.iconLeading != null) ...[
+                Icon(widget.iconLeading, color: textColor, size: 16),
+                SizedBox(width: cfg.getGap(sizeStr)),
+              ],
+              Text(
+                widget.label,
+                style: cfg.getTextStyle('Button/Semibold').copyWith(color: textColor),
+              ),
+              if (widget.iconTrailing != null) ...[
+                SizedBox(width: cfg.getGap(sizeStr)),
+                Icon(widget.iconTrailing, color: textColor, size: 16),
+              ],
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTertiaryButton(ButtonStyleConfig cfg) {
+    final state = widget.disabled ? 'Disabled' : (_hovering ? 'Hover' : 'Default');
+    final textColor = cfg.getColor('Text colour/Hyperlink/$state');
+
+    return MouseRegion(
+      onEnter: (_) => setState(() => _hovering = true),
+      onExit: (_) => setState(() => _hovering = false),
+      cursor: widget.disabled ? SystemMouseCursors.forbidden : SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: widget.disabled ? null : widget.onPressed,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (widget.iconLeading != null) ...[
+              Icon(widget.iconLeading, color: textColor, size: 16),
+              const SizedBox(width: 4),
+            ],
+            Text(
+              widget.label,
+              style: cfg.getTextStyle('Hyperlink/Medium').copyWith(color: textColor),
             ),
-          ),
+            if (widget.iconTrailing != null) ...[
+              const SizedBox(width: 4),
+              Icon(widget.iconTrailing, color: textColor, size: 16),
+            ],
+          ],
         ),
       ),
     );
