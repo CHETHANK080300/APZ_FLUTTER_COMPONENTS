@@ -60,9 +60,63 @@ class ProgressBarStyleConfig {
     return 0.0;
   }
 
+  TextStyle getTextStyle(String tokenName) {
+    final collections = _tokenParser.getValue<List<dynamic>>(['collections']);
+    if (collections == null) return TextStyle();
+
+    final typographyCollection = collections.firstWhere((c) => c['name'] == 'Typography', orElse: () => null);
+    if (typographyCollection == null) return TextStyle();
+
+    final variables = typographyCollection['modes'][0]['variables'] as List<dynamic>;
+    final token = variables.firstWhere((v) => v['name'] == tokenName, orElse: () => null);
+
+    if (token != null && token['value'] is Map<String, dynamic>) {
+      final typography = token['value'];
+      return TextStyle(
+        fontFamily: typography['fontFamily'],
+        fontSize: (typography['fontSize'] as num).toDouble(),
+        fontWeight: _getFontWeight(typography['fontWeight']),
+      );
+    }
+
+    return TextStyle();
+  }
+
+  FontWeight _getFontWeight(String fontWeight) {
+    switch (fontWeight) {
+      case 'Regular':
+        return FontWeight.w400;
+      case 'Medium':
+        return FontWeight.w500;
+      case 'SemiBold':
+        return FontWeight.w600;
+      case 'Bold':
+        return FontWeight.w700;
+      default:
+        return FontWeight.normal;
+    }
+  }
+
   Color _parseColor(String hex) {
     hex = hex.replaceFirst('#', '');
     if (hex.length == 6) hex = 'FF$hex';
     return Color(int.parse(hex, radix: 16));
+  }
+
+  String getFontFamily(String tokenName) {
+    final collections = _tokenParser.getValue<List<dynamic>>(['collections']);
+    if (collections == null) return 'Outfit';
+
+    final typographyCollection = collections.firstWhere((c) => c['name'] == 'Typography', orElse: () => null);
+    if (typographyCollection == null) return 'Outfit';
+
+    final variables = typographyCollection['modes'][0]['variables'] as List<dynamic>;
+    final token = variables.firstWhere((v) => v['name'] == tokenName, orElse: () => null);
+
+    if (token != null && token['value'] is Map<String, dynamic>) {
+      return token['value']['fontFamily'];
+    }
+
+    return 'Outfit';
   }
 }
