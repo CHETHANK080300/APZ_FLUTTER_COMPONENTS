@@ -48,9 +48,95 @@ class _AppzProgressBarState extends State<AppzProgressBar> {
         final borderRadius = cfg.getDouble('borderRadius', fromSupportingTokens: true) ?? 8.0;
         final bgColor = cfg.getColor('Form Fields/Progress bar/Color 2');
         final fillColor = cfg.getColor('Form Fields/Progress bar/Color 3');
+        final labelStyle = TextStyle(
+          fontSize: 12,
+          fontWeight: FontWeight.w500,
+          fontFamily: 'Outfit',
+          color: cfg.getColor('Text colour/Label & Help/Default'),
+        );
 
-        return _buildBarOnly(constraints.maxWidth, height, borderRadius, fillPercent, bgColor, fillColor);
+        Widget barWidget;
+        switch (widget.labelPosition) {
+          case ProgressBarLabelPosition.none:
+            barWidget = _buildBarOnly(constraints.maxWidth, height, borderRadius, fillPercent, bgColor, fillColor);
+            break;
+          case ProgressBarLabelPosition.right:
+            barWidget = Row(
+              children: [
+                Expanded(child: _buildBarOnly(constraints.maxWidth, height, borderRadius, fillPercent, bgColor, fillColor)),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Text(displayText, style: labelStyle),
+                ),
+              ],
+            );
+            break;
+          case ProgressBarLabelPosition.bottom:
+            barWidget = Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _buildBarOnly(constraints.maxWidth, height, borderRadius, fillPercent, bgColor, fillColor),
+                Padding(
+                  padding: const EdgeInsets.only(top: 4.0),
+                  child: Text(displayText, style: labelStyle),
+                ),
+              ],
+            );
+            break;
+          case ProgressBarLabelPosition.topFloating:
+            barWidget = Stack(
+              clipBehavior: Clip.none,
+              children: [
+                _buildBarOnly(constraints.maxWidth, height, borderRadius, fillPercent, bgColor, fillColor),
+                Positioned(
+                  left: (constraints.maxWidth * (fillPercent / 100.0)) - 20,
+                  bottom: height + 5,
+                  child: _buildFloatingLabel(displayText, labelStyle),
+                ),
+              ],
+            );
+            break;
+          case ProgressBarLabelPosition.bottomFloating:
+            barWidget = Stack(
+              clipBehavior: Clip.none,
+              children: [
+                _buildBarOnly(constraints.maxWidth, height, borderRadius, fillPercent, bgColor, fillColor),
+                Positioned(
+                  left: (constraints.maxWidth * (fillPercent / 100.0)) - 20,
+                  top: height + 5,
+                  child: _buildFloatingLabel(displayText, labelStyle),
+                ),
+              ],
+            );
+            break;
+        }
+        return barWidget;
       },
+    );
+  }
+
+  Widget _buildFloatingLabel(String text, TextStyle style) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+      decoration: BoxDecoration(
+        color: cfg.getColor('Form Fields/Tooltip/Default'),
+        borderRadius: BorderRadius.circular(4.0),
+        boxShadow: [
+          BoxShadow(
+            color: cfg.getColor('Shadow/lg').withOpacity(0.08),
+            offset: const Offset(0, 12),
+            blurRadius: 16.0,
+            spreadRadius: -4,
+          ),
+          BoxShadow(
+            color: cfg.getColor('Shadow/lg').withOpacity(0.03),
+            offset: const Offset(0, 4),
+            blurRadius: 6.0,
+            spreadRadius: -2,
+          ),
+        ],
+      ),
+      child: Text(text, style: style.copyWith(color: cfg.getColor('Text colour/Tooltip/Style 2'))),
     );
   }
 
