@@ -49,7 +49,7 @@ class _AppzProgressBarState extends State<AppzProgressBar> {
         final bgColor = cfg.getColor('Form Fields/Progress bar/Color 2');
         final fillColor = cfg.getColor('Form Fields/Progress bar/Color 3');
         final labelStyle = cfg.getTextStyle('Label & Helper Text/Regular').copyWith(
-              color: cfg.getColor('Text colour/Label & Help/Default'),
+              color: cfg.getColor('Text colour/Tooltip/Style 2'),
             );
 
         Widget barWidget;
@@ -70,7 +70,7 @@ class _AppzProgressBarState extends State<AppzProgressBar> {
             break;
           case ProgressBarLabelPosition.bottom:
             barWidget = Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 _buildBarOnly(constraints.maxWidth, height, borderRadius, fillPercent, bgColor, fillColor),
                 Padding(
