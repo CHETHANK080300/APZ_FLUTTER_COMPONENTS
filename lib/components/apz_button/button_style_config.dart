@@ -41,7 +41,10 @@ class ButtonStyleConfig {
     return Colors.transparent;
   }
 
-  double getDouble(String tokenName) {
+  double? getDouble(String tokenName, {bool fromSupportingTokens = false}) {
+    if (fromSupportingTokens) {
+      return _tokenParser.getValue<double>(['button', tokenName], fromSupportingTokens: true);
+    }
     final collections = _tokenParser.getValue<List<dynamic>>(['collections']);
     if (collections == null) return 0.0;
 
@@ -57,25 +60,23 @@ class ButtonStyleConfig {
     return 0.0;
   }
 
-  Map<String, double> getSpacings() {
-    final collections = _tokenParser.getValue<List<dynamic>>(['collections']);
-    if (collections == null) return {};
+  double getHeight(String size) {
+    return _tokenParser.getValue<double>(['button', size, 'height'], fromSupportingTokens: true) ?? 0.0;
+  }
 
-    final tokenCollection = collections.firstWhere((c) => c['name'] == 'Tokens', orElse: () => null);
-    if (tokenCollection == null) return {};
-
-    final variables = tokenCollection['modes'][0]['variables'] as List<dynamic>;
-    Map<String, double> spacings = {};
-    for (var token in variables) {
-      if (token['name'].startsWith('Spacings/')) {
-        final name = token['name'].split('/').last;
-        final value = token['value'];
-        if (value is num) {
-          spacings[name] = value.toDouble();
-        }
-      }
+  EdgeInsets getPadding(String size) {
+    final paddingMap = _tokenParser.getValue<Map<String, dynamic>>(['button', size, 'padding'], fromSupportingTokens: true);
+    if (paddingMap != null) {
+      return EdgeInsets.symmetric(
+        horizontal: (paddingMap['horizontal'] as num).toDouble(),
+        vertical: (paddingMap['vertical'] as num).toDouble(),
+      );
     }
-    return spacings;
+    return EdgeInsets.zero;
+  }
+
+  double getGap(String size) {
+    return _tokenParser.getValue<double>(['button', size, 'gap'], fromSupportingTokens: true) ?? 0.0;
   }
 
   TextStyle getTextStyle(String tokenName) {
