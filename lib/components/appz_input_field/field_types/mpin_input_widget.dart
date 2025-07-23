@@ -1,3 +1,4 @@
+import 'package:apz_flutter_components/components/appz_input_field/appz_input_field_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../appz_input_field_enums.dart';
@@ -186,7 +187,7 @@ class _MpinInputWidgetState extends State<MpinInputWidget> {
             style: TextStyle(
               color: widget.isEnabled ? style.textColor : style.textColor.withOpacity(0.5),
               fontFamily: style.fontFamily,
-              fontSize: style.fontSize + 4,
+              fontSize: style.labelFontSize + 4,
               fontWeight: FontWeight.bold,
             ),
             decoration: mpinSegmentBaseDecoration,

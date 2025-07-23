@@ -1,3 +1,4 @@
+import 'package:apz_flutter_components/components/appz_input_field/appz_input_field_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../appz_input_field_enums.dart';
@@ -178,7 +179,7 @@ class _AadhaarInputWidgetState extends State<AadhaarInputWidget> {
             style: TextStyle(
               color: widget.isEnabled ? widget.currentStyle.textColor : widget.currentStyle.textColor.withOpacity(0.5),
               fontFamily: widget.currentStyle.fontFamily,
-              fontSize: widget.currentStyle.fontSize,
+              fontSize: widget.currentStyle.labelFontSize,
               fontWeight: FontWeight.bold,
             ),
             decoration: InputDecoration(

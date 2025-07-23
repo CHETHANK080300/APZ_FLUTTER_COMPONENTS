@@ -1,3 +1,4 @@
+import 'package:apz_flutter_components/components/appz_input_field/appz_input_field_theme.dart';
 import 'package:flutter/material.dart';
 import 'appz_input_field_enums.dart';
 import 'appz_input_style_config.dart';
@@ -234,22 +235,69 @@ class _AppzInputFieldState extends State<AppzInputField> {
     _disposeMpinFields();
     super.dispose();
   }
+  TextStyle _getTextStyleForField(AppzStateStyle style) {
+    return TextStyle(
+      color: style.textColor,
+      fontFamily: style.fontFamily,
+      fontSize: style.labelFontSize + 2,
+      fontWeight: _isFilled ? FontWeight.w600 : FontWeight.w400, // Filled = SemiBold/Bold
+    );
+  }
+  InputDecoration _createBaseInputDecoration(AppzStateStyle defaultStyle) {
+    final focusedStyle = AppzStyleConfig.instance.getStyleForState(AppzFieldState.focused);
+    final errorStyle = AppzStyleConfig.instance.getStyleForState(AppzFieldState.error);
+    final disabledStyle = AppzStyleConfig.instance.getStyleForState(AppzFieldState.disabled);
 
-  InputDecoration _createBaseInputDecoration(AppzStateStyle style) {
     return InputDecoration(
       hintText: widget.hintText,
-      hintStyle: TextStyle(color: style.textColor.withOpacity(0.5), fontFamily: style.fontFamily, fontSize: style.fontSize),
+      hintStyle: TextStyle(
+        color: defaultStyle.textColor.withOpacity(0.5),
+        fontFamily: defaultStyle.fontFamily,
+        fontSize: defaultStyle.labelFontSize,
+      ),
       filled: true,
-      fillColor: style.backgroundColor,
+      fillColor: defaultStyle.backgroundColor,
       suffixIcon: widget.suffixIcon,
       prefixIcon: widget.prefixIcon,
-      contentPadding: EdgeInsets.symmetric(horizontal: style.paddingHorizontal, vertical: style.paddingVertical),
-      border: OutlineInputBorder(borderRadius: BorderRadius.circular(style.borderRadius), borderSide: BorderSide(color: style.borderColor, width: style.borderWidth)),
-      enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(style.borderRadius), borderSide: BorderSide(color: style.borderColor, width: style.borderWidth)),
-      focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(style.borderRadius), borderSide: BorderSide(color: style.borderColor, width: style.borderWidth)),
-      errorBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(style.borderRadius), borderSide: BorderSide(color: style.borderColor, width: style.borderWidth)),
-      focusedErrorBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(style.borderRadius), borderSide: BorderSide(color: style.borderColor, width: style.borderWidth + 0.5)),
-      disabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(style.borderRadius), borderSide: BorderSide(color: style.borderColor, width: style.borderWidth)),
+      contentPadding: EdgeInsets.symmetric(
+        horizontal: defaultStyle.paddingHorizontal,
+        vertical: defaultStyle.paddingVertical,
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(defaultStyle.borderRadius),
+        borderSide: BorderSide(
+          color: defaultStyle.borderColor,
+          width: defaultStyle.borderWidth,
+        ),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(focusedStyle.borderRadius),
+        borderSide: BorderSide(
+          color: focusedStyle.borderColor,
+          width: focusedStyle.borderWidth,
+        ),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(errorStyle.borderRadius),
+        borderSide: BorderSide(
+          color: errorStyle.borderColor,
+          width: errorStyle.borderWidth,
+        ),
+      ),
+      focusedErrorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(errorStyle.borderRadius),
+        borderSide: BorderSide(
+          color: errorStyle.borderColor,
+          width: errorStyle.borderWidth,
+        ),
+      ),
+      disabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(disabledStyle.borderRadius),
+        borderSide: BorderSide(
+          color: disabledStyle.borderColor,
+          width: disabledStyle.borderWidth,
+        ),
+      ),
     );
   }
 
@@ -269,14 +317,8 @@ class _AppzInputFieldState extends State<AppzInputField> {
           controller: _internalController,
           focusNode: _internalFocusNode,
           decoration: baseFieldDecoration,
-          style: TextStyle(color: style.textColor, fontFamily: style.fontFamily, fontSize: style.fontSize),
-          validator: (value) {
-            final error = _performValidation(value);
-            if (error != null) {
-              _updateState(AppzFieldState.error, errorMessage: error);
-            }
-            return error;
-          },
+          style: _getTextStyleForField(style),
+          validator: _performValidation,
           onTap: widget.onTap,
           onFieldSubmitted: widget.onSubmitted,
           obscureText: widget.obscureText,
@@ -336,7 +378,7 @@ class _AppzInputFieldState extends State<AppzInputField> {
         : widget.label;
     final Text labelWidget = Text(
       labelTextWithIndicator,
-      style: style.labelTextStyle.copyWith(color: style.labelColor),
+      style: TextStyle(color: style.labelColor, fontFamily: style.fontFamily, fontSize: style.labelFontSize, fontWeight: FontWeight.w400),
     );
 
     return Column(
@@ -347,17 +389,14 @@ class _AppzInputFieldState extends State<AppzInputField> {
           labelWidget,
           const SizedBox(height: 6.0),
         ],
-        Container(
-          height: style.height,
-          child: fieldWidget
-        ),
+        fieldWidget,
         if (_validationErrorMessage != null)
           Padding(
             padding: const EdgeInsets.only(top: 6.0),
             child: Text(
               _validationErrorMessage!,
               style: TextStyle(
-                color: AppzStyleConfig.instance.getStyleForState(AppzFieldState.error).textColor,
+                color: AppzStyleConfig.instance.getStyleForState(AppzFieldState.error).borderColor,
                 fontSize: style.labelFontSize * 0.9,
                 fontFamily: style.fontFamily),
             ),
