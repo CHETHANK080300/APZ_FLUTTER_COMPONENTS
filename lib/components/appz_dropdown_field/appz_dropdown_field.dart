@@ -196,8 +196,8 @@ class _AppzDropdownFieldState extends State<AppzDropdownField> {
                   child: Container(
                     key: _dropdownKey,
                     padding: EdgeInsets.symmetric(
-                      vertical: DropdownStyleConfig.instance.defaultStyle.paddingVertical!,
-                      horizontal: DropdownStyleConfig.instance.defaultStyle.paddingHorizontal!,
+                      vertical: DropdownStyleConfig.instance.defaultStyle.paddingVertical ?? 0,
+                      horizontal: DropdownStyleConfig.instance.defaultStyle.paddingHorizontal ?? 0,
                     ),
                     decoration: BoxDecoration(
                       color: _buildContainerColor(),
@@ -261,12 +261,12 @@ class _AppzDropdownFieldState extends State<AppzDropdownField> {
   }
 
   Color _buildContainerColor() {
-    if (!widget.enabled) return DropdownStyleConfig.instance.disabled.backgroundColor!;
-    if (_isHovered && !_isOpen) return DropdownStyleConfig.instance.hover.itemBackgroundColor!;
+    if (!widget.enabled) return DropdownStyleConfig.instance.disabled.backgroundColor;
+    if (_isHovered && !_isOpen) return DropdownStyleConfig.instance.hover.itemBackgroundColor;
     if (_selectedItem != null && widget.showFilledStyle) {
-      return DropdownStyleConfig.instance.filled.backgroundColor!;
+      return DropdownStyleConfig.instance.filled.backgroundColor;
     }
-    return DropdownStyleConfig.instance.defaultStyle.backgroundColor!;
+    return DropdownStyleConfig.instance.defaultStyle.backgroundColor;
   }
 
   Color _buildBorderColor() {

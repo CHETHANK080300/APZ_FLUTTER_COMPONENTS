@@ -32,9 +32,9 @@ class DropdownStateStyle {
   final Color borderColor;
   final double? borderWidth;
   final double borderRadius;
-  final Color? backgroundColor;
-  final Color? textColor;
-  final Color? labelColor;
+  final Color backgroundColor;
+  final Color textColor;
+  final Color labelColor;
   final String? fontFamily;
   final double? fontSize;
   final double? labelFontSize;
@@ -47,9 +47,9 @@ class DropdownStateStyle {
     required this.borderColor,
     this.borderWidth,
     required this.borderRadius,
-    this.backgroundColor,
-    this.textColor,
-    this.labelColor,
+    required this.backgroundColor,
+    required this.textColor,
+    required this.labelColor,
     this.fontFamily,
     this.fontSize,
     this.labelFontSize,
@@ -64,9 +64,9 @@ class DropdownStateStyle {
       borderColor: _parseColor(parser.getValue<String>(['Form Fields', 'Dropdown', 'Outline ${state.replaceFirst(state[0], state[0].toUpperCase())}']) ?? parser.getValue<String>(['Form Fields', 'Dropdown', 'Outline default']) ?? '#D9D9D9'),
       borderWidth: 1.0,
       borderRadius: parser.getValue<double>(['dropdown', 'borderRadius'], isSupportingToken: true) ?? 10.0,
-      backgroundColor: _parseOptionalColor(parser.getValue<String>(['Form Fields', 'Dropdown', state.replaceFirst(state[0], state[0].toUpperCase())]) ?? parser.getValue<String>(['Form Fields', 'Dropdown', 'Default'])),
-      textColor: _parseOptionalColor(parser.getValue<String>(['Text colour', 'Input', 'Default'])),
-      labelColor: _parseOptionalColor(parser.getValue<String>(['Text colour', 'Label & Help', 'Default'])),
+      backgroundColor: _parseColor(parser.getValue<String>(['Form Fields', 'Dropdown', state.replaceFirst(state[0], state[0].toUpperCase())]) ?? parser.getValue<String>(['Form Fields', 'Dropdown', 'Default']) ?? '#FFFFFF'),
+      textColor: _parseColor(parser.getValue<String>(['Text colour', 'Input', 'Default']) ?? '#000000'),
+      labelColor: _parseColor(parser.getValue<String>(['Text colour', 'Label & Help', 'Default']) ?? '#000000'),
       fontFamily: 'Outfit',
       fontSize: 14.0,
       labelFontSize: parser.getValue<double>(['dropdown', 'labelFontSize'], isSupportingToken: true) ?? 12.0,
@@ -79,24 +79,24 @@ class DropdownStateStyle {
 }
 
 class HoverStateStyle {
-  final Color? itemBackgroundColor;
-  final Color? textColor;
+  final Color itemBackgroundColor;
+  final Color textColor;
 
   HoverStateStyle({
-    this.itemBackgroundColor,
-    this.textColor,
+    required this.itemBackgroundColor,
+    required this.textColor,
   });
 
   factory HoverStateStyle.fromTokens(TokenParser parser, String state) {
     if (state == 'selected') {
       return HoverStateStyle(
-        itemBackgroundColor: _parseOptionalColor(parser.getValue<String>(['dropdown', 'selectedItemColor'], isSupportingToken: true)),
-        textColor: _parseOptionalColor(parser.getValue<String>(['dropdown', 'selectedTextColor'], isSupportingToken: true)),
+        itemBackgroundColor: _parseColor(parser.getValue<String>(['dropdown', 'selectedItemColor'], isSupportingToken: true) ?? '#0047AB'),
+        textColor: _parseColor(parser.getValue<String>(['dropdown', 'selectedTextColor'], isSupportingToken: true) ?? '#FFFFFF'),
       );
     }
     return HoverStateStyle(
-      itemBackgroundColor: _parseOptionalColor(parser.getValue<String>(['Form Fields', 'Dropdown', state.replaceFirst(state[0], state[0].toUpperCase())])),
-      textColor: _parseOptionalColor(parser.getValue<String>(['Text colour', 'Input', 'Default'])),
+      itemBackgroundColor: _parseColor(parser.getValue<String>(['Form Fields', 'Dropdown', state.replaceFirst(state[0], state[0].toUpperCase())]) ?? '#F3F4F6'),
+      textColor: _parseColor(parser.getValue<String>(['Text colour', 'Input', 'Default']) ?? '#000000'),
     );
   }
 }
