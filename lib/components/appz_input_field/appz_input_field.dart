@@ -1,3 +1,4 @@
+import 'package:apz_flutter_components/components/appz_input_field/appz_input_field_theme.dart';
 import 'package:flutter/material.dart';
 import 'appz_input_field_enums.dart';
 import 'appz_input_style_config.dart';
@@ -348,7 +349,7 @@ class _AppzInputFieldState extends State<AppzInputField> {
             child: Text(
               _validationErrorMessage!,
               style: TextStyle(
-                color: AppzStyleConfig.instance.getStyleForState(AppzFieldType.error, isFilled: _isFilled).textColor,
+                color: AppzStyleConfig.instance.getStyleForState(AppzFieldState.error, isFilled: _isFilled).textColor,
                 fontSize: style.labelFontSize * 0.9,
                 fontFamily: style.fontFamily),
             ),
