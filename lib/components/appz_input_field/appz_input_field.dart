@@ -1,4 +1,3 @@
-import 'package:apz_flutter_components/components/appz_input_field/appz_input_field_theme.dart';
 import 'package:flutter/material.dart';
 import 'appz_input_field_enums.dart';
 import 'appz_input_style_config.dart';
@@ -70,7 +69,7 @@ class _AppzInputFieldState extends State<AppzInputField> {
   bool get _isEffectivelyDisabled => _currentFieldState == AppzFieldState.disabled;
   bool get _hasError => _currentFieldState == AppzFieldState.error;
   bool get _isFocused => _currentFieldState == AppzFieldState.focused;
-  bool get _isFilled => _currentFieldState == AppzFieldState.filled || _internalController.text.isNotEmpty;
+  bool get _isFilled => _internalController.text.isNotEmpty;
 
   @override
   void initState() {
@@ -158,7 +157,7 @@ class _AppzInputFieldState extends State<AppzInputField> {
       _updateState(AppzFieldState.focused);
     } else {
       if (!_hasError) {
-        _updateState(_internalController.text.isNotEmpty ? AppzFieldState.filled : AppzFieldState.defaultState);
+        _updateState(_isFilled ? AppzFieldState.filled : AppzFieldState.defaultState);
       }
     }
   }
@@ -167,16 +166,10 @@ class _AppzInputFieldState extends State<AppzInputField> {
     if (_isEffectivelyDisabled) return;
     widget.onChanged?.call(_internalController.text);
     _updateFilledState();
-    if (widget.fieldType != AppzFieldType.defaultType) { // DefaultType has TextFormField which handles this
-        //_performValidation(_internalController.text);
-    }
   }
 
   void _updateFilledState() {
     if (_isEffectivelyDisabled || _isFocused || _hasError) {
-      if (!_isFocused && !_hasError && _internalController.text.isEmpty && _currentFieldState == AppzFieldState.filled) {
-        _updateState(AppzFieldState.defaultState);
-      }
       return;
     }
     final bool hasText = _internalController.text.isNotEmpty;
@@ -202,7 +195,6 @@ class _AppzInputFieldState extends State<AppzInputField> {
     String? validationError;
 
     if (widget.fieldType == AppzFieldType.mobile || widget.fieldType == AppzFieldType.mpin || widget.fieldType == AppzFieldType.aadhaar) {
-      // Do not validate here for custom field types. Let them handle it internally.
       return null;
     }
 
@@ -264,20 +256,12 @@ class _AppzInputFieldState extends State<AppzInputField> {
   @override
   Widget build(BuildContext context) {
     if (!AppzStyleConfig.instance.isInitialized) {
-      return const Center(child: Text("Styles loading or failed..."));
+      return const Center(child: CircularProgressIndicator());
     }
-    AppzFieldState stateForDeterminingStyle = _currentFieldState;
-    if (_isEffectivelyDisabled) {
-        stateForDeterminingStyle = AppzFieldState.disabled;
-    } else if (_hasError) { // _hasError checks _currentFieldState == AppzFieldState.error
-        stateForDeterminingStyle = AppzFieldState.error;
-    } else if (_isFocused) {
-        stateForDeterminingStyle = AppzFieldState.focused;
-    }
-    final AppzStateStyle style = AppzStyleConfig.instance.getStyleForState(stateForDeterminingStyle, isFilled: _isFilled);
-    final InputDecoration baseFieldDecoration = _createBaseInputDecoration(style); // Used by defaultType
+    final AppzStateStyle style = AppzStyleConfig.instance.getStyleForState(_currentFieldState, isFilled: _isFilled);
+    final InputDecoration baseFieldDecoration = _createBaseInputDecoration(style);
 
-    Widget fieldWidget; // This must be assigned in all paths
+    Widget fieldWidget;
 
     switch (widget.fieldType) {
       case AppzFieldType.defaultType:
@@ -298,7 +282,7 @@ class _AppzInputFieldState extends State<AppzInputField> {
         break;
       case AppzFieldType.mobile:
         fieldWidget = MobileInputWidget(
-          key: widget.key ?? ValueKey('mobile_${widget.label}'), // Stabilized key
+          key: widget.key ?? ValueKey('mobile_${widget.label}'),
           currentStyle: style,
           mainController: _internalController,
           mainFocusNode: _internalFocusNode,
@@ -306,32 +290,32 @@ class _AppzInputFieldState extends State<AppzInputField> {
           hintText: widget.hintText,
           countryCode: widget.mobileCountryCode,
           countryCodeEditable: widget.mobileCountryCodeEditable,
-          validator: widget.validator, // User's validator expects 10-digit number part
+          validator: widget.validator,
           validationType: widget.validationType,
         );
         break;
       case AppzFieldType.aadhaar:
         fieldWidget = AadhaarInputWidget(
-          key: widget.key ?? ValueKey('aadhaar_${widget.label}'), // Stabilized key
+          key: widget.key ?? ValueKey('aadhaar_${widget.label}'),
           currentStyle: style,
           mainController: _internalController,
           mainFocusNode: _internalFocusNode,
           isEnabled: !_isEffectivelyDisabled,
           hintText: widget.hintText,
-          validator: widget.validator, // User's validator, or composed one expects full 12 digits
+          validator: widget.validator,
           validationType: widget.validationType,
         );
         break;
       case AppzFieldType.mpin:
         fieldWidget = MpinInputWidget(
-          key: widget.key ?? ValueKey('mpin_${widget.label}'), // Stabilized key
+          key: widget.key ?? ValueKey('mpin_${widget.label}'),
           currentStyle: style,
           mainController: _internalController,
-        mainFocusNode: _internalFocusNode, // Pass the main focus node
+          mainFocusNode: _internalFocusNode,
           isEnabled: !_isEffectivelyDisabled,
           obscureText: widget.obscureText,
           mpinLength: widget.mpinLength,
-          validator: widget.validator, // User's validator, or composed one expects full mpin
+          validator: widget.validator,
           validationType: widget.validationType,
         );
         break;
@@ -357,14 +341,14 @@ class _AppzInputFieldState extends State<AppzInputField> {
           labelWidget,
           const SizedBox(height: 6.0),
         ],
-        fieldWidget, // Removed the outer Focus widget wrapper
+        fieldWidget,
         if (_validationErrorMessage != null)
           Padding(
             padding: const EdgeInsets.only(top: 6.0),
             child: Text(
               _validationErrorMessage!,
               style: TextStyle(
-                color: AppzStyleConfig.instance.getStyleForState(AppzFieldState.error, isFilled: _isFilled).textColor,
+                color: AppzStyleConfig.instance.getStyleForState(AppzFieldType.error, isFilled: _isFilled).textColor,
                 fontSize: style.labelFontSize * 0.9,
                 fontFamily: style.fontFamily),
             ),

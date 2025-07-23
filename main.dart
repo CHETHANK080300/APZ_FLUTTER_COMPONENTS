@@ -13,10 +13,9 @@ Future<void> main() async {
   final resolver = UIConfigResolver();
 
   final dropdownConfig = await resolver.loadJson('assets/json/dropdown_ui_config.json');
-  final inputConfig = await resolver.loadJson('assets/json/input_ui_config.json');
 
   await DropdownStyleConfig.instance.loadFromResolved(dropdownConfig);
-  await AppzStyleConfig.instance.loadFromResolved(inputConfig);
+  await AppzStyleConfig.instance.load();
   await ProgressBarStyleConfig.instance.load();
   await ButtonStyleConfig.instance.load();
 

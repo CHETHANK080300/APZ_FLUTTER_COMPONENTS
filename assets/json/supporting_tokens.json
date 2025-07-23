@@ -29,5 +29,12 @@
   "progressBar": {
     "height": 8.0,
     "borderRadius": 8.0
+  },
+  "inputField": {
+    "borderRadius": 8.0,
+    "padding": {
+      "horizontal": 16.0,
+      "vertical": 12.0
+    }
   }
 }
