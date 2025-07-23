@@ -61,17 +61,17 @@ class _ApzComponentsDemoPageState extends State<ApzComponentsDemoPage> {
 
   Future<void> _loadConfigs() async {
     try {
-      /*final resolver = await UIConfigResolver.loadMaster('assets/json/master_theme.json');
+      final resolver = await UIConfigResolver.loadMaster('assets/json/master_theme.json');
       final dropdownConfig = await resolver.loadAndResolve('assets/json/dropdown_ui_config.json');
       final inputConfig = await resolver.loadAndResolve('assets/json/input_ui_config.json');
       final progressBarConfig = await resolver.loadAndResolve('assets/json/progress_bar_ui_config.json');
       final buttonConfig = await resolver.loadAndResolve('assets/json/button_ui_config.json');
       final categoryConfig = await resolver.loadAndResolve('assets/json/category_ui_config.json');
-      await DropdownStyleConfig.instance.loadFromResolved(dropdownConfig);*/
-      //await AppzStyleConfig.instance.loadFromResolved(inputConfig);
-      //await ProgressBarStyleConfig.instance.loadFromResolved(progressBarConfig);
-      //await ButtonStyleConfig.instance.loadFromResolved(buttonConfig);
-      //await AppzCategoryStyleConfig.instance.loadFromResolved(categoryConfig);
+      await DropdownStyleConfig.instance.loadFromResolved(dropdownConfig);
+      await AppzStyleConfig.instance.loadFromResolved(inputConfig);
+      await ProgressBarStyleConfig.instance.loadFromResolved(progressBarConfig);
+      await ButtonStyleConfig.instance.loadFromResolved(buttonConfig);
+      await AppzCategoryStyleConfig.instance.loadFromResolved(categoryConfig);
       setState(() => _loading = false);
     } catch (e) {
       setState(() {
