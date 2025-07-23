@@ -1,4 +1,5 @@
 
+import 'package:apz_flutter_components/common/token_parser.dart';
 import 'package:flutter/material.dart';
 
 class DropdownStyleConfig {
@@ -13,14 +14,17 @@ class DropdownStyleConfig {
   late HoverStateStyle hover;
   late HoverStateStyle selected;
 
-  Future<void> loadFromResolved(Map<String, dynamic> json) async {
-    defaultStyle = DropdownStateStyle.fromJson(json['default']);
-    focused = DropdownStateStyle.fromJson(json['focused']);
-    error = DropdownStateStyle.fromJson(json['error']);
-    disabled = DropdownStateStyle.fromJson(json['disabled']);
-    filled = DropdownStateStyle.fromJson(json['filled']);
-    hover = HoverStateStyle.fromJson(json['hover']);
-    selected = HoverStateStyle.fromJson(json['selected']);
+  Future<void> load() async {
+    final tokenParser = TokenParser();
+    await tokenParser.loadTokens();
+
+    defaultStyle = DropdownStateStyle.fromTokens(tokenParser, 'default');
+    focused = DropdownStateStyle.fromTokens(tokenParser, 'focused');
+    error = DropdownStateStyle.fromTokens(tokenParser, 'error');
+    disabled = DropdownStateStyle.fromTokens(tokenParser, 'disabled');
+    filled = DropdownStateStyle.fromTokens(tokenParser, 'filled');
+    hover = HoverStateStyle.fromTokens(tokenParser, 'hover');
+    selected = HoverStateStyle.fromTokens(tokenParser, 'selected');
   }
 }
 
@@ -55,21 +59,21 @@ class DropdownStateStyle {
     this.elevation,
   });
 
-  factory DropdownStateStyle.fromJson(Map<String, dynamic> json) {
+  factory DropdownStateStyle.fromTokens(TokenParser parser, String state) {
     return DropdownStateStyle(
-      borderColor: _parseColor(json['borderColor'] ?? '#D9D9D9'),
-      borderWidth: (json['borderWidth'] ?? 1.0).toDouble(),
-      borderRadius: (json['borderRadius'] ?? 10).toDouble(),
-      backgroundColor: _parseOptionalColor(json['backgroundColor']),
-      textColor: _parseOptionalColor(json['textColor']),
-      labelColor: _parseOptionalColor(json['labelColor']),
-      fontFamily: json['fontFamily'] ?? 'Inter',
-      fontSize: (json['fontSize'] ?? 14).toDouble(),
-      labelFontSize: (json['labelFontSize'] ?? 12).toDouble(),
-      paddingHorizontal: (json['paddingHorizontal'] ?? 12).toDouble(),
-      paddingVertical: (json['paddingVertical'] ?? 10).toDouble(),
-      dropdownMaxHeight: (json['dropdownMaxHeight'] ?? 220).toDouble(),
-      elevation: (json['elevation'] ?? 4).toDouble(),
+      borderColor: _parseColor(parser.getValue<String>(['Form Fields', 'Dropdown', 'Outline ${state.replaceFirst(state[0], state[0].toUpperCase())}']) ?? parser.getValue<String>(['Form Fields', 'Dropdown', 'Outline default']) ?? '#D9D9D9'),
+      borderWidth: 1.0,
+      borderRadius: parser.getValue<double>(['dropdown', 'borderRadius'], isSupportingToken: true) ?? 10.0,
+      backgroundColor: _parseOptionalColor(parser.getValue<String>(['Form Fields', 'Dropdown', state.replaceFirst(state[0], state[0].toUpperCase())]) ?? parser.getValue<String>(['Form Fields', 'Dropdown', 'Default'])),
+      textColor: _parseOptionalColor(parser.getValue<String>(['Text colour', 'Input', 'Default'])),
+      labelColor: _parseOptionalColor(parser.getValue<String>(['Text colour', 'Label & Help', 'Default'])),
+      fontFamily: 'Outfit',
+      fontSize: 14.0,
+      labelFontSize: parser.getValue<double>(['dropdown', 'labelFontSize'], isSupportingToken: true) ?? 12.0,
+      paddingHorizontal: parser.getValue<double>(['dropdown', 'padding', 'horizontal'], isSupportingToken: true) ?? 12.0,
+      paddingVertical: parser.getValue<double>(['dropdown', 'padding', 'vertical'], isSupportingToken: true) ?? 10.0,
+      dropdownMaxHeight: parser.getValue<double>(['dropdown', 'dropdownMaxHeight'], isSupportingToken: true) ?? 220.0,
+      elevation: parser.getValue<double>(['dropdown', 'elevation'], isSupportingToken: true) ?? 4.0,
     );
   }
 }
@@ -83,10 +87,16 @@ class HoverStateStyle {
     this.textColor,
   });
 
-  factory HoverStateStyle.fromJson(Map<String, dynamic> json) {
+  factory HoverStateStyle.fromTokens(TokenParser parser, String state) {
+    if (state == 'selected') {
+      return HoverStateStyle(
+        itemBackgroundColor: _parseOptionalColor(parser.getValue<String>(['dropdown', 'selectedItemColor'], isSupportingToken: true)),
+        textColor: _parseOptionalColor(parser.getValue<String>(['dropdown', 'selectedTextColor'], isSupportingToken: true)),
+      );
+    }
     return HoverStateStyle(
-      itemBackgroundColor: _parseOptionalColor(json['itemBackgroundColor']),
-      textColor: _parseOptionalColor(json['textColor']),
+      itemBackgroundColor: _parseOptionalColor(parser.getValue<String>(['Form Fields', 'Dropdown', state.replaceFirst(state[0], state[0].toUpperCase())])),
+      textColor: _parseOptionalColor(parser.getValue<String>(['Text colour', 'Input', 'Default'])),
     );
   }
 }
