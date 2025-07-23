@@ -14,6 +14,8 @@ class AppzStateStyle {
   final double paddingVertical;
   final double height;
   final double gap;
+  final double labelFontSize;
+  final String fontFamily;
 
   const AppzStateStyle({
     required this.borderColor,
@@ -27,6 +29,8 @@ class AppzStateStyle {
     required this.paddingVertical,
     required this.height,
     required this.gap,
+    required this.labelFontSize,
+    required this.fontFamily,
   });
 }
 
@@ -57,6 +61,8 @@ class AppzStyleConfig {
     // Capitalize first letter
     stateName = stateName[0].toUpperCase() + stateName.substring(1);
 
+    final labelTextStyle = _getTextStyle('Label & Helper Text/Regular');
+
     return AppzStateStyle(
       borderColor: _getColor('Form Fields/Input/Outline $stateName') ?? _getColor('Form Fields/Input/Outline default') ?? Colors.grey,
       borderWidth: 1.0,
@@ -64,11 +70,13 @@ class AppzStyleConfig {
       backgroundColor: _getColor('Form Fields/Input/$stateName') ?? _getColor('Form Fields/Input/Default') ?? Colors.white,
       textColor: _getColor('Text colour/Input/Active') ?? Colors.black,
       labelColor: _getColor('Text colour/Label & Help/Default') ?? Colors.grey,
-      labelTextStyle: _getTextStyle('Label & Helper Text/Regular'),
+      labelTextStyle: labelTextStyle,
       paddingHorizontal: _tokenParser.getValue<double>(['inputField', 'padding', 'horizontal'], fromSupportingTokens: true) ?? 16.0,
       paddingVertical: _tokenParser.getValue<double>(['inputField', 'padding', 'vertical'], fromSupportingTokens: true) ?? 12.0,
       height: _tokenParser.getValue<double>(['inputField', 'height'], fromSupportingTokens: true) ?? 44.0,
       gap: _tokenParser.getValue<double>(['inputField', 'gap'], fromSupportingTokens: true) ?? 8.0,
+      labelFontSize: labelTextStyle.fontSize ?? 12.0,
+      fontFamily: labelTextStyle.fontFamily ?? 'Outfit',
     );
   }
 
