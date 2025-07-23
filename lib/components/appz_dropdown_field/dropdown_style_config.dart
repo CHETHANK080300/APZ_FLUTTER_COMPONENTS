@@ -60,18 +60,49 @@ class DropdownStateStyle {
   });
 
   factory DropdownStateStyle.fromTokens(TokenParser parser, String state) {
+    String backgroundColor;
+    String borderColor;
+    String textColor;
+
+    switch (state) {
+      case 'focused':
+        backgroundColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Default']) ?? '#FFFFFF';
+        borderColor = parser.getValue<String>(['Form Fields', 'Input', 'Outline default']) ?? '#D9D9D9';
+        textColor = parser.getValue<String>(['Text colour', 'Input', 'Active']) ?? '#000000';
+        break;
+      case 'filled':
+        backgroundColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Filled']) ?? '#FFFFFF';
+        borderColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Outline default']) ?? '#D9D9D9';
+        textColor = parser.getValue<String>(['Text colour', 'Input', 'Active']) ?? '#000000';
+        break;
+      case 'disabled':
+        backgroundColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Disabled']) ?? '#EEEEEE';
+        borderColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Outline disabled']) ?? '#E0E0E0';
+        textColor = parser.getValue<String>(['Text colour', 'Input', 'Disabled']) ?? '#000000';
+        break;
+      case 'error':
+        backgroundColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Disabled']) ?? '#FEECEC';
+        borderColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Outline error']) ?? '#D80000';
+        textColor = parser.getValue<String>(['Text colour', 'Input', 'Disabled']) ?? '#000000';
+        break;
+      default:
+        backgroundColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Default']) ?? '#FFFFFF';
+        borderColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Outline default']) ?? '#D9D9D9';
+        textColor = parser.getValue<String>(['Text colour', 'Input', 'Default']) ?? '#000000';
+    }
+
     return DropdownStateStyle(
-      borderColor: _parseColor(parser.getValue<String>(['Form Fields', 'Dropdown', 'Outline ${state.replaceFirst(state[0], state[0].toUpperCase())}']) ?? parser.getValue<String>(['Form Fields', 'Dropdown', 'Outline default']) ?? '#D9D9D9'),
+      borderColor: _parseColor(borderColor),
       borderWidth: 1.0,
-      borderRadius: parser.getValue<double>(['dropdown', 'borderRadius'], isSupportingToken: true) ?? 10.0,
-      backgroundColor: _parseColor(parser.getValue<String>(['Form Fields', 'Dropdown', state.replaceFirst(state[0], state[0].toUpperCase())]) ?? parser.getValue<String>(['Form Fields', 'Dropdown', 'Default']) ?? '#FFFFFF'),
-      textColor: _parseColor(parser.getValue<String>(['Text colour', 'Input', 'Default']) ?? '#000000'),
+      borderRadius: parser.getValue<double>(['dropdown', 'borderRadius'], isSupportingToken: true) ?? 12.0,
+      backgroundColor: _parseColor(backgroundColor),
+      textColor: _parseColor(textColor),
       labelColor: _parseColor(parser.getValue<String>(['Text colour', 'Label & Help', 'Default']) ?? '#000000'),
       fontFamily: 'Outfit',
       fontSize: 14.0,
       labelFontSize: parser.getValue<double>(['dropdown', 'labelFontSize'], isSupportingToken: true) ?? 12.0,
-      paddingHorizontal: parser.getValue<double>(['dropdown', 'padding', 'horizontal'], isSupportingToken: true) ?? 12.0,
-      paddingVertical: parser.getValue<double>(['dropdown', 'padding', 'vertical'], isSupportingToken: true) ?? 10.0,
+      paddingHorizontal: parser.getValue<double>(['dropdown', 'padding', 'horizontal'], isSupportingToken: true) ?? 16.0,
+      paddingVertical: parser.getValue<double>(['dropdown', 'padding', 'vertical'], isSupportingToken: true) ?? 12.0,
       dropdownMaxHeight: parser.getValue<double>(['dropdown', 'dropdownMaxHeight'], isSupportingToken: true) ?? 220.0,
       elevation: parser.getValue<double>(['dropdown', 'elevation'], isSupportingToken: true) ?? 4.0,
     );
