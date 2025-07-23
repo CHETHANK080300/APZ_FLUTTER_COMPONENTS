@@ -69,7 +69,7 @@ class _AppzDropdownFieldState extends State<AppzDropdownField> {
             CompositedTransformFollower(
               link: _layerLink,
               showWhenUnlinked: false,
-              offset: Offset(0, size.height + 1),
+              offset: Offset(0, size.height + (DropdownStyleConfig.instance.defaultStyle.paddingVertical ?? 8) / 2),
               child: SizedBox(
                 width: size.width,
                 child: Material(
@@ -241,7 +241,7 @@ class _AppzDropdownFieldState extends State<AppzDropdownField> {
 
     final content = <Widget>[
       label,
-      SizedBox(height: DropdownStyleConfig.instance.defaultStyle.paddingVertical != null ? DropdownStyleConfig.instance.defaultStyle.paddingVertical! / 2 : 4),
+      SizedBox(height: DropdownStyleConfig.instance.defaultStyle.gap ?? 8),
       dropdownField,
     ];
 
@@ -253,7 +253,7 @@ class _AppzDropdownFieldState extends State<AppzDropdownField> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 label,
-                SizedBox(width: DropdownStyleConfig.instance.defaultStyle.paddingHorizontal != null ? DropdownStyleConfig.instance.defaultStyle.paddingHorizontal! / 2 : 8),
+                SizedBox(width: DropdownStyleConfig.instance.defaultStyle.gap ?? 8),
                 Expanded(child: dropdownField),
               ],
             ),
@@ -261,7 +261,6 @@ class _AppzDropdownFieldState extends State<AppzDropdownField> {
   }
 
   Color _getBackgroundColor(bool showError) {
-    if (showError) return DropdownStyleConfig.instance.error.backgroundColor;
     if (!widget.enabled) return DropdownStyleConfig.instance.disabled.backgroundColor;
     if (_isOpen) return DropdownStyleConfig.instance.focused.backgroundColor;
     if (_selectedItem != null && widget.showFilledStyle) {

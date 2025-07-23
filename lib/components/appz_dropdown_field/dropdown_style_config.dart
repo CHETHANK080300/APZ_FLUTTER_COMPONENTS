@@ -42,6 +42,7 @@ class DropdownStateStyle {
   final double? paddingVertical;
   final double? dropdownMaxHeight;
   final double? elevation;
+  final double? gap;
 
   DropdownStateStyle({
     required this.borderColor,
@@ -57,6 +58,7 @@ class DropdownStateStyle {
     this.paddingVertical,
     this.dropdownMaxHeight,
     this.elevation,
+    this.gap,
   });
 
   factory DropdownStateStyle.fromTokens(TokenParser parser, String state) {
@@ -94,17 +96,18 @@ class DropdownStateStyle {
     return DropdownStateStyle(
       borderColor: _parseColor(borderColor),
       borderWidth: 1.0,
-      borderRadius: parser.getValue<double>(['dropdown', 'borderRadius'], isSupportingToken: true) ?? 12.0,
+      borderRadius: parser.getValue<double>(['dropdown', 'borderRadius'], fromSupportingTokens: true) ?? 12.0,
       backgroundColor: _parseColor(backgroundColor),
       textColor: _parseColor(textColor),
       labelColor: _parseColor(parser.getValue<String>(['Text colour', 'Label & Help', 'Default']) ?? '#000000'),
       fontFamily: 'Outfit',
       fontSize: 14.0,
-      labelFontSize: parser.getValue<double>(['dropdown', 'labelFontSize'], isSupportingToken: true) ?? 12.0,
-      paddingHorizontal: parser.getValue<double>(['dropdown', 'padding', 'horizontal'], isSupportingToken: true) ?? 16.0,
-      paddingVertical: parser.getValue<double>(['dropdown', 'padding', 'vertical'], isSupportingToken: true) ?? 12.0,
-      dropdownMaxHeight: parser.getValue<double>(['dropdown', 'dropdownMaxHeight'], isSupportingToken: true) ?? 220.0,
-      elevation: parser.getValue<double>(['dropdown', 'elevation'], isSupportingToken: true) ?? 4.0,
+      labelFontSize: parser.getValue<double>(['dropdown', 'labelFontSize'], fromSupportingTokens: true) ?? 12.0,
+      paddingHorizontal: parser.getValue<double>(['dropdown', 'padding', 'horizontal'], fromSupportingTokens: true) ?? 16.0,
+      paddingVertical: parser.getValue<double>(['dropdown', 'padding', 'vertical'], fromSupportingTokens: true) ?? 12.0,
+      dropdownMaxHeight: parser.getValue<double>(['dropdown', 'dropdownMaxHeight'], fromSupportingTokens: true) ?? 220.0,
+      elevation: parser.getValue<double>(['dropdown', 'elevation'], fromSupportingTokens: true) ?? 4.0,
+      gap: parser.getValue<double>(['dropdown', 'gap'], fromSupportingTokens: true) ?? 8.0,
     );
   }
 }
@@ -121,8 +124,8 @@ class HoverStateStyle {
   factory HoverStateStyle.fromTokens(TokenParser parser, String state) {
     if (state == 'selected') {
       return HoverStateStyle(
-        itemBackgroundColor: _parseColor(parser.getValue<String>(['dropdown', 'selectedItemColor'], isSupportingToken: true) ?? '#0047AB'),
-        textColor: _parseColor(parser.getValue<String>(['dropdown', 'selectedTextColor'], isSupportingToken: true) ?? '#FFFFFF'),
+        itemBackgroundColor: _parseColor(parser.getValue<String>(['dropdown', 'selectedItemColor'], fromSupportingTokens: true) ?? '#0047AB'),
+        textColor: _parseColor(parser.getValue<String>(['dropdown', 'selectedTextColor'], fromSupportingTokens: true) ?? '#FFFFFF'),
       );
     }
     return HoverStateStyle(
