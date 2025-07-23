@@ -68,29 +68,29 @@ class DropdownStateStyle {
 
     switch (state) {
       case 'focused':
-        backgroundColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Default']) ?? '#FFFFFF';
-        borderColor = parser.getValue<String>(['Form Fields', 'Input', 'Outline default']) ?? '#D9D9D9';
-        textColor = parser.getValue<String>(['Text colour', 'Input', 'Active']) ?? '#000000';
+        backgroundColor = parser.getValue<Map<String, dynamic>>(['Form Fields', 'Dropdown', 'Default'])?['value'] ?? '#FFFFFF';
+        borderColor = parser.getValue<Map<String, dynamic>>(['Form Fields', 'Input', 'Outline default'])?['value'] ?? '#D9D9D9';
+        textColor = parser.getValue<Map<String, dynamic>>(['Text colour', 'Input', 'Active'])?['value'] ?? '#000000';
         break;
       case 'filled':
-        backgroundColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Filled']) ?? '#FFFFFF';
-        borderColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Outline default']) ?? '#D9D9D9';
-        textColor = parser.getValue<String>(['Text colour', 'Input', 'Active']) ?? '#000000';
+        backgroundColor = parser.getValue<Map<String, dynamic>>(['Form Fields', 'Dropdown', 'Filled'])?['value'] ?? '#FFFFFF';
+        borderColor = parser.getValue<Map<String, dynamic>>(['Form Fields', 'Dropdown', 'Outline default'])?['value'] ?? '#D9D9D9';
+        textColor = parser.getValue<Map<String, dynamic>>(['Text colour', 'Input', 'Active'])?['value'] ?? '#000000';
         break;
       case 'disabled':
-        backgroundColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Disabled']) ?? '#EEEEEE';
-        borderColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Outline disabled']) ?? '#E0E0E0';
-        textColor = parser.getValue<String>(['Text colour', 'Input', 'Disabled']) ?? '#000000';
+        backgroundColor = parser.getValue<Map<String, dynamic>>(['Form Fields', 'Dropdown', 'Disabled'])?['value'] ?? '#EEEEEE';
+        borderColor = parser.getValue<Map<String, dynamic>>(['Form Fields', 'Dropdown', 'Outline disabled'])?['value'] ?? '#E0E0E0';
+        textColor = parser.getValue<Map<String, dynamic>>(['Text colour', 'Input', 'Disabled'])?['value'] ?? '#000000';
         break;
       case 'error':
-        backgroundColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Disabled']) ?? '#FEECEC';
-        borderColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Outline error']) ?? '#D80000';
-        textColor = parser.getValue<String>(['Text colour', 'Input', 'Disabled']) ?? '#000000';
+        backgroundColor = parser.getValue<Map<String, dynamic>>(['Form Fields', 'Dropdown', 'Disabled'])?['value'] ?? '#FEECEC';
+        borderColor = parser.getValue<Map<String, dynamic>>(['Form Fields', 'Dropdown', 'Outline error'])?['value'] ?? '#D80000';
+        textColor = parser.getValue<Map<String, dynamic>>(['Text colour', 'Input', 'Disabled'])?['value'] ?? '#000000';
         break;
       default:
-        backgroundColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Default']) ?? '#FFFFFF';
-        borderColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Outline default']) ?? '#D9D9D9';
-        textColor = parser.getValue<String>(['Text colour', 'Input', 'Default']) ?? '#000000';
+        backgroundColor = parser.getValue<Map<String, dynamic>>(['Form Fields', 'Dropdown', 'Default'])?['value'] ?? '#FFFFFF';
+        borderColor = parser.getValue<Map<String, dynamic>>(['Form Fields', 'Dropdown', 'Outline default'])?['value'] ?? '#D9D9D9';
+        textColor = parser.getValue<Map<String, dynamic>>(['Text colour', 'Input', 'Default'])?['value'] ?? '#000000';
     }
 
     return DropdownStateStyle(
