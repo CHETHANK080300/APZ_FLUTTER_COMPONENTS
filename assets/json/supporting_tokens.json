@@ -1,33 +1,103 @@
 {
   "button": {
     "small": {
-      "height": 36.0,
+      "height": 36,
       "padding": {
-        "horizontal": 16.0,
-        "vertical": 8.0
+        "horizontal": 16,
+        "vertical": 8
       },
-      "gap": 8.0
+      "gap": 8
     },
     "medium": {
-      "height": 40.0,
+      "height": 40,
       "padding": {
-        "horizontal": 16.0,
-        "vertical": 8.0
+        "horizontal": 16,
+        "vertical": 8
       },
-      "gap": 8.0
+      "gap": 8
     },
     "large": {
-      "height": 44.0,
+      "height": 44,
       "padding": {
-        "horizontal": 16.0,
-        "vertical": 8.0
+        "horizontal": 16,
+        "vertical": 8
       },
-      "gap": 12.0
+      "gap": 12
     },
-    "borderRadius": 64.0
+    "borderRadius": 64
   },
   "progressBar": {
-    "height": 8.0,
-    "borderRadius": 8.0
+    "height": 8,
+    "borderRadius": 8
+  },
+  "inputField": {
+    "borderRadius": 8,
+    "padding": {
+      "horizontal": 16,
+      "vertical": 12
+    }
+  },
+  "dropdown": {
+    "borderRadius": 12,
+    "height": 44,
+    "padding": {
+      "horizontal": 16,
+      "vertical": 12
+    },
+    "gap": 8,
+    "labelFontSize": 12,
+    "dropdownMaxHeight": 220,
+    "elevation": 4,
+    "selectedItemColor": "#0047AB",
+    "selectedTextColor": "#FFFFFF"
+  },
+  "searchBar": {
+    "enabled_small": {
+      "height": 40,
+      "borderRadius": 12,
+      "iconSize": 20,
+      "paddingHorizontal": 16
+    },
+    "enabled_large": {
+      "height": 44,
+      "borderRadius": 16,
+      "iconSize": 20,
+      "paddingHorizontal": 16
+    },
+    "hovered_small": {
+      "height": 40,
+      "borderRadius": 12,
+      "iconSize": 20,
+      "paddingHorizontal": 16
+    },
+    "hovered_large": {
+      "height": 44,
+      "borderRadius": 16,
+      "iconSize": 20,
+      "paddingHorizontal": 16
+    },
+    "icons": {
+      "search": "assets/icons/search.svg",
+      "microphone": "assets/icons/microphone-2.svg"
+    }
+  },
+   "category": {
+    "default": {
+      "cardHeight": 86.0,
+      "borderRadius": 16.0,
+      "padding": 12.0,
+      "spacing": 8.0,
+      "elevation": 2,
+      "iconSize": 32.0,
+      "itemWidth": 100.0,
+      "boxShadowHorizontal": [
+        {
+          "color": "#1F000000",
+          "blurRadius": 2
+        }
+      ],
+      "boxShadowVertical": []
+    }
   }
+ 
 }

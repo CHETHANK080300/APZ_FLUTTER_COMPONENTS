@@ -179,7 +179,7 @@ class _AadhaarInputWidgetState extends State<AadhaarInputWidget> {
             style: TextStyle(
               color: widget.isEnabled ? widget.currentStyle.textColor : widget.currentStyle.textColor.withOpacity(0.5),
               fontFamily: widget.currentStyle.fontFamily,
-              fontSize: widget.currentStyle.fontSize,
+              fontSize: widget.currentStyle.labelFontSize,
               fontWeight: FontWeight.bold,
             ),
             decoration: InputDecoration(

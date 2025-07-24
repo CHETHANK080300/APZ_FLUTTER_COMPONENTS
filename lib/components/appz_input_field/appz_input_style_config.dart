@@ -1,12 +1,6 @@
+import 'package:apz_flutter_components/common/token_parser.dart';
 import 'package:flutter/material.dart';
 import 'appz_input_field_enums.dart';
-
-Color _parseColor(String? hexColor, Color defaultColor) {
-  if (hexColor == null || hexColor.isEmpty) return defaultColor;
-  hexColor = hexColor.toUpperCase().replaceAll("#", "");
-  if (hexColor.length == 6) hexColor = "FF$hexColor";
-  return Color(int.parse(hexColor, radix: 16));
-}
 
 class AppzStateStyle {
   final Color borderColor;
@@ -15,11 +9,13 @@ class AppzStateStyle {
   final Color backgroundColor;
   final Color textColor;
   final Color labelColor;
-  final String fontFamily;
-  final double fontSize;
-  final double labelFontSize;
+  final TextStyle labelTextStyle;
   final double paddingHorizontal;
   final double paddingVertical;
+  final double height;
+  final double gap;
+  final double labelFontSize;
+  final String fontFamily;
 
   const AppzStateStyle({
     required this.borderColor,
@@ -28,28 +24,14 @@ class AppzStateStyle {
     required this.backgroundColor,
     required this.textColor,
     required this.labelColor,
-    required this.fontFamily,
-    required this.fontSize,
-    required this.labelFontSize,
+    required this.labelTextStyle,
     required this.paddingHorizontal,
     required this.paddingVertical,
+    required this.height,
+    required this.gap,
+    required this.labelFontSize,
+    required this.fontFamily,
   });
-
-  factory AppzStateStyle.fromJson(Map<String, dynamic> json, AppzStateStyle base) {
-    return AppzStateStyle(
-      borderColor: _parseColor(json['borderColor'], base.borderColor),
-      borderWidth: (json['borderWidth'] ?? base.borderWidth).toDouble(),
-      borderRadius: (json['borderRadius'] ?? base.borderRadius).toDouble(),
-      backgroundColor: _parseColor(json['backgroundColor'], base.backgroundColor),
-      textColor: _parseColor(json['textColor'], base.textColor),
-      labelColor: _parseColor(json['labelColor'], base.labelColor),
-      fontFamily: json['fontFamily'] ?? base.fontFamily,
-      fontSize: (json['fontSize'] ?? base.fontSize).toDouble(),
-      labelFontSize: (json['labelFontSize'] ?? base.labelFontSize).toDouble(),
-      paddingHorizontal: (json['paddingHorizontal'] ?? base.paddingHorizontal).toDouble(),
-      paddingVertical: (json['paddingVertical'] ?? base.paddingVertical).toDouble(),
-    );
-  }
 }
 
 class AppzStyleConfig {
@@ -57,66 +39,121 @@ class AppzStyleConfig {
   static final AppzStyleConfig _instance = AppzStyleConfig._privateConstructor();
   static AppzStyleConfig get instance => _instance;
 
+  final TokenParser _tokenParser = TokenParser();
   bool _isInitialized = false;
   bool get isInitialized => _isInitialized;
 
-  late AppzStateStyle _defaultStyle;
-  Map<String, Map<String, dynamic>> _rawJsonStyles = {};
-
-  static final AppzStateStyle _fallbackDefaultStyle = AppzStateStyle(
-    borderColor: _parseColor("#D9D9D9", Colors.grey),
-    borderWidth: 1.0,
-    borderRadius: 10.0,
-    backgroundColor: _parseColor("#F6F6F6", Colors.grey),
-    textColor: _parseColor("#000000", Colors.black),
-    labelColor: _parseColor("#333333", Colors.black87),
-    fontFamily: "Inter",
-    fontSize: 14.0,
-    labelFontSize: 12.0,
-    paddingHorizontal: 12.0,
-    paddingVertical: 10.0,
-  );
-
-  Future<void> loadFromResolved(Map<String, dynamic> json) async {
-    _rawJsonStyles = Map<String, Map<String, dynamic>>.from(json);
-    final defaultJson = _rawJsonStyles['default'];
-    _defaultStyle = defaultJson != null
-        ? AppzStateStyle.fromJson(defaultJson, _fallbackDefaultStyle)
-        : _fallbackDefaultStyle;
+  Future<void> load() async {
+    await _tokenParser.loadTokens();
     _isInitialized = true;
   }
 
-  AppzStateStyle _getRawStyleForStateName(String stateName) {
-    final stateJson = _rawJsonStyles[stateName];
-    return stateJson != null ? AppzStateStyle.fromJson(stateJson, _defaultStyle) : _defaultStyle;
+  AppzStateStyle getStyleForState(AppzFieldState state, {bool isFilled = false}) {
+    if (!_isInitialized) {
+      throw Exception("AppzStyleConfig not initialized. Call load() first.");
+    }
+
+    String stateName = state.toString().split('.').last;
+    if (isFilled) {
+      stateName = 'filled';
+    }
+
+    // Capitalize first letter
+    stateName = stateName[0].toUpperCase() + stateName.substring(1);
+
+    final labelTextStyle = _getTextStyle('Label & Helper Text/Regular');
+
+    return AppzStateStyle(
+      borderColor: _getColor('Form Fields/Input/Outline $stateName') ?? _getColor('Form Fields/Input/Outline default') ?? Colors.grey,
+      borderWidth: 1.0,
+      borderRadius: _tokenParser.getValue<double>(['inputField', 'borderRadius'], fromSupportingTokens: true) ?? 12.0,
+      backgroundColor: _getColor('Form Fields/Input/$stateName') ?? _getColor('Form Fields/Input/Default') ?? Colors.white,
+      textColor: _getColor('Text colour/Input/Active') ?? Colors.black,
+      labelColor: _getColor('Text colour/Label & Help/Default') ?? Colors.grey,
+      labelTextStyle: labelTextStyle,
+      paddingHorizontal: _tokenParser.getValue<double>(['inputField', 'padding', 'horizontal'], fromSupportingTokens: true) ?? 16.0,
+      paddingVertical: _tokenParser.getValue<double>(['inputField', 'padding', 'vertical'], fromSupportingTokens: true) ?? 12.0,
+      height: _tokenParser.getValue<double>(['inputField', 'height'], fromSupportingTokens: true) ?? 44.0,
+      gap: _tokenParser.getValue<double>(['inputField', 'gap'], fromSupportingTokens: true) ?? 8.0,
+      labelFontSize: labelTextStyle.fontSize ?? 12.0,
+      fontFamily: labelTextStyle.fontFamily ?? 'Outfit',
+    );
   }
 
-  AppzStateStyle getStyleForState(AppzFieldState state, {bool isFilled = false}) {
-    if (!_isInitialized) return _fallbackDefaultStyle;
-    AppzStateStyle currentStyle;
-    switch (state) {
-      case AppzFieldState.focused:
-        currentStyle = _getRawStyleForStateName('focused');
-        break;
-      case AppzFieldState.error:
-        currentStyle = _getRawStyleForStateName('error');
-        break;
-      case AppzFieldState.disabled:
-        currentStyle = _getRawStyleForStateName('disabled');
-        break;
-      case AppzFieldState.filled:
-        currentStyle = _getRawStyleForStateName('filled');
-        break;
-      case AppzFieldState.defaultState:
-        currentStyle = _defaultStyle;
-        break;
+  Color? _getColor(String tokenName) {
+    final collections = _tokenParser.getValue<List<dynamic>>(['collections']);
+    if (collections == null) return null;
+
+    final tokenCollection = collections.firstWhere((c) => c['name'] == 'Tokens', orElse: () => null);
+    if (tokenCollection == null) return null;
+
+    final variables = tokenCollection['modes'][0]['variables'] as List<dynamic>;
+    final token = variables.firstWhere((v) => v['name'] == tokenName, orElse: () => null);
+
+    if (token == null) return null;
+
+    if (token['isAlias'] == true) {
+      final alias = token['value']['name'];
+      final primitiveCollection = collections.firstWhere((c) => c['name'] == 'Primitive', orElse: () => null);
+      if (primitiveCollection == null) return null;
+
+      final primitiveVariables = primitiveCollection['modes'][0]['variables'] as List<dynamic>;
+      final primitiveToken = primitiveVariables.firstWhere((v) => v['name'] == alias, orElse: () => null);
+
+      if (primitiveToken != null) {
+        return _parseColor(primitiveToken['value']);
       }
-    if (isFilled && state != AppzFieldState.filled) {
-      final filledJson = _rawJsonStyles['filled'];
-      if (filledJson != null) {
-        return AppzStateStyle.fromJson(filledJson, currentStyle);
+    } else {
+       final value = token['value'];
+      if (value is String) {
+        return _parseColor(value);
       }
     }
-    return currentStyle;
+
+    return null;
+  }
+
+  TextStyle _getTextStyle(String tokenName) {
+    final collections = _tokenParser.getValue<List<dynamic>>(['collections']);
+    if (collections == null) return TextStyle();
+
+    final typographyCollection = collections.firstWhere((c) => c['name'] == 'Typography', orElse: () => null);
+    if (typographyCollection == null) return TextStyle();
+
+    final variables = typographyCollection['modes'][0]['variables'] as List<dynamic>;
+    final token = variables.firstWhere((v) => v['name'] == tokenName, orElse: () => null);
+
+    if (token != null && token['value'] is Map<String, dynamic>) {
+      final typography = token['value'];
+      return TextStyle(
+        fontFamily: typography['fontFamily'],
+        fontSize: (typography['fontSize'] as num).toDouble(),
+        fontWeight: _getFontWeight(typography['fontWeight']),
+        letterSpacing: (typography['letterSpacing'] as num).toDouble(),
+      );
+    }
+
+    return TextStyle();
+  }
+
+  FontWeight _getFontWeight(String fontWeight) {
+    switch (fontWeight) {
+      case 'Regular':
+        return FontWeight.w400;
+      case 'Medium':
+        return FontWeight.w500;
+      case 'SemiBold':
+        return FontWeight.w600;
+      case 'Bold':
+        return FontWeight.w700;
+      default:
+        return FontWeight.normal;
+    }
+  }
+
+  Color _parseColor(String hex) {
+    hex = hex.replaceFirst('#', '');
+    if (hex.length == 6) hex = 'FF$hex';
+    return Color(int.parse(hex, radix: 16));
   }
 }

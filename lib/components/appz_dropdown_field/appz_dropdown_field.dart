@@ -69,7 +69,7 @@ class _AppzDropdownFieldState extends State<AppzDropdownField> {
             CompositedTransformFollower(
               link: _layerLink,
               showWhenUnlinked: false,
-              offset: Offset(0, size.height + 1),
+              offset: Offset(0, size.height + (DropdownStyleConfig.instance.defaultStyle.paddingVertical ?? 8) / 2),
               child: SizedBox(
                 width: size.width,
                 child: Material(
@@ -154,11 +154,7 @@ class _AppzDropdownFieldState extends State<AppzDropdownField> {
   @override
   Widget build(BuildContext context) {
     final labelStyle = TextStyle(
-      color: widget.errorText != null
-          ? DropdownStyleConfig.instance.error.labelColor
-          : (widget.enabled
-              ? DropdownStyleConfig.instance.defaultStyle.labelColor
-              : DropdownStyleConfig.instance.disabled.labelColor),
+      color: _getLabelColor(),
       fontSize: DropdownStyleConfig.instance.defaultStyle.labelFontSize,
     );
 
@@ -195,19 +191,18 @@ class _AppzDropdownFieldState extends State<AppzDropdownField> {
                   link: _layerLink,
                   child: Container(
                     key: _dropdownKey,
+                    height: DropdownStyleConfig.instance.defaultStyle.paddingVertical != null ? DropdownStyleConfig.instance.defaultStyle.paddingVertical! * 2 + 20 : 44,
                     padding: EdgeInsets.symmetric(
-                      vertical: DropdownStyleConfig.instance.defaultStyle.paddingVertical!,
-                      horizontal: DropdownStyleConfig.instance.defaultStyle.paddingHorizontal!,
+                      vertical: DropdownStyleConfig.instance.defaultStyle.paddingVertical ?? 12,
+                      horizontal: DropdownStyleConfig.instance.defaultStyle.paddingHorizontal ?? 16,
                     ),
                     decoration: BoxDecoration(
-                      color: _buildContainerColor(),
+                      color: _getBackgroundColor(showError),
                       borderRadius: BorderRadius.circular(
                         DropdownStyleConfig.instance.defaultStyle.borderRadius,
                       ),
                       border: Border.all(
-                        color: showError
-                            ? DropdownStyleConfig.instance.error.borderColor
-                            : _buildBorderColor(),
+                        color: _getBorderColor(showError),
                         width: DropdownStyleConfig.instance.focused.borderWidth ?? 1,
                       ),
                     ),
@@ -217,9 +212,7 @@ class _AppzDropdownFieldState extends State<AppzDropdownField> {
                         Text(
                           _selectedItem ?? 'Please select',
                           style: TextStyle(
-                            color: showError
-                                ? DropdownStyleConfig.instance.error.textColor
-                                : _buildTextColor(),
+                            color: _getTextColor(showError),
                             fontSize: DropdownStyleConfig.instance.defaultStyle.fontSize,
                           ),
                         ),
@@ -248,7 +241,7 @@ class _AppzDropdownFieldState extends State<AppzDropdownField> {
 
     final content = <Widget>[
       label,
-      const SizedBox(height: 4),
+      SizedBox(height: DropdownStyleConfig.instance.defaultStyle.gap ?? 8),
       dropdownField,
     ];
 
@@ -256,32 +249,46 @@ class _AppzDropdownFieldState extends State<AppzDropdownField> {
       padding: const EdgeInsets.all(0),
       child: widget.labelPosition == LabelPosition.vertical
           ? Column(crossAxisAlignment: CrossAxisAlignment.start, children: content)
-          : Row(children: [label, const SizedBox(width: 8), Expanded(child: dropdownField)]),
+          : Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                label,
+                SizedBox(width: DropdownStyleConfig.instance.defaultStyle.gap ?? 8),
+                Expanded(child: dropdownField),
+              ],
+            ),
     );
   }
 
-  Color _buildContainerColor() {
-    if (!widget.enabled) return DropdownStyleConfig.instance.disabled.backgroundColor!;
-    if (_isHovered && !_isOpen) return DropdownStyleConfig.instance.hover.itemBackgroundColor!;
+  Color _getBackgroundColor(bool showError) {
+    if (!widget.enabled) return DropdownStyleConfig.instance.disabled.backgroundColor;
+    if (_isOpen) return DropdownStyleConfig.instance.focused.backgroundColor;
     if (_selectedItem != null && widget.showFilledStyle) {
-      return DropdownStyleConfig.instance.filled.backgroundColor!;
+      return DropdownStyleConfig.instance.filled.backgroundColor;
     }
-    return DropdownStyleConfig.instance.defaultStyle.backgroundColor!;
+    return DropdownStyleConfig.instance.defaultStyle.backgroundColor;
   }
 
-  Color _buildBorderColor() {
+  Color _getBorderColor(bool showError) {
+    if (showError) return DropdownStyleConfig.instance.error.borderColor;
     if (!widget.enabled) return DropdownStyleConfig.instance.disabled.borderColor;
-    if (widget.errorText != null) return DropdownStyleConfig.instance.error.borderColor;
     if (_isOpen) return DropdownStyleConfig.instance.focused.borderColor;
     return DropdownStyleConfig.instance.defaultStyle.borderColor;
   }
 
-  Color _buildTextColor() {
-    if (!widget.enabled) return DropdownStyleConfig.instance.disabled.textColor!;
-    if (widget.errorText != null) return DropdownStyleConfig.instance.error.textColor!;
+  Color _getTextColor(bool showError) {
+    if (showError) return DropdownStyleConfig.instance.error.textColor;
+    if (!widget.enabled) return DropdownStyleConfig.instance.disabled.textColor;
+    if (_isOpen) return DropdownStyleConfig.instance.focused.textColor;
     if (_selectedItem != null && widget.showFilledStyle) {
-      return DropdownStyleConfig.instance.filled.textColor ?? DropdownStyleConfig.instance.defaultStyle.textColor!;
+      return DropdownStyleConfig.instance.filled.textColor;
     }
-    return DropdownStyleConfig.instance.defaultStyle.textColor!;
+    return DropdownStyleConfig.instance.defaultStyle.textColor;
+  }
+
+  Color _getLabelColor() {
+    if (widget.errorText != null) return DropdownStyleConfig.instance.error.labelColor;
+    if (!widget.enabled) return DropdownStyleConfig.instance.disabled.labelColor;
+    return DropdownStyleConfig.instance.defaultStyle.labelColor;
   }
 }

@@ -187,7 +187,7 @@ class _MpinInputWidgetState extends State<MpinInputWidget> {
             style: TextStyle(
               color: widget.isEnabled ? style.textColor : style.textColor.withOpacity(0.5),
               fontFamily: style.fontFamily,
-              fontSize: style.fontSize + 4,
+              fontSize: style.labelFontSize + 4,
               fontWeight: FontWeight.bold,
             ),
             decoration: mpinSegmentBaseDecoration,

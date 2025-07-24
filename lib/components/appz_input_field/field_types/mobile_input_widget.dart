@@ -1,9 +1,9 @@
 import 'package:apz_flutter_components/components/appz_input_field/appz_input_field_enums.dart';
+import 'package:apz_flutter_components/components/appz_input_field/appz_input_field_theme.dart';
 import 'package:apz_flutter_components/components/appz_input_field/appz_input_style_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:phonecodes/phonecodes.dart';
-import '../appz_input_field_theme.dart';
 
 class MobileInputWidget extends StatefulWidget {
   final TextEditingController mainController;
@@ -179,7 +179,7 @@ class _MobileInputWidgetState extends State<MobileInputWidget> {
                         Text(
                           '${selectedCountry.flag} ${selectedCountry.dialCode}',
                           style: TextStyle(
-                            fontSize: style.fontSize,
+                            fontSize: style.labelFontSize,
                             color: style.textColor,
                             fontFamily: style.fontFamily,
                           ),
@@ -213,13 +213,13 @@ class _MobileInputWidgetState extends State<MobileInputWidget> {
                     hintText: widget.hintText ?? 'Enter number',
                     hintStyle: TextStyle(
                       color: style.textColor.withOpacity(0.5),
-                      fontSize: style.fontSize,
+                      fontSize: style.labelFontSize,
                       fontFamily: style.fontFamily,
                     ),
                   ),
                   style: TextStyle(
                     color: style.textColor,
-                    fontSize: style.fontSize,
+                    fontSize: style.labelFontSize,
                     fontFamily: style.fontFamily,
                   ),
                 ),
