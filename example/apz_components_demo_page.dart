@@ -4,8 +4,6 @@ import 'package:apz_flutter_components/components/appz_dropdown_field/appz_dropd
 import 'package:apz_flutter_components/components/apz_button/appz_button.dart';
 import 'package:apz_flutter_components/components/appz_progress_bar/appz_progress_bar.dart';
 import 'package:apz_flutter_components/components/apz_file_upload/apz_file_upload.dart';
-import 'package:apz_flutter_components/apz_date_picker_field.dart';
-import 'package:apz_flutter_components/apz_phone_input_with_dropdown.dart';
 import 'package:apz_flutter_components/components/appz_input_field/appz_input_field_enums.dart';
 import 'package:apz_flutter_components/components/appz_input_field/appz_input_field_theme.dart';
 import 'package:apz_flutter_components/components/appz_input_field/appz_input_style_config.dart';
@@ -41,6 +39,13 @@ class _ApzComponentsDemoPageState extends State<ApzComponentsDemoPage> {
     CategoryItem(id: 'cat2', label: 'Music', iconAsset: 'assets/icons/music.png'),
     CategoryItem(id: 'cat3', label: 'Movies', iconAsset: 'assets/icons/video-play.png'),
     CategoryItem(id: 'cat4', label: 'Games', iconAsset: 'assets/icons/game.png'),
+    CategoryItem(id: 'cat5', label: 'Games', iconAsset: 'assets/icons/game.png'),
+    CategoryItem(id: 'cat6', label: 'Games', iconAsset: 'assets/icons/game.png'),
+    CategoryItem(id: 'cat7', label: 'Games', iconAsset: 'assets/icons/game.png'),
+    CategoryItem(id: 'cat8', label: 'Games', iconAsset: 'assets/icons/game.png'),
+    CategoryItem(id: 'cat9', label: 'Games', iconAsset: 'assets/icons/game.png'),
+    CategoryItem(id: 'cat10', label: 'Games', iconAsset: 'assets/icons/game.png'),
+    CategoryItem(id: 'cat11', label: 'Games', iconAsset: 'assets/icons/game.png'), 
   ]);
   final ValueNotifier<String?> _selectedCategoryIdNotifier = ValueNotifier('cat1');
 
@@ -61,17 +66,17 @@ class _ApzComponentsDemoPageState extends State<ApzComponentsDemoPage> {
 
   Future<void> _loadConfigs() async {
     try {
-      final resolver = await UIConfigResolver.loadMaster('assets/json/master_theme.json');
-      final dropdownConfig = await resolver.loadAndResolve('assets/json/dropdown_ui_config.json');
-      final inputConfig = await resolver.loadAndResolve('assets/json/input_ui_config.json');
-      final progressBarConfig = await resolver.loadAndResolve('assets/json/progress_bar_ui_config.json');
-      final buttonConfig = await resolver.loadAndResolve('assets/json/button_ui_config.json');
-      final categoryConfig = await resolver.loadAndResolve('assets/json/category_ui_config.json');
-      await DropdownStyleConfig.instance.loadFromResolved(dropdownConfig);
-      await AppzStyleConfig.instance.loadFromResolved(inputConfig);
-      await ProgressBarStyleConfig.instance.loadFromResolved(progressBarConfig);
-      await ButtonStyleConfig.instance.loadFromResolved(buttonConfig);
-      await AppzCategoryStyleConfig.instance.loadFromResolved(categoryConfig);
+      // final resolver = await UIConfigResolver.loadMaster('assets/json/master_theme.json');
+      // final dropdownConfig = await resolver.loadAndResolve('assets/json/dropdown_ui_config.json');
+      // final inputConfig = await resolver.loadAndResolve('assets/json/input_ui_config.json');
+      // final progressBarConfig = await resolver.loadAndResolve('assets/json/progress_bar_ui_config.json');
+      // final buttonConfig = await resolver.loadAndResolve('assets/json/button_ui_config.json');
+      // final categoryConfig = await resolver.loadAndResolve('assets/json/category_ui_config.json');
+      // await DropdownStyleConfig.instance.loadFromResolved(dropdownConfig);
+      // await AppzStyleConfig.instance.loadFromResolved(inputConfig);
+      // await ProgressBarStyleConfig.instance.loadFromResolved(progressBarConfig);
+      // await ButtonStyleConfig.instance.loadFromResolved(buttonConfig);
+      // await AppzCategoryStyleConfig.instance.loadFromResolved(categoryConfig);
       setState(() => _loading = false);
     } catch (e) {
       setState(() {
@@ -277,24 +282,6 @@ class _ApzComponentsDemoPageState extends State<ApzComponentsDemoPage> {
                 validationType: AppzInputValidationType.mandatory,
                 selectedFile: _selectedFile,
                 maxSizeInKB: 2048,
-              ),
-            ),
-            _sectionCard(
-              title: 'Date Picker',
-              child: ApzDatePickerField(
-                label: 'Select Date',
-                selectedDate: _selectedDate,
-                onDateSelected: (date) => setState(() => _selectedDate = date),
-                isMandatory: true,
-              ),
-            ),
-            _sectionCard(
-              title: 'Phone Input with Dropdown',
-              child: ApzPhoneInputWithDropdown(
-                label: 'Phone Number',
-                initialPhoneCode: '91',
-                isMandatory: true,
-                onChanged: (val) => setState(() => _phoneValue = val),
               ),
             ),
           ],

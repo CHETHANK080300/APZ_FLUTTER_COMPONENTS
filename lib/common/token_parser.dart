@@ -18,7 +18,7 @@ class TokenParser {
   }
 
   T? getValue<T>(List<dynamic> path, {bool fromSupportingTokens = false}) {
-    final data = fromSupportingTokens ? _supportingTokenData : _getResolvedVariables();
+    final data = fromSupportingTokens ? _supportingTokenData : _tokenData;
     if (data == null) {
       throw Exception("Tokens not loaded. Call loadTokens() first.");
     }
@@ -39,66 +39,5 @@ class TokenParser {
     }
 
     return null;
-  }
-
-  Map<String, dynamic> _getResolvedVariables() {
-    if (_tokenData == null) {
-      return {};
-    }
-
-    final resolved = <String, dynamic>{};
-    final collections = _tokenData!['collections'] as List;
-
-    for (var collection in collections) {
-      final modes = collection['modes'] as List;
-      for (var mode in modes) {
-        final variables = mode['variables'] as List;
-        for (var variable in variables) {
-          final name = variable['name'] as String;
-          final value = _resolveValue(variable);
-          _assignValue(resolved, name.split('/'), value);
-        }
-      }
-    }
-    return resolved;
-  }
-
-  dynamic _resolveValue(Map<String, dynamic> variable) {
-    if (variable.containsKey('value')) {
-      if (variable['isAlias'] == true) {
-        final alias = variable['value'] as Map<String, dynamic>;
-        final collectionName = alias['collection'] as String;
-        final variableName = alias['name'] as String;
-        return _findVariableValue(collectionName, variableName);
-      } else {
-        return variable['value'];
-      }
-    }
-    return null;
-  }
-
-  dynamic _findVariableValue(String collectionName, String variableName) {
-    final collections = _tokenData!['collections'] as List;
-    for (var collection in collections) {
-      if (collection['name'] == collectionName) {
-        final modes = collection['modes'] as List;
-        for (var mode in modes) {
-          final variables = mode['variables'] as List;
-          for (var variable in variables) {
-            if (variable['name'] == variableName) {
-              return _resolveValue(variable);
-            }
-          }
-        }
-      }
-    }
-    return null;
-  }
-
-  void _assignValue(Map<String, dynamic> map, List<String> path, dynamic value) {
-    for (int i = 0; i < path.length - 1; i++) {
-      map = map.putIfAbsent(path[i], () => <String, dynamic>{});
-    }
-    map[path.last] = value;
   }
 }

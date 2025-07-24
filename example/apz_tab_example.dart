@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final resolver = await UIConfigResolver.loadMaster('assets/json/master_theme.json');
+  /*final resolver = await UIConfigResolver.loadMaster('assets/json/master_theme.json');
   final tabConfig = await resolver.loadAndResolve('assets/json/tabs_ui_config.json');
-  await TabStyleConfig.instance.loadFromResolved(tabConfig);
+  await TabStyleConfig.instance.loadFromResolved(tabConfig);*/
   runApp(const TabBarTest());
 }
 
