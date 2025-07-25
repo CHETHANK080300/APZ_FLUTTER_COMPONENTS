@@ -376,9 +376,18 @@ class _AppzInputFieldState extends State<AppzInputField> {
     final String labelTextWithIndicator = (widget.validationType == AppzInputValidationType.mandatory && widget.label.isNotEmpty)
         ? '${widget.label}*'
         : widget.label;
-    final Text labelWidget = Text(
-      labelTextWithIndicator,
-      style: TextStyle(color: style.labelColor, fontFamily: style.fontFamily, fontSize: style.labelFontSize, fontWeight: FontWeight.w400),
+    final Text labelWidget = Text.rich(
+      TextSpan(
+        text: widget.label,
+        style: TextStyle(color: style.labelColor, fontFamily: style.fontFamily, fontSize: style.labelFontSize, fontWeight: FontWeight.w400),
+        children: [
+          if (widget.validationType == AppzInputValidationType.mandatory)
+            TextSpan(
+              text: '*',
+              style: TextStyle(color: AppzStyleConfig.instance.getMandatoryAsteriskColor(), fontSize: style.labelFontSize, fontWeight: FontWeight.w400),
+            ),
+        ],
+      ),
     );
 
     return Column(

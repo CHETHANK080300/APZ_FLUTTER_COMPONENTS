@@ -122,7 +122,7 @@ class _AppzDropdownFieldState extends State<AppzDropdownField> {
                                         fontWeight: FontWeight.w600,
                                         color: isSelected
                                             ? DropdownStyleConfig.instance.selected.textColor
-                                            : DropdownStyleConfig.instance.defaultStyle.textColor,
+                                            : DropdownStyleConfig.instance.defaultStyle.ddOverlayTextColor,
                                       ),
                                     ),
                                   ),
@@ -155,6 +155,7 @@ class _AppzDropdownFieldState extends State<AppzDropdownField> {
   Widget build(BuildContext context) {
     final labelStyle = TextStyle(
       color: _getLabelColor(),
+      fontFamily: DropdownStyleConfig.instance.defaultStyle.fontFamily,
       fontSize: DropdownStyleConfig.instance.defaultStyle.labelFontSize,
     );
 
@@ -177,6 +178,7 @@ class _AppzDropdownFieldState extends State<AppzDropdownField> {
                   text: ' *',
                   style: TextStyle(
                     color: DropdownStyleConfig.instance.mandatoryAsteriskColor,
+                    fontFamily: DropdownStyleConfig.instance.defaultStyle.fontFamily,
                     fontSize: DropdownStyleConfig.instance.defaultStyle.labelFontSize,
                   ),
                 ),
@@ -230,6 +232,7 @@ class _AppzDropdownFieldState extends State<AppzDropdownField> {
                           _selectedItem ?? 'Please select',
                           style: TextStyle(
                             color: _getTextColor(showError),
+                            fontFamily: DropdownStyleConfig.instance.defaultStyle.fontFamily,
                             fontSize: DropdownStyleConfig.instance.defaultStyle.fontSize,
                           ),
                         ),
@@ -298,9 +301,9 @@ class _AppzDropdownFieldState extends State<AppzDropdownField> {
     if (!widget.enabled) return DropdownStyleConfig.instance.disabled.textColor;
     if (_isOpen) return DropdownStyleConfig.instance.focused.textColor;
     if (_selectedItem != null && widget.showFilledStyle) {
-      return DropdownStyleConfig.instance.filled.textColor;
+      return DropdownStyleConfig.instance.filled.ddOverlayTextColor;
     }
-    return DropdownStyleConfig.instance.defaultStyle.textColor;
+    return DropdownStyleConfig.instance.filled.ddOverlayTextColor;
   }
 
   /*Color _getLabelColor() {
