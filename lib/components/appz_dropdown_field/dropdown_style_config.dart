@@ -207,46 +207,93 @@ class DropdownStateStyle {
   });
 
   factory DropdownStateStyle.fromTokens(TokenParser parser, String state) {
-    String? backgroundColor;
-    String? borderColor;
-    String? textColor;
-    String? fontFamily;
+    Color getPropertyColor(String propertyName) {
+      final collections = parser.getValue<List<dynamic>>(['collections']);
+      if (collections == null) return Colors.transparent;
+
+      final tokenCollection = collections.firstWhere((c) => c['name'] == 'Tokens', orElse: () => null);
+      if (tokenCollection == null) return Colors.transparent;
+
+      final variables = tokenCollection['modes'][0]['variables'] as List<dynamic>;
+      final token = variables.firstWhere((v) => v['name'] == propertyName, orElse: () => null);
+
+      if (token == null) return Colors.transparent;
+
+      if (token['isAlias'] == true) {
+        final alias = token['value']['name'];
+        final primitiveCollection = collections.firstWhere((c) => c['name'] == 'Primitive', orElse: () => null);
+        if (primitiveCollection == null) return Colors.transparent;
+
+        final primitiveVariables = primitiveCollection['modes'][0]['variables'] as List<dynamic>;
+        final primitiveToken = primitiveVariables.firstWhere((v) => v['name'] == alias, orElse: () => null);
+
+        if (primitiveToken != null) {
+          return _parseColor(primitiveToken['value']);
+        }
+      } else {
+        return _parseColor(token['value']);
+      }
+
+      return Colors.transparent;
+    }
+
+    String getTypography(String tokenName) {
+      final collections = parser.getValue<List<dynamic>>(['collections']);
+      if (collections == null) return 'Outfit';
+
+      final typographyCollection = collections.firstWhere((c) => c['name'] == 'Typography', orElse: () => null);
+      if (typographyCollection == null) return 'Outfit';
+
+      final variables = typographyCollection['modes'][0]['variables'] as List<dynamic>;
+      final token = variables.firstWhere((v) => v['name'] == tokenName, orElse: () => null);
+
+      if (token != null && token['value'] is Map<String, dynamic>) {
+        final typography = token['value'];
+        return typography['fontFamily'];
+      }
+
+      return 'Outfit';
+    }
+
+    Color backgroundColor;
+    Color borderColor;
+    Color textColor;
 
     switch (state) {
       case 'focused':
-        backgroundColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Form Fields/Dropdown/Default']);
-        borderColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Form Fields/Dropdown/Outline clicked']);
-        textColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Text colour/Input/Active']);
+        backgroundColor = getPropertyColor('Form Fields/Dropdown/Default');
+        borderColor = getPropertyColor('Form Fields/Dropdown/Outline clicked');
+        textColor = getPropertyColor('Text colour/Input/Active');
         break;
       case 'filled':
-        backgroundColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Form Fields/Dropdown/Filled']);
-        borderColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Form Fields/Dropdown/Outline default']);
-        textColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Text colour/Input/Active']);
+        backgroundColor = getPropertyColor('Form Fields/Dropdown/Filled');
+        borderColor = getPropertyColor('Form Fields/Dropdown/Outline default');
+        textColor = getPropertyColor('Text colour/Input/Active');
         break;
       case 'disabled':
-        backgroundColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Form Fields/Dropdown/Disabled']);
-        borderColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Form Fields/Dropdown/Outline disabled']);
-        textColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Text colour/Input/Disabled']);
+        backgroundColor = getPropertyColor('Form Fields/Dropdown/Disabled');
+        borderColor = getPropertyColor('Form Fields/Dropdown/Outline disabled');
+        textColor = getPropertyColor('Text colour/Input/Disabled');
         break;
       case 'error':
-        backgroundColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Form Fields/Dropdown/Error']);
-        borderColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Form Fields/Dropdown/Outline error']);
-        textColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Text colour/Input/Active']);
+        backgroundColor = getPropertyColor('Form Fields/Dropdown/Error');
+        borderColor = getPropertyColor('Form Fields/Dropdown/Outline error');
+        textColor = getPropertyColor('Text colour/Input/Active');
         break;
       default:
-        backgroundColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Form Fields/Dropdown/Default']);
-        borderColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Form Fields/Dropdown/Outline default']);
-        textColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Text colour/Input/Default']);
+        backgroundColor = getPropertyColor('Form Fields/Dropdown/Default');
+        borderColor = getPropertyColor('Form Fields/Dropdown/Outline default');
+        textColor = getPropertyColor('Text colour/Input/Default');
     }
-    fontFamily = parser.getValue(['Typography', 'Style', 'Input/Regular', 'fontFamily']);
+
     return DropdownStateStyle(
-      borderColor: _parseColor(borderColor ?? '#000000'),
+      borderColor: borderColor,
       borderWidth: 1.0,
       borderRadius: parser.getValue<double>(['dropdown', 'borderRadius'], fromSupportingTokens: true) ?? 12.0,
-      backgroundColor: _parseColor(backgroundColor ?? '#FFFFFF'),
-      textColor: _parseColor(textColor ?? '#000000'),
-      labelColor: _parseColor(parser.getValue(['Tokens', 'CSC - Light theme', 'Text colour/Label & Help/Default']) ?? '#B3BBC6'),
-      fontFamily: fontFamily,
+      backgroundColor: backgroundColor,
+      textColor: textColor,
+      labelColor: getPropertyColor('Text colour/Label & Help/Default'),
+      fontFamily: getTypography('Input/Regular'),
       fontSize: 14.0,
       labelFontSize: parser.getValue<double>(['dropdown', 'labelFontSize'], fromSupportingTokens: true) ?? 12.0,
       paddingHorizontal: parser.getValue<double>(['dropdown', 'padding', 'horizontal'], fromSupportingTokens: true) ?? 16.0,
