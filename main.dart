@@ -6,6 +6,10 @@ import 'package:apz_flutter_components/components/appz_input_field/appz_input_st
 import 'package:apz_flutter_components/components/appz_category/appz_category_style_config.dart';
 import 'example/apz_components_demo_page.dart';
 import 'example/appz_category_example.dart';
+import 'package:apz_flutter_components/components/appz_checkbox/checkbox_style_config.dart';
+import 'package:apz_flutter_components/components/appz_radio/radio_style_config.dart';
+import 'package:apz_flutter_components/components/appz_toggle/toggle_style_config.dart';
+import 'package:apz_flutter_components/components/appz_toggle_with_label/toggle_with_label_style_config.dart';
 
 Future<void> main() async {
   // Ensure that widget binding is initialized before calling native code.
@@ -16,6 +20,10 @@ Future<void> main() async {
   await ProgressBarStyleConfig.instance.load();
   await ButtonStyleConfig.instance.load();
   await AppzCategoryStyleConfig.instance.load();
+  await CheckboxStyleConfig.instance.load();
+  await RadioStyleConfig.instance.load();
+  await ToggleStyleConfig.instance.load();
+  await ToggleWithLabelStyleConfig.instance.load();
 
   runApp(const MyApp());
 }

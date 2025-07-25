@@ -158,12 +158,29 @@ class _AppzDropdownFieldState extends State<AppzDropdownField> {
       fontSize: DropdownStyleConfig.instance.defaultStyle.labelFontSize,
     );
 
-    final label = RichText(
+    /*final label = RichText(
       text: TextSpan(
         text: widget.label,
         style: labelStyle,
         children: widget.isMandatory
             ? [const TextSpan(text: ' *', style: TextStyle(color: Colors.red))]
+            : [],
+      ),
+    );*/
+    final label = RichText(
+      text: TextSpan(
+        text: widget.label,
+        style: labelStyle,
+        children: widget.isMandatory
+            ? [
+                TextSpan(
+                  text: ' *',
+                  style: TextStyle(
+                    color: DropdownStyleConfig.instance.mandatoryAsteriskColor,
+                    fontSize: DropdownStyleConfig.instance.defaultStyle.labelFontSize,
+                  ),
+                ),
+              ]
             : [],
       ),
     );
@@ -286,9 +303,18 @@ class _AppzDropdownFieldState extends State<AppzDropdownField> {
     return DropdownStyleConfig.instance.defaultStyle.textColor;
   }
 
-  Color _getLabelColor() {
+  /*Color _getLabelColor() {
     if (widget.errorText != null) return DropdownStyleConfig.instance.error.labelColor;
     if (!widget.enabled) return DropdownStyleConfig.instance.disabled.labelColor;
     return DropdownStyleConfig.instance.defaultStyle.labelColor;
+  }*/
+  Color _getLabelColor() {
+    if (widget.errorText != null) {
+      return DropdownStyleConfig.instance.error.labelColor;
+    } else if (!widget.enabled) {
+      return DropdownStyleConfig.instance.disabled.labelColor;
+    } else {
+      return DropdownStyleConfig.instance.defaultStyle.labelColor;
+    }
   }
 }
