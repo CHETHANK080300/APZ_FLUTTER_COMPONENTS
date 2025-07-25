@@ -207,45 +207,46 @@ class DropdownStateStyle {
   });
 
   factory DropdownStateStyle.fromTokens(TokenParser parser, String state) {
-    String backgroundColor;
-    String borderColor;
-    String textColor;
+    String? backgroundColor;
+    String? borderColor;
+    String? textColor;
+    String? fontFamily;
 
     switch (state) {
       case 'focused':
-        backgroundColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Default']) ?? '#FFFFFF';
-        borderColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Outline clicked']) ?? '#0047AB';
-        textColor = parser.getValue<String>(['Text colour', 'Input', 'Active']) ?? '#000000';
+        backgroundColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Form Fields/Dropdown/Default']);
+        borderColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Form Fields/Dropdown/Outline clicked']);
+        textColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Text colour/Input/Active']);
         break;
       case 'filled':
-        backgroundColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Filled']) ?? '#FFFFFF';
-        borderColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Outline default']) ?? '#D9D9D9';
-        textColor = parser.getValue<String>(['Text colour', 'Input', 'Active']) ?? '#000000';
+        backgroundColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Form Fields/Dropdown/Filled']);
+        borderColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Form Fields/Dropdown/Outline default']);
+        textColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Text colour/Input/Active']);
         break;
       case 'disabled':
-        backgroundColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Disabled']) ?? '#FFFFFF';
-        borderColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Outline disabled']) ?? '#E0E0E0';
-        textColor = parser.getValue<String>(['Text colour', 'Input', 'Disabled']) ?? '#000000';
+        backgroundColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Form Fields/Dropdown/Disabled']);
+        borderColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Form Fields/Dropdown/Outline disabled']);
+        textColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Text colour/Input/Disabled']);
         break;
       case 'error':
-        backgroundColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Disabled']) ?? '#FEECEC';
-        borderColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Outline error']) ?? '#D80000';
-        textColor = parser.getValue<String>(['Text colour', 'Input', 'Error']) ?? '#D80000';
+        backgroundColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Form Fields/Dropdown/Error']);
+        borderColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Form Fields/Dropdown/Outline error']);
+        textColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Text colour/Input/Active']);
         break;
       default:
-        backgroundColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Default']) ?? '#FFFFFF';
-        borderColor = parser.getValue<String>(['Form Fields', 'Dropdown', 'Outline default']) ?? '#D9D9D9';
-        textColor = parser.getValue<String>(['Text colour', 'Input', 'Default']) ?? '#000000';
+        backgroundColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Form Fields/Dropdown/Default']);
+        borderColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Form Fields/Dropdown/Outline default']);
+        textColor = parser.getValue(['Tokens', 'CSC - Light theme', 'Text colour/Input/Default']);
     }
-
+    fontFamily = parser.getValue(['Typography', 'Style', 'Input/Regular', 'fontFamily']);
     return DropdownStateStyle(
-      borderColor: _parseColor(borderColor),
+      borderColor: _parseColor(borderColor ?? '#000000'),
       borderWidth: 1.0,
       borderRadius: parser.getValue<double>(['dropdown', 'borderRadius'], fromSupportingTokens: true) ?? 12.0,
-      backgroundColor: _parseColor(backgroundColor),
-      textColor: _parseColor(textColor),
-      labelColor: _parseColor(parser.getValue<String>(['Text colour', 'Label & Help', 'Default']) ?? '#B3BBC6'),
-      fontFamily: parser.getValue<String>(['dropdown', 'fontFamily'], fromSupportingTokens: true) ?? 'Outfit',
+      backgroundColor: _parseColor(backgroundColor ?? '#FFFFFF'),
+      textColor: _parseColor(textColor ?? '#000000'),
+      labelColor: _parseColor(parser.getValue(['Tokens', 'CSC - Light theme', 'Text colour/Label & Help/Default']) ?? '#B3BBC6'),
+      fontFamily: fontFamily,
       fontSize: 14.0,
       labelFontSize: parser.getValue<double>(['dropdown', 'labelFontSize'], fromSupportingTokens: true) ?? 12.0,
       paddingHorizontal: parser.getValue<double>(['dropdown', 'padding', 'horizontal'], fromSupportingTokens: true) ?? 16.0,
