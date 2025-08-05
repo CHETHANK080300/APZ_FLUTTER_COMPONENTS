@@ -215,6 +215,210 @@
       "noSupportingPaddingHorizontal": 12,
       "noSupportingPaddingVertical": 8
     }
+  },
+    "image": {
+    "circular": {
+      "width": 40.0,
+      "height": 40.0,
+      "cornerRadius": 40.0
+    },
+    "square": {
+      "width": 40.0,
+      "height": 40.0,
+      "cornerRadius": 0.0
+    },
+    "rectangle": {
+      "width": 206.1,
+      "height": 99.82,
+      "cornerRadius": 0.0
+    }
+  },
+  "icon": {
+    "square": {
+      "width": 24.0,
+      "height": 24.0,
+      "cornerRadius": 0.0,
+      "padding": 2.0
+    }
+  },
+  "categoryList": {
+    "default": {
+      "borderRadius": 16.0,
+      "cardHeight": 64.0,
+      "padding": 16.0,
+      "iconSize": 40.0,
+      "dividerHeight": 1.0,
+      "boxShadow": [
+        {
+          "color": "#1F000000",
+          "blurRadius": 2
+        }
+      ]
+    }
+  },
+  "badges": {
+    "small": {
+      "height": 25.0,
+      "padding": {
+        "top": 6.0,
+        "bottom": 6.0,
+        "left": 12.0,
+        "right": 12.0
+      }
+    },
+    "large": {
+      "height": 32.0,
+      "padding": {
+        "top": 8.0,
+        "bottom": 8.0,
+        "left": 16.0,
+        "right": 16.0
+      }
+    },
+    "borderRadius": 30.0,
+    "borderWeight": 1.0,
+    "itemSpacing": 4.0
+  },
+   "loader": {
+    "sizes": {
+      "labelFontSize": 14,
+      "defaultHeight": 150,
+      "defaultWidth": 150
+    }
+  },
+  "chips": {
+    "borderRadius": 28.0,
+    "padding": {
+      "top": 11.0,
+      "bottom": 11.0,
+      "left": 16.0,
+      "right": 16.0
+    },
+    "categorySpacing": 4.0,
+    "shadow": "Shadow/sm",
+    "icon": {
+      "asset": "assets/icons/close-1.svg"
+    }
+  },
+  "progressStep": {
+    "circleSize": 24.0,
+    "iconSize": 12.0,
+    "borderWidth": 1.5,
+    "borderRadius": 999.0,
+    "stepSpacing": 12.0,
+    "verticalSpacing": 4.0,
+    "connectorLineWidth": 1.5,
+    "connectorLineHeight": 24.0,
+    "icons": {
+      "completed": "assets/icons/passed.svg",
+      "current": "assets/icons/current.svg",
+      "next": "assets/icons/next_step.svg",
+      "nextdashed": "assets/icons/next_dashed.svg",
+      "lineEnabled": "assets/icons/line_enabled.svg",
+      "lineDisabled": "assets/icons/line_disabled.svg"
+    },
+    "steps": [
+      "Personal info",
+      "Account info",
+      "Review",
+      "Confirmation"
+    ]
+  },
+  "listContent": {
+    "sideBySide": {
+      "spacing": 24.0,
+      "totalWidth": 311.0,
+      "labelWidth": 103.0
+    },
+    "twoLine": {
+      "spacing": 10.0,
+      "width": 219.0
+    }
+  },
+      "tags": {
+    "sizes": {
+      "height": 26,
+      "paddingHorizontal": 12,
+      "paddingVertical": 4,
+      "roundedBorderRadius": 24,
+      "rectangleBorderRadius": 8,
+      "iconSize": 19.2,
+      "iconSpacing": 4
+    }
+  },
+   "menu": {
+    "frame": {
+      "borderRadius": 24.0,
+      "padding": 24.0
+    },
+    "closeButton": {
+      "borderRadius": 749.25,
+      "padding": 3.0,
+      "iconSize": 16.0
+    },
+
+    "menuItem": {
+      "paddingTop": 8.0,
+      "paddingBottom": 8.0,
+      "spacing": 32.0
+    },
+    "signout": {
+      "backgroundColor": "#262633",
+      "borderColor": "#FFC9C6",
+      "borderRadius": 16.0,
+      "borderWidth": 1.0,
+      "height": 34.0,
+      "width": 119.0,
+      "textColor": "#FFAA99",
+      "spacing": 16.0,
+      "paddingTop": 6.0,
+      "paddingBottom": 6.0,
+      "paddingHorizontal": 12.0
+    }},
+    "alert": {
+    "sizes": {
+      "width": 343,
+      "borderRadius": 16,
+      "headerHeight": 56,
+      "headerPaddingHorizontal": 24,
+      "headerPaddingVertical": 16,
+      "contentPadding": 16,
+      "buttonContainerPadding": 16,
+      "iconContainerSize": 56,
+      "iconSize": 24,
+      "iconSpacing": 16,
+      "buttonSpacing": 16,
+      "closeIconSize": 24,
+      "borderWidth": 1,
+      "iconBorderRadius": 999
+    },
+
+    "icons": {
+      "success": "assets/icons/check.svg",
+      "warning": "assets/icons/circum_warning.svg",
+      "error": "assets/icons/close-circle-1.svg",
+      "info": "assets/icons/Question mark.svg",
+      "close": "assets/icons/close-circle-1.svg"
+    },
+    "boxShadow": [
+      {
+        "color": "#28000000",
+        "blurRadius": 16,
+        "offsetX": 0,
+        "offsetY": 8,
+        "spreadRadius": 0
+      }
+    ]
+  },
+     "footer": {
+    "sizes": {
+      "width": 375,
+      "padding": 20,
+      "borderRadius": 5,
+      "borderWidth": 1,
+      "buttonContainerPadding": 24,
+      "buttonSpacing": 24
+    }
   }
- 
+
 }

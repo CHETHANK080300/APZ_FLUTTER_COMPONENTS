@@ -31,6 +31,8 @@ flutter:
   assets:
     - assets/json/
     - assets/icons/
+    - assets/images/
+    - assets/loader/
   fonts:
     - family: Outfit
       fonts:
