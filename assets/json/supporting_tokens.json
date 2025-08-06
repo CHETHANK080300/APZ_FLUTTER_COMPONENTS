@@ -82,15 +82,15 @@
       "microphone": "assets/icons/microphone-2.svg"
     }
   },
-   "category": {
+  "category": {
     "default": {
-      "cardHeight": 86.0,
-      "borderRadius": 16.0,
-      "padding": 12.0,
-      "spacing": 8.0,
+      "cardHeight": 86,
+      "borderRadius": 16,
+      "padding": 12,
+      "spacing": 8,
       "elevation": 2,
-      "iconSize": 32.0,
-      "itemWidth": 100.0,
+      "iconSize": 32,
+      "itemWidth": 100,
       "boxShadowHorizontal": [
         {
           "color": "#1F000000",
@@ -100,90 +100,93 @@
       "boxShadowVertical": []
     }
   },
-   "checkbox": {
+  "checkbox": {
     "small": {
-      "width": 20.0,
-      "height": 20.0,
-      "borderRadius": 4.0,
-      "iconSize": 16.0,
-      "borderWidth": 1.0
+      "width": 20,
+      "height": 20,
+      "borderRadius": 4,
+      "iconSize": 16,
+      "borderWidth": 1
     },
     "medium": {
-      "width": 24.0,
-      "height": 24.0,
-      "borderRadius": 6.0,
-      "iconSize": 18.0,
-      "borderWidth": 1.0
+      "width": 24,
+      "height": 24,
+      "borderRadius": 6,
+      "iconSize": 18,
+      "borderWidth": 1
     },
     "large": {
-      "width": 28.0,
-      "height": 28.0,
-      "borderRadius": 8.0,
-      "iconSize": 20.0,
-      "borderWidth": 1.0
+      "width": 28,
+      "height": 28,
+      "borderRadius": 8,
+      "iconSize": 20,
+      "borderWidth": 1
     },
     "spacing": {
-      "small": 8.0,
-      "medium": 12.0,
-      "large": 16.0
+      "small": 8,
+      "medium": 12,
+      "large": 16
     }
   },
   "radio": {
     "small": {
-      "outerRadius": 8.0,
-      "innerRadius": 4.0,
-      "borderWidth": 1.0
+      "outerRadius": 8,
+      "innerRadius": 4,
+      "borderWidth": 1,
+      "spacing": 8
     },
     "medium": {
-      "outerRadius": 10.0,
-      "innerRadius": 5.0,
-      "borderWidth": 1.0
+      "outerRadius": 10,
+      "innerRadius": 5,
+      "borderWidth": 1,
+      "spacing": 10
     },
     "large": {
-      "outerRadius": 12.0,
-      "innerRadius": 6.0,
-      "borderWidth": 1.0
+      "outerRadius": 12,
+      "innerRadius": 6,
+      "borderWidth": 1,
+      "spacing": 12
     },
     "spacing": {
-      "small": 8.0,
-      "medium": 12.0,
-      "large": 16.0
+      "small": 8,
+      "medium": 12,
+      "large": 16
     }
   },
   "toggleSwitch": {
     "small": {
-      "width": 36.0,
-      "height": 20.0,
-      "thumbSize": 12.0,
-      "padding": 2.0
+      "width": 36,
+      "height": 20,
+      "thumbSize": 12,
+      "padding": 2
     },
     "large": {
-      "width": 44.0,
-      "height": 24.0,
-      "thumbSize": 20.0,
-      "padding": 2.0
+      "width": 44,
+      "height": 24,
+      "thumbSize": 20,
+      "padding": 2
     },
     "spacing": {
-      "small": 8.0,
-      "large": 12.0
+      "small": 8,
+      "large": 12
     }
   },
   "toggleWithLabel": {
     "small": {
-      "width": 101.0,
-      "height": 34.0,
-      "borderRadius": 16.0,
-      "fontSize": 12.0,
-      "labelFontSize": 14.0,
-      "spacing": 8.0
+      "width": 101,
+      "height": 34,
+      "borderRadius": 16,
+      "fontSize": 12,
+      "labelFontSize": 14,
+      "spacing": 8
     },
     "large": {
-      "width": 134.0,
-      "height": 42.0,
-      "borderRadius": 24.0,
-      "fontSize": 16.0,
-      "labelFontSize": 18.0,
-      "spacing": 12.0
+      "width": 134,
+      "height": 42,
+      "borderRadius": 24,
+      "fontSize": 16,
+      "labelFontSize": 18,
+      "spacing": 12
     }
   },
   "tooltip": {
@@ -216,38 +219,38 @@
       "noSupportingPaddingVertical": 8
     }
   },
-    "image": {
+  "image": {
     "circular": {
-      "width": 40.0,
-      "height": 40.0,
-      "cornerRadius": 40.0
+      "width": 40,
+      "height": 40,
+      "cornerRadius": 40
     },
     "square": {
-      "width": 40.0,
-      "height": 40.0,
-      "cornerRadius": 0.0
+      "width": 40,
+      "height": 40,
+      "cornerRadius": 0
     },
     "rectangle": {
       "width": 206.1,
       "height": 99.82,
-      "cornerRadius": 0.0
+      "cornerRadius": 0
     }
   },
   "icon": {
     "square": {
-      "width": 24.0,
-      "height": 24.0,
-      "cornerRadius": 0.0,
-      "padding": 2.0
+      "width": 24,
+      "height": 24,
+      "cornerRadius": 0,
+      "padding": 2
     }
   },
   "categoryList": {
     "default": {
-      "borderRadius": 16.0,
-      "cardHeight": 64.0,
-      "padding": 16.0,
-      "iconSize": 40.0,
-      "dividerHeight": 1.0,
+      "borderRadius": 16,
+      "cardHeight": 64,
+      "padding": 16,
+      "iconSize": 40,
+      "dividerHeight": 1,
       "boxShadow": [
         {
           "color": "#1F000000",
@@ -258,28 +261,28 @@
   },
   "badges": {
     "small": {
-      "height": 25.0,
+      "height": 25,
       "padding": {
-        "top": 6.0,
-        "bottom": 6.0,
-        "left": 12.0,
-        "right": 12.0
+        "top": 6,
+        "bottom": 6,
+        "left": 12,
+        "right": 12
       }
     },
     "large": {
-      "height": 32.0,
+      "height": 32,
       "padding": {
-        "top": 8.0,
-        "bottom": 8.0,
-        "left": 16.0,
-        "right": 16.0
+        "top": 8,
+        "bottom": 8,
+        "left": 16,
+        "right": 16
       }
     },
-    "borderRadius": 30.0,
-    "borderWeight": 1.0,
-    "itemSpacing": 4.0
+    "borderRadius": 30,
+    "borderWeight": 1,
+    "itemSpacing": 4
   },
-   "loader": {
+  "loader": {
     "sizes": {
       "labelFontSize": 14,
       "defaultHeight": 150,
@@ -287,28 +290,28 @@
     }
   },
   "chips": {
-    "borderRadius": 28.0,
+    "borderRadius": 28,
     "padding": {
-      "top": 11.0,
-      "bottom": 11.0,
-      "left": 16.0,
-      "right": 16.0
+      "top": 11,
+      "bottom": 11,
+      "left": 16,
+      "right": 16
     },
-    "categorySpacing": 4.0,
+    "categorySpacing": 4,
     "shadow": "Shadow/sm",
     "icon": {
       "asset": "assets/icons/close-1.svg"
     }
   },
   "progressStep": {
-    "circleSize": 24.0,
-    "iconSize": 12.0,
+    "circleSize": 24,
+    "iconSize": 12,
     "borderWidth": 1.5,
-    "borderRadius": 999.0,
-    "stepSpacing": 12.0,
-    "verticalSpacing": 4.0,
+    "borderRadius": 999,
+    "stepSpacing": 12,
+    "verticalSpacing": 4,
     "connectorLineWidth": 1.5,
-    "connectorLineHeight": 24.0,
+    "connectorLineHeight": 24,
     "icons": {
       "completed": "assets/icons/passed.svg",
       "current": "assets/icons/current.svg",
@@ -326,16 +329,16 @@
   },
   "listContent": {
     "sideBySide": {
-      "spacing": 24.0,
-      "totalWidth": 311.0,
-      "labelWidth": 103.0
+      "spacing": 24,
+      "totalWidth": 311,
+      "labelWidth": 103
     },
     "twoLine": {
-      "spacing": 10.0,
-      "width": 219.0
+      "spacing": 10,
+      "width": 219
     }
   },
-      "tags": {
+  "tags": {
     "sizes": {
       "height": 26,
       "paddingHorizontal": 12,
@@ -346,36 +349,36 @@
       "iconSpacing": 4
     }
   },
-   "menu": {
+  "menu": {
     "frame": {
-      "borderRadius": 24.0,
-      "padding": 24.0
+      "borderRadius": 24,
+      "padding": 24
     },
     "closeButton": {
       "borderRadius": 749.25,
-      "padding": 3.0,
-      "iconSize": 16.0
+      "padding": 3,
+      "iconSize": 16
     },
-
     "menuItem": {
-      "paddingTop": 8.0,
-      "paddingBottom": 8.0,
-      "spacing": 32.0
+      "paddingTop": 8,
+      "paddingBottom": 8,
+      "spacing": 32
     },
     "signout": {
       "backgroundColor": "#262633",
       "borderColor": "#FFC9C6",
-      "borderRadius": 16.0,
-      "borderWidth": 1.0,
-      "height": 34.0,
-      "width": 119.0,
+      "borderRadius": 16,
+      "borderWidth": 1,
+      "height": 34,
+      "width": 119,
       "textColor": "#FFAA99",
-      "spacing": 16.0,
-      "paddingTop": 6.0,
-      "paddingBottom": 6.0,
-      "paddingHorizontal": 12.0
-    }},
-    "alert": {
+      "spacing": 16,
+      "paddingTop": 6,
+      "paddingBottom": 6,
+      "paddingHorizontal": 12
+    }
+  },
+  "alert": {
     "sizes": {
       "width": 343,
       "borderRadius": 16,
@@ -392,7 +395,6 @@
       "borderWidth": 1,
       "iconBorderRadius": 999
     },
-
     "icons": {
       "success": "assets/icons/check.svg",
       "warning": "assets/icons/circum_warning.svg",
@@ -410,7 +412,7 @@
       }
     ]
   },
-     "footer": {
+  "footer": {
     "sizes": {
       "width": 375,
       "padding": 20,
@@ -420,5 +422,4 @@
       "buttonSpacing": 24
     }
   }
-
 }
