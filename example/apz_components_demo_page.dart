@@ -15,7 +15,10 @@ import 'package:file_picker/file_picker.dart';
 import 'package:apz_flutter_components/components/appz_category/appz_category.dart';
 import 'package:apz_flutter_components/components/appz_category/appz_category_style_config.dart';
 import 'package:apz_flutter_components/components/appz_category/model/category_model.dart';
-
+import 'package:apz_flutter_components/components/appz_radio/appz_radio.dart';
+import 'package:apz_flutter_components/components/appz_toggle/appz_toggle.dart';
+import 'package:apz_flutter_components/components/appz_toggle_with_label/appz_toggle_with_label.dart';
+import 'package:apz_flutter_components/components/appz_checkbox/appz_checkbox.dart';
 class ApzComponentsDemoPage extends StatefulWidget {
   const ApzComponentsDemoPage({super.key});
 
@@ -32,6 +35,10 @@ class _ApzComponentsDemoPageState extends State<ApzComponentsDemoPage> {
   DateTime? _selectedDate;
   // ignore: unused_field
   String? _phoneValue;
+   bool _checkboxValue = false;
+  bool _radioValue = false;
+  bool _toggleValue = false;
+  bool _toggleWithLabelValue = false;
 
   // Category demo state
   final ValueNotifier<List<CategoryItem>> _categoryItemsNotifier = ValueNotifier([
@@ -282,6 +289,37 @@ class _ApzComponentsDemoPageState extends State<ApzComponentsDemoPage> {
                 validationType: AppzInputValidationType.mandatory,
                 selectedFile: _selectedFile,
                 maxSizeInKB: 2048,
+              ),
+            ),
+             _sectionCard(
+              title: 'AppzCheckbox',
+              child: AppzCheckbox(
+                isChecked: _checkboxValue,
+                onChanged: (val) => setState(() => _checkboxValue = val),
+                title: 'Checkbox',
+              ),
+            ),
+            _sectionCard(
+              title: 'AppzRadio',
+              child: AppzRadio(
+                isChecked: _radioValue,
+                onChanged: (val) => setState(() => _radioValue = val),
+                title: 'Radio Button',
+              ),
+            ),
+            _sectionCard(
+              title: 'AppzToggle',
+              child: AppzToggle(
+                isOn: _toggleValue,
+                onChanged: (val) => setState(() => _toggleValue = val),
+              ),
+            ),
+            _sectionCard(
+              title: 'AppzToggleWithLabel',
+              child: AppzToggleWithLabel(
+                label: 'Toggle With Label',
+                value: _toggleWithLabelValue,
+                onChanged: (val) => setState(() => _toggleWithLabelValue = val),
               ),
             ),
           ],

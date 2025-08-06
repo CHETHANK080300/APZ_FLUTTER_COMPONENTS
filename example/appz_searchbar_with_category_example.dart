@@ -19,18 +19,18 @@ class _AppzSearchBarWithCategoryExampleState
       ValueNotifier<String?>(null);
 
   final List<CategoryItem> _allCategories = [
-    CategoryItem(id: '1', label: 'Books', iconAsset: 'assets/icons/book-1.png'),
+    CategoryItem(id: '1', label: 'Books', iconAsset: 'assets/icons/book-1.svg'),
     CategoryItem(
-        id: '2', label: 'Music', iconAsset: 'assets/icons/audio-square.png'),
-    CategoryItem(id: '3', label: 'Movies', iconAsset: 'assets/icons/video.png'),
-    CategoryItem(id: '4', label: 'Games', iconAsset: 'assets/icons/game.png'),
+        id: '2', label: 'Music', iconAsset: 'assets/icons/audio-square.svg'),
+    CategoryItem(id: '3', label: 'Movies', iconAsset: 'assets/icons/video.svg'),
+    CategoryItem(id: '4', label: 'Games', iconAsset: 'assets/icons/game.svg'),
     CategoryItem(
-        id: '5', label: 'Fitness', iconAsset: 'assets/icons/activity.png'),
-    CategoryItem(id: '6', label: 'Food', iconAsset: 'assets/icons/cup.png'),
+        id: '5', label: 'Fitness', iconAsset: 'assets/icons/activity.svg'),
+    CategoryItem(id: '6', label: 'Food', iconAsset: 'assets/icons/cup.svg'),
     CategoryItem(
-        id: '7', label: 'Travel', iconAsset: 'assets/icons/airplane.png'),
+        id: '7', label: 'Travel', iconAsset: 'assets/icons/airplane.svg'),
     CategoryItem(
-        id: '8', label: 'Tech', iconAsset: 'assets/icons/computing.png'),
+        id: '8', label: 'Tech', iconAsset: 'assets/icons/computing.svg'),
   ];
 
   // New: recommendations for demo
