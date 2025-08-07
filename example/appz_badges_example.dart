@@ -24,7 +24,52 @@ class AppzBadgesExample extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 32),
-            
+
+            // X-Small Badges Row
+            const Text(
+              'X-Small Badges',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                AppzBadges(
+                  size: AppzBadgeSize.xSmall,
+                  state: AppzBadgeState.defaultState,
+                  label: 'Default',
+                ),
+                const SizedBox(width: 16),
+                AppzBadges(
+                  size: AppzBadgeSize.xSmall,
+                  state: AppzBadgeState.success,
+                  label: 'Success',
+                ),
+                const SizedBox(width: 16),
+                AppzBadges(
+                  size: AppzBadgeSize.xSmall,
+                  state: AppzBadgeState.error,
+                  label: 'Error',
+                ),
+                const SizedBox(width: 16),
+                AppzBadges(
+                  size: AppzBadgeSize.xSmall,
+                  state: AppzBadgeState.warning,
+                  label: 'Warning',
+                ),
+                const SizedBox(width: 16),
+                AppzBadges(
+                  size: AppzBadgeSize.xSmall,
+                  state: AppzBadgeState.info,
+                  label: 'Info',
+                ),
+              ],
+            ),
+
+            const SizedBox(height: 32),
+
             // Small Badges Row
             const Text(
               'Small Badges',
@@ -67,9 +112,9 @@ class AppzBadgesExample extends StatelessWidget {
                 ),
               ],
             ),
-            
+
             const SizedBox(height: 32),
-            
+
             // Large Badges Row
             const Text(
               'Large Badges',
@@ -112,9 +157,9 @@ class AppzBadgesExample extends StatelessWidget {
                 ),
               ],
             ),
-            
+
             const SizedBox(height: 32),
-            
+
             // Usage Examples
             const Text(
               'Usage Examples',
@@ -124,7 +169,7 @@ class AppzBadgesExample extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            
+
             // Status indicators
             const Text(
               'Status Indicators:',
@@ -139,30 +184,30 @@ class AppzBadgesExample extends StatelessWidget {
               runSpacing: 8,
               children: [
                 AppzBadges(
-                  size: AppzBadgeSize.small,
+                  size: AppzBadgeSize.xSmall,
                   state: AppzBadgeState.success,
                   label: 'Active',
                 ),
                 AppzBadges(
-                  size: AppzBadgeSize.small,
+                  size: AppzBadgeSize.xSmall,
                   state: AppzBadgeState.error,
                   label: 'Inactive',
                 ),
                 AppzBadges(
-                  size: AppzBadgeSize.small,
+                  size: AppzBadgeSize.xSmall,
                   state: AppzBadgeState.warning,
                   label: 'Pending',
                 ),
                 AppzBadges(
-                  size: AppzBadgeSize.small,
+                  size: AppzBadgeSize.xSmall,
                   state: AppzBadgeState.info,
                   label: 'Processing',
                 ),
               ],
             ),
-            
+
             const SizedBox(height: 24),
-            
+
             // Categories
             const Text(
               'Categories:',
@@ -198,9 +243,9 @@ class AppzBadgesExample extends StatelessWidget {
                 ),
               ],
             ),
-            
+
             const SizedBox(height: 24),
-            
+
             // Priority levels
             const Text(
               'Priority Levels:',
@@ -236,4 +281,4 @@ class AppzBadgesExample extends StatelessWidget {
       ),
     );
   }
-} 
+}

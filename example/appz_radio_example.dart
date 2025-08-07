@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:apz_flutter_components/components/appz_radio/appz_radio.dart';
+import 'package:apz_flutter_components/components/appz_radio/appz_radio_group.dart';
 
 class AppzRadioExample extends StatefulWidget {
   const AppzRadioExample({Key? key}) : super(key: key);
@@ -9,51 +9,38 @@ class AppzRadioExample extends StatefulWidget {
 }
 
 class _AppzRadioExampleState extends State<AppzRadioExample> {
-  bool checked1 = false;
-  bool checked2 = true;
-  bool checked3 = false;
+  String? _selectedValue;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('AppzRadio Example')),
+      appBar: AppBar(title: const Text('AppzRadioGroup Example')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Default (unchecked, medium)'),
-            AppzRadio(
-              isChecked: checked1,
-              title: 'Option 1',
-              subtitle: 'This is option 1',
-              onChanged: (val) => setState(() => checked1 = val),
+            AppzRadioItem(
+              label: 'Select an option',
+              options: const ['Option 1', 'Option 2', 'Option 3'],
+              defaultValue: 'Option 1',
+              onChanged: (value) {
+                setState(() {
+                  _selectedValue = value;
+                });
+              },
             ),
             const SizedBox(height: 16),
-            const Text('Checked (large)'),
-            AppzRadio(
-              isChecked: checked2,
-              size: AppzRadioSize.large,
-              title: 'Option 2',
-              onChanged: (val) => setState(() => checked2 = val),
-            ),
-            const SizedBox(height: 16),
-            const Text('Disabled (small)'),
-            AppzRadio(
-              isChecked: false,
+            AppzRadioItem(
+              label: 'Another selection (disabled)',
+              options: const ['Option A', 'Option B', 'Option C'],
+              defaultValue: 'Option B',
               isDisabled: true,
-              size: AppzRadioSize.small,
-              title: 'Disabled Option',
-              subtitle: 'This cannot be changed',
+              onChanged: (value) {},
             ),
             const SizedBox(height: 16),
-            const Text('With error'),
-            AppzRadio(
-              isChecked: checked3,
-              showError: true,
-              title: 'Must be selected',
-              onChanged: (val) => setState(() => checked3 = val),
-            ),
+            if (_selectedValue != null)
+              Text('Selected value: $_selectedValue'),
           ],
         ),
       ),

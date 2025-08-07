@@ -2,7 +2,8 @@ import 'package:apz_flutter_components/common/token_parser.dart';
 import 'package:flutter/material.dart';
 
 class AppzBadgesStyleConfig {
-  static final AppzBadgesStyleConfig instance = AppzBadgesStyleConfig._internal();
+  static final AppzBadgesStyleConfig instance =
+      AppzBadgesStyleConfig._internal();
   final TokenParser _tokenParser = TokenParser();
 
   AppzBadgesStyleConfig._internal();
@@ -62,21 +63,23 @@ class AppzBadgesStyleConfig {
     }
   }
 
-
-
   double getHeight(String size) {
-    return _tokenParser.getValue<double>(['badges', size, 'height'], fromSupportingTokens: true) ?? 25.0;
+    return _tokenParser.getValue<double>(['badges', size, 'height'],
+            fromSupportingTokens: true) ??
+        25.0;
   }
 
   EdgeInsets getPadding(String size) {
-    final paddingMap = _tokenParser.getValue<Map<String, dynamic>>(['badges', size, 'padding'], fromSupportingTokens: true);
+    final paddingMap = _tokenParser.getValue<Map<String, dynamic>>(
+        ['badges', size, 'padding'],
+        fromSupportingTokens: true);
     // if (paddingMap != null) {
-      return EdgeInsets.fromLTRB(
-        (paddingMap?['left'] as num).toDouble(),
-        (paddingMap?['top'] as num).toDouble(),
-        (paddingMap?['right'] as num).toDouble(),
-        (paddingMap?['bottom'] as num).toDouble(),
-      );
+    return EdgeInsets.fromLTRB(
+      (paddingMap?['left'] as num).toDouble(),
+      (paddingMap?['top'] as num).toDouble(),
+      (paddingMap?['right'] as num).toDouble(),
+      (paddingMap?['bottom'] as num).toDouble(),
+    );
     // }
     // Fallback to hardcoded values if token parsing fails
     // switch (size) {
@@ -90,15 +93,21 @@ class AppzBadgesStyleConfig {
   }
 
   double getBorderRadius() {
-    return _tokenParser.getValue<double>(['badges', 'borderRadius'], fromSupportingTokens: true) ?? 30.0;
+    return _tokenParser.getValue<double>(['badges', 'borderRadius'],
+            fromSupportingTokens: true) ??
+        30.0;
   }
 
   double getBorderWeight() {
-    return _tokenParser.getValue<double>(['badges', 'borderWeight'], fromSupportingTokens: true) ?? 1.0;
+    return _tokenParser.getValue<double>(['badges', 'borderWeight'],
+            fromSupportingTokens: true) ??
+        1.0;
   }
 
   double getItemSpacing() {
-    return _tokenParser.getValue<double>(['badges', 'itemSpacing'], fromSupportingTokens: true) ?? 4.0;
+    return _tokenParser.getValue<double>(['badges', 'itemSpacing'],
+            fromSupportingTokens: true) ??
+        4.0;
   }
 
   Color _getColorFromToken(String tokenName) {
@@ -106,28 +115,35 @@ class AppzBadgesStyleConfig {
     if (collections == null) return Colors.transparent;
 
     // First try to find in Tokens collection
-    final tokenCollection = collections.firstWhere((c) => c['name'] == 'Tokens', orElse: () => null);
+    final tokenCollection = collections.firstWhere((c) => c['name'] == 'Tokens',
+        orElse: () => null);
     if (tokenCollection != null) {
-      final variables = tokenCollection['modes'][0]['variables'] as List<dynamic>;
-      final token = variables.firstWhere((v) => v['name'] == tokenName, orElse: () => null);
+      final variables =
+          tokenCollection['modes'][0]['variables'] as List<dynamic>;
+      final token = variables.firstWhere((v) => v['name'] == tokenName,
+          orElse: () => null);
 
       if (token != null) {
         if (token['isAlias'] == true) {
           final alias = token['value']['name'];
-          
+
           // Try to find the alias in Primitive collection
-          final primitiveCollection = collections.firstWhere((c) => c['name'] == 'Primitive', orElse: () => null);
+          final primitiveCollection = collections
+              .firstWhere((c) => c['name'] == 'Primitive', orElse: () => null);
           if (primitiveCollection != null) {
-            final primitiveVariables = primitiveCollection['modes'][0]['variables'] as List<dynamic>;
-            final primitiveToken = primitiveVariables.firstWhere((v) => v['name'] == alias, orElse: () => null);
-            
+            final primitiveVariables =
+                primitiveCollection['modes'][0]['variables'] as List<dynamic>;
+            final primitiveToken = primitiveVariables
+                .firstWhere((v) => v['name'] == alias, orElse: () => null);
+
             if (primitiveToken != null) {
               return _parseColor(primitiveToken['value']);
             }
           }
-          
+
           // If not found in Primitive, try to find in Tokens collection
-          final aliasToken = variables.firstWhere((v) => v['name'] == alias, orElse: () => null);
+          final aliasToken = variables.firstWhere((v) => v['name'] == alias,
+              orElse: () => null);
           if (aliasToken != null) {
             // Recursively resolve the alias
             return _getColorFromToken(alias);
@@ -137,22 +153,23 @@ class AppzBadgesStyleConfig {
         }
       }
     }
-    
+
     // If not found in Tokens collection, try to find directly in Primitive collection
-    final primitiveCollection = collections.firstWhere((c) => c['name'] == 'Primitive', orElse: () => null);
+    final primitiveCollection = collections
+        .firstWhere((c) => c['name'] == 'Primitive', orElse: () => null);
     if (primitiveCollection != null) {
-      final primitiveVariables = primitiveCollection['modes'][0]['variables'] as List<dynamic>;
-      final primitiveToken = primitiveVariables.firstWhere((v) => v['name'] == tokenName, orElse: () => null);
-      
+      final primitiveVariables =
+          primitiveCollection['modes'][0]['variables'] as List<dynamic>;
+      final primitiveToken = primitiveVariables
+          .firstWhere((v) => v['name'] == tokenName, orElse: () => null);
+
       if (primitiveToken != null) {
         return _parseColor(primitiveToken['value']);
       }
     }
-    
+
     return Colors.transparent;
   }
-
-
 
   Color _parseColor(dynamic value) {
     if (value is String) {
@@ -194,4 +211,4 @@ class AppzBadgesStyleConfig {
     }
     return FontWeight.normal;
   }
-} 
+}

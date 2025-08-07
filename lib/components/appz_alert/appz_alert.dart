@@ -1,267 +1,316 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'alert_style_config.dart';
 import '../appz_text/appz_text.dart';
 import '../appz_image/appz_image.dart';
 import '../apz_button/appz_button.dart';
 
-enum AppzAlertType {
-  success,
-  warning,
-  error,
-  info,
-}
+enum AppzAlertMessageType { success, error, info, confirmation }
 
-enum AppzAlertVariant {
-  withIcon,
-  withoutIcon,
-}
-
-class AppzAlert extends StatefulWidget {
+class AppzAlert extends StatelessWidget {
   final String title;
-  final String description;
-  final AppzAlertType type;
-  final AppzAlertVariant variant;
-  final String? iconPath;
-  final String? headerIconPath;
-  final String? primaryButtonText;
-  final String? secondaryButtonText;
-  final VoidCallback? onPrimaryButtonTap;
-  final VoidCallback? onSecondaryButtonTap;
-  final VoidCallback? onHeaderIconTap;
+  final String message;
+  final AppzAlertMessageType messageType;
+  final List<String> buttons;
+  final Function(String)? onButtonPressed;
 
   const AppzAlert({
     Key? key,
     required this.title,
-    required this.description,
-    this.type = AppzAlertType.info,
-    this.variant = AppzAlertVariant.withIcon,
-    this.iconPath,
-    this.headerIconPath,
-    this.primaryButtonText,
-    this.secondaryButtonText,
-    this.onPrimaryButtonTap,
-    this.onSecondaryButtonTap,
-    this.onHeaderIconTap,
+    required this.message,
+    required this.messageType,
+    this.buttons = const ['Okay'],
+    this.onButtonPressed,
   }) : super(key: key);
 
-  @override
-  State<AppzAlert> createState() => _AppzAlertState();
-}
-
-class _AppzAlertState extends State<AppzAlert> {
-  bool _configLoaded = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _loadConfig();
-  }
-
-  Future<void> _loadConfig() async {
-    await AlertStyleConfig.instance.load();
-    if (mounted) setState(() => _configLoaded = true);
-  }
-
-  String _getDefaultIconPath() {
-    final config = AlertStyleConfig.instance;
-    switch (widget.type) {
-      case AppzAlertType.success:
-        return config.getSuccessIconPath();
-      case AppzAlertType.warning:
-        return config.getWarningIconPath();
-      case AppzAlertType.error:
-        return config.getErrorIconPath();
-      case AppzAlertType.info:
-        return config.getInfoIconPath();
-    }
-  }
-
-  String _getHeaderIconPath() {
-    return widget.headerIconPath ?? AlertStyleConfig.instance.getCloseIconPath();
-  }
-
-  Widget _buildDefaultIcon(double size) {
-    final config = AlertStyleConfig.instance;
-    final defaultIconPath = widget.iconPath ?? _getDefaultIconPath();
-    
-    return SvgPicture.asset(
-      defaultIconPath,
-      width: size,
-      height: size,
-      colorFilter: ColorFilter.mode(
-        config.getIconColor(),
-        BlendMode.srcIn,
-      ),
+  static Future<void> show(
+    BuildContext context, {
+    required String title,
+    required String message,
+    required AppzAlertMessageType messageType,
+    List<String> buttons = const ['Okay'],
+    Function(String)? onButtonPressed,
+    Alignment alignment = Alignment.center,
+  }) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return Align(
+          alignment: alignment,
+          child: AppzAlert(
+            title: title,
+            message: message,
+            messageType: messageType,
+            buttons: buttons,
+            onButtonPressed: onButtonPressed,
+          ),
+        );
+      },
     );
   }
 
-  Color _getIconBackgroundColor() {
-    final config = AlertStyleConfig.instance;
-    switch (widget.type) {
-      case AppzAlertType.success:
-        return config.getSuccessIconBackgroundColor();
-      case AppzAlertType.warning:
-        return config.getWarningIconBackgroundColor();
-      case AppzAlertType.error:
-        return config.getErrorIconBackgroundColor();
-      case AppzAlertType.info:
-        return config.getInfoIconBackgroundColor();
+  String _getIconPath() {
+    switch (messageType) {
+      case AppzAlertMessageType.success:
+        return 'packages/apz_flutter_components/assets/icons/success-filled.svg';
+      case AppzAlertMessageType.error:
+        return 'packages/apz_flutter_components/assets/icons/error-filled.svg';
+      case AppzAlertMessageType.info:
+        return 'packages/apz_flutter_components/assets/icons/info.svg';
+      case AppzAlertMessageType.confirmation:
+        return 'packages/apz_flutter_components/assets/icons/info-circle.svg';
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    if (!_configLoaded) {
-      return const SizedBox.shrink();
-    }
-
     final config = AlertStyleConfig.instance;
-    final boxShadows = config.boxShadow != null
-        ? config.boxShadow!.map<BoxShadow>((shadow) {
-            return BoxShadow(
-              color: AlertStyleConfig.parseColor(shadow['color']),
-              blurRadius: shadow['blurRadius'] ?? 0,
-              offset: Offset(shadow['offsetX'] ?? 0, shadow['offsetY'] ?? 0),
-              spreadRadius: shadow['spreadRadius'] ?? 0,
-            );
-          }).toList()
-        : <BoxShadow>[];
 
-    return Container(
-      width: config.size('width'),
-      clipBehavior: Clip.antiAlias,
-      decoration: ShapeDecoration(
-        color: config.getBackgroundColor(),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(config.size('borderRadius')),
+    return Material(
+      color: Colors.transparent,
+      child: Container(
+        width: config.size('width'),
+        clipBehavior: Clip.antiAlias,
+        decoration: ShapeDecoration(
+          color: config.getBackgroundColor(),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(config.size('borderRadius')),
+          ),
         ),
-        shadows: boxShadows,
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          // Header section
-          Container(
-            width: config.size('width'),
-            height: config.size('headerHeight'),
-            padding: EdgeInsets.symmetric(
-              horizontal: config.size('headerPaddingHorizontal'),
-              vertical: config.size('headerPaddingVertical'),
-            ),
-            clipBehavior: Clip.antiAlias,
-            decoration: ShapeDecoration(
-              color: config.getBackgroundColor(),
-              shape: RoundedRectangleBorder(
-                side: BorderSide(
-                  width: config.size('borderWidth'),
-                  color: config.getBorderColor(),
-                ),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(config.size('borderRadius')),
-                  topRight: Radius.circular(config.size('borderRadius')),
-                ),
-              ),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: AppzText(
-                    widget.title,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              padding: EdgeInsets.all(config.size('contentPadding')),
+              child: Column(
+                children: [
+                  AppzImage(
+                    assetName: _getIconPath(),
+                    size: AppzImageSize.square(size: config.size('iconSize')),
+                  ),
+                  SizedBox(height: config.size('iconSpacing')),
+                  AppzText(
+                    title,
                     category: 'heading',
                     fontWeight: 'bold',
                     color: config.getTitleColor(),
                   ),
-                ),
-                Container(
-                  width: config.size('closeIconSize'),
-                  height: config.size('closeIconSize'),
-                  child: GestureDetector(
-                    onTap: widget.onHeaderIconTap,
-                    child: AppzImage(
-                      assetName: _getHeaderIconPath(),
-                      size: AppzImageSize.square(size: config.size('closeIconSize')),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          // Content section
-          Container(
-            width: double.infinity,
-            padding: EdgeInsets.all(config.size('contentPadding')),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                if (widget.variant == AppzAlertVariant.withIcon) ...[
-                  Container(
-                    width: config.size('iconContainerSize'),
-                    height: config.size('iconContainerSize'),
-                    decoration: BoxDecoration(
-                      color: _getIconBackgroundColor(),
-                      borderRadius: BorderRadius.circular(config.size('iconBorderRadius')),
-                    ),
-                    child: Center(
-                      child: _buildDefaultIcon(config.size('iconSize')),
-                    ),
-                  ),
-                  SizedBox(width: config.size('iconSpacing')),
-                ],
-                Expanded(
-                  child: AppzText(
-                    widget.description,
+                  SizedBox(height: config.size('iconSpacing')),
+                  AppzText(
+                    message,
                     category: 'paragraph',
                     fontWeight: 'regular',
                     color: config.getDescriptionColor(),
                   ),
-                ),
-              ],
-            ),
-          ),
-          // Button section
-          if (widget.primaryButtonText != null || widget.secondaryButtonText != null)
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(config.size('buttonContainerPadding')),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  if (widget.primaryButtonText != null) ...[
-                    Expanded(
-                      child: AppzButton(
-                        label: widget.primaryButtonText!,
-                        appearance: AppzButtonAppearance.primary,
-                        size: AppzButtonSize.medium,
-                        onPressed: widget.onPrimaryButtonTap,
-                      ),
-                    ),
-                    if (widget.secondaryButtonText != null)
-                      SizedBox(width: config.size('buttonSpacing')),
-                  ],
-                  if (widget.secondaryButtonText != null) ...[
-                    Expanded(
-                      child: AppzButton(
-                        label: widget.secondaryButtonText!,
-                        appearance: AppzButtonAppearance.secondary,
-                        size: AppzButtonSize.medium,
-                        onPressed: widget.onSecondaryButtonTap,
-                      ),
-                    ),
-                  ],
                 ],
               ),
             ),
-        ],
+            Container(
+              padding: EdgeInsets.all(config.size('buttonContainerPadding')),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(buttons.length, (index) {
+                  return Expanded(
+                    child: AppzButton(
+                      label: buttons[index],
+                      appearance: index == 0
+                          ? AppzButtonAppearance.primary
+                          : AppzButtonAppearance.secondary,
+                      size: AppzButtonSize.medium,
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                        onButtonPressed?.call(buttons[index]);
+                      },
+                    ),
+                  );
+                }).expand((widget) => [
+                  widget,
+                  if (buttons.length > 1 && widget != (buttons.length -1))
+                    SizedBox(width: config.size('buttonSpacing'))
+                ]).toList(),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+} */
+import 'package:flutter/material.dart';
+import 'alert_style_config.dart';
+import '../appz_text/appz_text.dart';
+import '../appz_image/appz_image.dart';
+import '../apz_button/appz_button.dart';
+
+enum AppzAlertMessageType { success, error, info, warning }
+
+class AppzAlert extends StatelessWidget {
+  final String title;
+  final String message;
+  final AppzAlertMessageType messageType;
+  final List<String> buttons;
+  final Function(String)? onButtonPressed;
+  final bool showCloseIcon;
+
+  const AppzAlert({
+    Key? key,
+    required this.title,
+    required this.message,
+    required this.messageType,
+    this.buttons = const ['Okay'],
+    this.onButtonPressed,
+    this.showCloseIcon = false,
+  }) : super(key: key);
+
+  static Future<void> show(
+    BuildContext context, {
+    required String title,
+    required String message,
+    required AppzAlertMessageType messageType,
+    List<String> buttons = const ['Okay'],
+    Function(String)? onButtonPressed,
+    Alignment alignment = Alignment.center,
+    bool showCloseIcon = false,
+  }) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return Align(
+          alignment: alignment,
+          child: AppzAlert(
+            title: title,
+            message: message,
+            messageType: messageType,
+            buttons: buttons,
+            onButtonPressed: onButtonPressed,
+            showCloseIcon: showCloseIcon,
+          ),
+        );
+      },
+    );
+  }
+
+  /*String _getIconPath(String iconName) {
+    return 'packages/apz_flutter_components/assets/icons/$iconName.svg';
+  }*/
+  String _getIconPath() {
+    switch (messageType) {
+      case AppzAlertMessageType.success:
+        return 'packages/apz_flutter_components/assets/icons/success-filled.svg';
+      case AppzAlertMessageType.error:
+        return 'packages/apz_flutter_components/assets/icons/error-filled.svg';
+      case AppzAlertMessageType.info:
+        return 'packages/apz_flutter_components/assets/icons/info-filled.svg';
+      case AppzAlertMessageType.warning:
+        return 'packages/apz_flutter_components/assets/icons/warning-filled.svg';
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final config = AlertStyleConfig.instance;
+
+    return Material(
+      color: Colors.transparent,
+      child: Container(
+        width: config.size('width'),
+        clipBehavior: Clip.antiAlias,
+        decoration: ShapeDecoration(
+          color: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(config.size('borderRadius')),
+          ),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Padding(
+              padding: EdgeInsets.fromLTRB(
+                config.size('headerPaddingHorizontal'),
+                config.size('headerPaddingVertical'),
+                config.size('headerPaddingHorizontal'),
+                0,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: AppzText(
+                      title,
+                      category: 'heading',
+                      fontWeight: 'bold',
+                      color: config.getTitleColor(),
+                    ),
+                  ),
+                  if (showCloseIcon)
+                    GestureDetector(
+                      onTap: () => Navigator.of(context).pop(),
+                      child: AppzImage(
+                        assetName: 'packages/apz_flutter_components/assets/icons/close-circle-1.svg',
+                        size: AppzImageSize.square(size: config.size('closeIconSize')),
+                      ),
+                    ),
+                ],
+              ),
+            ),
+            const Divider(),
+            Padding(
+              padding: EdgeInsets.all(config.size('contentPadding')),
+              child: Row(
+                children: [
+                  AppzImage(
+                    assetName: _getIconPath(),
+                    size: AppzImageSize.square(size: config.size('iconSize')),
+                  ),
+                  SizedBox(width: config.size('iconSpacing')),
+                  Expanded(
+                    child: AppzText(
+                      message,
+                      category: 'paragraph',
+                      fontWeight: 'regular',
+                      color: config.getDescriptionColor(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(config.size('buttonContainerPadding')),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  if (buttons.length > 1)
+                    Expanded(
+                      child: AppzButton(
+                        label: buttons[1],
+                        appearance: AppzButtonAppearance.secondary,
+                        size: AppzButtonSize.medium,
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          onButtonPressed?.call(buttons[1]);
+                        },
+                      ),
+                    ),
+                  if (buttons.length > 1)
+                    SizedBox(width: config.size('buttonSpacing')),
+                  Expanded(
+                    child: AppzButton(
+                      label: buttons[0],
+                      appearance: AppzButtonAppearance.primary,
+                      size: AppzButtonSize.medium,
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                        onButtonPressed?.call(buttons[0]);
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

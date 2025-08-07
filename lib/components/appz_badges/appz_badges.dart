@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'appz_badges_style_config.dart';
 import '../appz_text/appz_text.dart';
 
-enum AppzBadgeSize { small, large }
+enum AppzBadgeSize { xSmall, small, large }
+
 enum AppzBadgeState { defaultState, success, warning, error, info }
 
 class AppzBadges extends StatefulWidget {
@@ -25,7 +26,7 @@ class _AppzBadgesState extends State<AppzBadges> {
   @override
   Widget build(BuildContext context) {
     final config = AppzBadgesStyleConfig.instance;
-    final sizeStr = widget.size.name;
+    final sizeStr = _getSizeString(widget.size);
     final stateStr = _getStateString(widget.state);
 
     // Get colors based on state
@@ -40,8 +41,12 @@ class _AppzBadgesState extends State<AppzBadges> {
     final borderWeight = config.getBorderWeight();
 
     // Determine AppzText category and fontWeight based on size
-    final textCategory = sizeStr == 'small' ? 'label' : 'input';
-    final textFontWeight = sizeStr == 'small' ? 'label' : 'medium';
+    final textCategory = sizeStr == 'x-small'
+        ? 'label'
+        : (sizeStr == 'small' ? 'label' : 'label');
+    final textFontWeight = sizeStr == 'x-small'
+        ? 'label'
+        : (sizeStr == 'small' ? 'label' : 'regular');
 
     return Container(
       constraints: BoxConstraints(
@@ -72,6 +77,17 @@ class _AppzBadgesState extends State<AppzBadges> {
     );
   }
 
+  String _getSizeString(AppzBadgeSize size) {
+    switch (size) {
+      case AppzBadgeSize.xSmall:
+        return 'x-small';
+      case AppzBadgeSize.small:
+        return 'small';
+      case AppzBadgeSize.large:
+        return 'large';
+    }
+  }
+
   String _getStateString(AppzBadgeState state) {
     switch (state) {
       case AppzBadgeState.defaultState:
@@ -86,4 +102,4 @@ class _AppzBadgesState extends State<AppzBadges> {
         return 'Info';
     }
   }
-} 
+}

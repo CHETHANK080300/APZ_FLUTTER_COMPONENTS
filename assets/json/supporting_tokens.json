@@ -101,57 +101,24 @@
     }
   },
   "checkbox": {
-    "small": {
-      "width": 20,
-      "height": 20,
-      "borderRadius": 4,
-      "iconSize": 16,
-      "borderWidth": 1
-    },
-    "medium": {
-      "width": 24,
-      "height": 24,
-      "borderRadius": 6,
-      "iconSize": 18,
-      "borderWidth": 1
-    },
-    "large": {
-      "width": 28,
-      "height": 28,
-      "borderRadius": 8,
-      "iconSize": 20,
-      "borderWidth": 1
-    },
-    "spacing": {
-      "small": 8,
-      "medium": 12,
-      "large": 16
-    }
+    "width": 20,
+    "height": 20,
+    "borderRadius": 4,
+    "iconSize": 16,
+    "borderWidth": 1.43,
+    "containerWidth": 24.5,
+    "containerHeight": 24,
+    "spacing": 12,
+    "groupSpacing": 16,
+    "groupRunSpacing": 8
   },
   "radio": {
-    "small": {
-      "outerRadius": 8,
-      "innerRadius": 4,
-      "borderWidth": 1,
-      "spacing": 8
-    },
-    "medium": {
-      "outerRadius": 10,
-      "innerRadius": 5,
-      "borderWidth": 1,
-      "spacing": 10
-    },
-    "large": {
-      "outerRadius": 12,
-      "innerRadius": 6,
-      "borderWidth": 1,
-      "spacing": 12
-    },
-    "spacing": {
-      "small": 8,
-      "medium": 12,
-      "large": 16
-    }
+    "outerRadius": 10,
+    "innerRadius": 5,
+    "borderWidth": 1.5,
+    "spacing": 10,
+    "labelFontSize": 12,
+    "optionFontSize": 14
   },
   "toggleSwitch": {
     "small": {
@@ -171,22 +138,19 @@
       "large": 12
     }
   },
-  "toggleWithLabel": {
+  "toggleButton": {
+    "borderRadius": 40,
     "small": {
-      "width": 101,
-      "height": 34,
-      "borderRadius": 16,
-      "fontSize": 12,
-      "labelFontSize": 14,
-      "spacing": 8
+      "padding": {
+        "horizontal": 16,
+        "vertical": 8
+      }
     },
     "large": {
-      "width": 134,
-      "height": 42,
-      "borderRadius": 24,
-      "fontSize": 16,
-      "labelFontSize": 18,
-      "spacing": 12
+      "padding": {
+        "horizontal": 24,
+        "vertical": 12
+      }
     }
   },
   "tooltip": {
@@ -260,6 +224,15 @@
     }
   },
   "badges": {
+     "x-small": {
+      "height": 16.0,
+      "padding": {
+        "top": 4.0,
+        "bottom": 4.0,
+        "left": 6.0,
+        "right": 6.0
+      }
+    },
     "small": {
       "height": 25,
       "padding": {
@@ -388,19 +361,12 @@
       "contentPadding": 16,
       "buttonContainerPadding": 16,
       "iconContainerSize": 56,
-      "iconSize": 24,
+      "iconSize": 32,
       "iconSpacing": 16,
       "buttonSpacing": 16,
       "closeIconSize": 24,
       "borderWidth": 1,
       "iconBorderRadius": 999
-    },
-    "icons": {
-      "success": "assets/icons/check.svg",
-      "warning": "assets/icons/circum_warning.svg",
-      "error": "assets/icons/close-circle-1.svg",
-      "info": "assets/icons/Question mark.svg",
-      "close": "assets/icons/close-circle-1.svg"
     },
     "boxShadow": [
       {
@@ -420,6 +386,22 @@
       "borderWidth": 1,
       "buttonContainerPadding": 24,
       "buttonSpacing": 24
+    }
+  },
+  "modalHeader": {
+    "width": 343,
+    "padding": {
+      "horizontal": 24,
+      "vertical": 16
+    },
+    "borderRadius": {
+      "topLeft": 16,
+      "topRight": 16
+    },
+    "borderWidth": 1,
+    "spacing": 4,
+    "closeButton": {
+      "iconSize": 24
     }
   }
 }
